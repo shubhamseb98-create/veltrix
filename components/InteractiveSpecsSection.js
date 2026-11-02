@@ -62,17 +62,17 @@ function getSmoothTrajectory(p, isMobile) {
   // Vertical trajectory (y: offset relative to viewport height)
   if (isMobile) {
     if (p < 0.12) {
-      y = 0.0; // Exact vertical center, perfectly aligned with VELTRIX
+      y = 0.04; // Gives comfortable breathing room below header on mobile
     } else if (p < 0.85) {
       y = -0.20; // Sits in upper half so text has lower half
     } else {
       y = -0.24;
     }
   } else {
-    if (p < 0.12) {
-      y = 0.0; // Exact vertical center (0.0), perfectly aligned with VELTRIX
+    if (p < 0.10) {
+      y = 0.04; // Gentle downward nudge (+4vh) giving generous breathing room below header
     } else if (p < 0.18) {
-      y = 0.0; // Locked in dead center
+      y = 0.04 * (1.0 - smoothStep(0.10, 0.18, p)); // Smoothly glides to 0.0 for side stations
     } else if (p < 0.83) {
       y = 0.0; // Perfect vertical center for all 4 side stations
     } else if (p < 0.90) {
@@ -165,7 +165,7 @@ export default function InteractiveSpecsSection() {
 
       const isMobile = window.innerWidth < 1024;
       // Proportional luxury framing: 0.66 ensures entire watch fits cleanly with breathing room
-      const scale = Math.min(scaleW, scaleH) * (isMobile ? 0.70 : 0.66);
+      const scale = Math.min(scaleW, scaleH) * (isMobile ? 0.62 : 0.58);
 
       const drawW = Math.round(imgW * scale);
       const drawH = Math.round(imgH * scale);
@@ -204,13 +204,13 @@ export default function InteractiveSpecsSection() {
       if (brandWatermarkRef.current) {
         if (p <= 0.08) {
           brandWatermarkRef.current.style.opacity = '1';
-          brandWatermarkRef.current.style.transform = 'translate(-50%, -50%) scale(1)';
+          brandWatermarkRef.current.style.transform = 'translate(-50%, calc(-50% + 4vh)) scale(1)';
           brandWatermarkRef.current.style.visibility = 'visible';
         } else if (p <= 0.16) {
           const t = (p - 0.08) / 0.08;
           const ease = t * t * (3 - 2 * t);
           brandWatermarkRef.current.style.opacity = String(Math.max(0, 1 - ease));
-          brandWatermarkRef.current.style.transform = `translate(-50%, -50%) scale(${1 + ease * 0.05})`;
+          brandWatermarkRef.current.style.transform = `translate(-50%, calc(-50% + ${(4 * (1 - ease)).toFixed(2)}vh)) scale(${1 + ease * 0.05})`;
           brandWatermarkRef.current.style.visibility = 'visible';
         } else {
           brandWatermarkRef.current.style.opacity = '0';
@@ -457,10 +457,11 @@ export default function InteractiveSpecsSection() {
            ======================================================== */}
         <div
           ref={brandWatermarkRef}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none select-none w-full max-w-7xl mx-auto px-6 text-center flex items-center justify-center transition-all duration-300"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 z-0 pointer-events-none select-none w-full max-w-7xl mx-auto px-6 text-center flex items-center justify-center transition-all duration-300"
           style={{
-            maskImage: 'radial-gradient(123px 217px, transparent 68%, black 100%)',
-            WebkitMaskImage: 'radial-gradient(ellipse 123px 217px at 50% 50%, transparent 68%, black 100%)',
+            transform: 'translate(-50%, calc(-50% + 4vh))',
+            maskImage: 'radial-gradient(110px 190px, transparent 68%, black 100%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 110px 190px at 50% 50%, transparent 68%, black 100%)',
           }}
         >
           <span className="font-heading font-black text-[14vw] sm:text-[15vw] md:text-[165px] lg:text-[180px] xl:text-[180px] 2xl:text-[180px] tracking-[0.14em] sm:tracking-[0.18em] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-b from-[#39FF88] via-[#39FF88]/75 to-[#6D8F63]/30 drop-shadow-[0_0_45px_rgba(57,255,136,0.15)] pl-[0.14em]">
@@ -512,19 +513,20 @@ export default function InteractiveSpecsSection() {
 
         {/* ========================================================
             3. HERO INTRO HEADER (Station 0: Upper Center)
+               - Elevated with generous padding to prevent collapsing into watch
            ======================================================== */}
         <div
           ref={card0Ref}
-          className="absolute inset-x-4 top-12 sm:top-14 max-w-2xl mx-auto text-center z-20 pointer-events-none"
+          className="absolute inset-x-4 top-4 sm:top-6 lg:top-7 max-w-2xl mx-auto text-center z-20 pointer-events-none"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#6D8F63]/25 mb-3 text-[#39FF88] font-mono text-[10px] sm:text-xs font-semibold tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-white/5 border border-[#6D8F63]/25 mb-2 text-[#39FF88] font-mono text-[10px] sm:text-xs font-semibold tracking-widest uppercase">
             <span className="w-1.5 h-1.5 rounded-full bg-[#39FF88] shadow-[0_0_8px_#39FF88]" />
             <span>SUB-NANOSECOND HOROLOGY ARCHITECTURE</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-3">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight leading-tight mb-2 sm:mb-2.5">
             Technical Specifications
           </h2>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-950/80 border border-[#6D8F63]/25 backdrop-blur-md text-xs font-mono text-slate-300 shadow-xl">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-950/80 border border-[#6D8F63]/25 backdrop-blur-md text-[11px] sm:text-xs font-mono text-slate-300 shadow-xl">
             <span>SCROLL DOWN TO EXPLORE ARCHITECTURE</span>
             <ChevronDown className="w-3.5 h-3.5 text-[#39FF88] animate-bounce" />
           </div>
