@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHRONOS T-01 // Pure 3D Interactive Scroll</title>
+  <meta name="description" content="Experience the anatomy of precision. Scroll to interact with the 3D deconstruction.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Minimal Sticky Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <span class="logo-symbol">⬡</span>
+        <div class="logo-text">
+          <span class="brand-name">CHRONOS</span>
+          <span class="brand-sub">HOROLOGY LAB</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#scrolly-section">3D ANIMATION</a>
+        <a href="#engineering">CRAFTSMANSHIP</a>
+        <a href="#specs">SPECS</a>
+        <a href="#purchase">BUY</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#purchase" class="btn btn-primary btn-sm">
+          <span>ORDER T-01</span>
+          <span class="arrow-glyph">&nearr;</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Clean Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-container">
+      <div class="hero-badge">
+        <span class="badge-ring"></span>
+        <span>AEROSPACE GRADE 5 TITANIUM</span>
+      </div>
+
+      <h1 class="hero-title">
+        CHRONOS <span class="text-gradient">T-01</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Sculpted from solid titanium. Scroll down to trigger the 3D disassembly animation.
+      </p>
+
+      <div class="scroll-cue">
+        <div class="mouse-icon">
+          <div class="mouse-wheel"></div>
+        </div>
+        <span class="scroll-cue-text">SCROLL DOWN TO PLAY</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pure 3D Scrollytelling Section (NO TEXT OVERLAYS - 100% CLEAN PRODUCT VIEW) -->
+  <section class="scrolly-container" id="scrolly-section">
+    <div class="scrolly-sticky">
+
+      <!-- Minimal Canvas Preloader -->
+      <div class="canvas-loader" id="canvas-loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-pct mono" id="loader-progress-text">LOADING 3D FRAMES...</div>
+      </div>
+
+      <!-- Pure Canvas (Green screen removed, 100% transparent merge) -->
+      <canvas id="sequence-canvas"></canvas>
+
+    </div>
+  </section>
+
+  <!-- Craftsmanship / Manufacturing Section -->
+  <section class="section engineering-section" id="engineering">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag mono">IN-HOUSE HOROLOGY LAB</span>
+        <h2 class="section-title">PRECISION TITANIUM<br><span class="text-gradient">ENGINEERING.</span></h2>
+        <p class="section-lead">
+          Raw aerospace ingots machined down to absolute tolerances in our micro-precision cleanrooms.
+        </p>
+      </div>
+
+      <div class="craft-grid">
+        <div class="craft-card">
+          <div class="craft-num mono">01</div>
+          <div class="craft-icon">⚙️</div>
+          <h3 class="craft-title">5-Axis CNC Precision</h3>
+          <p class="craft-desc">
+            Carved from solid Grade 5 Titanium bar stock. Over 4 hours of continuous multi-axis milling sculpts the octagonal facets.
+          </p>
+          <div class="craft-meta mono">TOLERANCE: &plusmn;0.005mm</div>
+        </div>
+
+        <div class="craft-card">
+          <div class="craft-num mono">02</div>
+          <div class="craft-icon">✨</div>
+          <h3 class="craft-title">Hand-Finished Satin Brush</h3>
+          <p class="craft-desc">
+            Each bezel angle is hand-finished by master polishers, combining directional satin graining with mirror-polished chamfers.
+          </p>
+          <div class="craft-meta mono">HAND FINISHED: 120 MIN/PIECE</div>
+        </div>
+
+        <div class="craft-card">
+          <div class="craft-num mono">03</div>
+          <div class="craft-icon">🛡️</div>
+          <h3 class="craft-title">10 ATM Hermetic Seal</h3>
+          <p class="craft-desc">
+            Constructed with self-energizing fluorosilicone gaskets, enabling underwater immersion down to 100 meters (330 feet).
+          </p>
+          <div class="craft-meta mono">PRESSURE TESTED: 10 ATM</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Specifications Matrix Section -->
+  <section class="section specs-section" id="specs">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag mono">TECHNICAL BLUEPRINT</span>
+        <h2 class="section-title">SPECIFICATIONS.</h2>
+      </div>
+
+      <div class="specs-table-wrapper">
+        <div class="spec-row">
+          <div class="spec-category mono">CHASSIS</div>
+          <div class="spec-details">
+            <strong>Grade 5 Titanium (Ti-6Al-4V)</strong>
+            <span>45.0mm diameter, 12.8mm thickness, 22mm lug width. Weight: 68g.</span>
+          </div>
+        </div>
+
+        <div class="spec-row">
+          <div class="spec-category mono">DISPLAY</div>
+          <div class="spec-details">
+            <strong>1.95-Inch Ultra Retina AMOLED</strong>
+            <span>480 &times; 480 px, 454 PPI, 2,000 Nits peak brightness, Sapphire Crystal.</span>
+          </div>
+        </div>
+
+        <div class="spec-row">
+          <div class="spec-category mono">BATTERY</div>
+          <div class="spec-details">
+            <strong>580mAh Solid Polymer Matrix</strong>
+            <span>Up to 14 days standard usage; Fast magnetic inductive dock.</span>
+          </div>
+        </div>
+
+        <div class="spec-row">
+          <div class="spec-category mono">WATER RESISTANCE</div>
+          <div class="spec-details">
+            <strong>10 ATM (100 Meters / 330 Feet)</strong>
+            <span>Suitable for high-velocity water sports and deep swimming.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Purchase Section -->
+  <section class="section purchase-section" id="purchase">
+    <div class="container">
+      <div class="purchase-card">
+        <div class="purchase-gallery">
+          <div class="purchase-preview-wrap">
+            <img src="frames/frame_0001.webp" alt="CHRONOS T-01 Titanium Smartwatch" class="purchase-preview-img" id="purchase-product-img">
+            <span class="preview-badge mono">IN-STOCK // READY TO SHIP</span>
+          </div>
+          <div class="thumbnail-strip">
+            <button class="thumb-btn active" data-frame="1">
+              <img src="frames/frame_0001.webp" alt="Assembled View">
+            </button>
+            <button class="thumb-btn" data-frame="70">
+              <img src="frames/frame_0070.webp" alt="Deconstructed View">
+            </button>
+            <button class="thumb-btn" data-frame="120">
+              <img src="frames/frame_0120.webp" alt="Exploded Core">
+            </button>
+            <button class="thumb-btn" data-frame="185">
+              <img src="frames/frame_0185.webp" alt="Full Blueprint">
+            </button>
+          </div>
+        </div>
+
+        <div class="purchase-details">
+          <div class="card-tag mono">DIRECT MANUFACTURER ALLOCATION</div>
+          <h2 class="purchase-title">CHRONOS T-01 TITANIUM</h2>
+          <p class="purchase-desc">
+            Directly manufactured in our micro-precision lab. Ships inside a matte black anodized aluminum presentation box with magnetic charging dock and sizing tool kit.
+          </p>
+
+          <div class="price-container">
+            <div class="price-main">$499 <span class="currency">USD</span></div>
+            <div class="price-inr mono">&approx; &#8377;42,500 INR (Tax Included)</div>
+          </div>
+
+          <div class="guarantee-list mono">
+            <div class="guarantee-item">
+              <span class="chk">✓</span> 3-Year In-House Manufacturer Warranty
+            </div>
+            <div class="guarantee-item">
+              <span class="chk">✓</span> Free Worldwide Express Shipping
+            </div>
+            <div class="guarantee-item">
+              <span class="chk">✓</span> 30-Day Unconditional Trial Guarantee
+            </div>
+          </div>
+
+          <div class="purchase-actions">
+            <button class="btn btn-glow btn-block" id="btn-order-now">
+              <span>ACQUIRE CHRONOS T-01 &bull; $499</span>
+              <span class="arrow-glyph">&rarr;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Modal -->
+  <div class="modal-backdrop" id="order-modal">
+    <div class="modal-dialog">
+      <div class="modal-close" id="modal-close">&times;</div>
+      <div class="modal-header">
+        <span class="pulse-dot"></span>
+        <span class="mono">RESERVATION SECURED</span>
+      </div>
+      <h3 class="modal-title">CHRONOS T-01 ALLOCATED</h3>
+      <p class="modal-body">
+        Your order for <strong>CHRONOS T-01 Titanium</strong> has been registered with our direct manufacturing queue.
+      </p>
+      <button class="btn btn-primary btn-block" id="modal-confirm">CONTINUE EXPLORING</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-bottom mono">
+      <div class="container footer-bottom-inner">
+        <div>&copy; 2026 CHRONOS HOROLOGY LABS INC. ALL RIGHTS RESERVED.</div>
+        <div class="footer-legal">
+          <a href="#">PRIVACY POLICY</a>
+          <a href="#">TERMS OF SERVICE</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
