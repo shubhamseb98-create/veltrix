@@ -16,7 +16,7 @@ import {
 
 const TOTAL_FRAMES = 239;
 const FRAME_PREFIX = '/spec_frames/frame_';
-const FRAME_EXT = '.webp?v=v3_clean';
+const FRAME_EXT = '.webp?v=v4_newpp';
 
 function getFramePath(index) {
   return `${FRAME_PREFIX}${String(index).padStart(4, '0')}${FRAME_EXT}`;
@@ -193,15 +193,7 @@ export default function InteractiveSpecsSection() {
         }
       }
 
-      // 100% Watermark blackout guarantee
-      const wmScaleX = drawW / imgW;
-      const wmScaleY = drawH / imgH;
-      const wmX = drawX + Math.round(1660 * wmScaleX);
-      const wmY = drawY + Math.round(820 * wmScaleY);
-      const wmW = Math.round(150 * wmScaleX);
-      const wmH = Math.round(150 * wmScaleY);
-      ctx.fillStyle = '#000000';
-      ctx.fillRect(wmX, wmY, wmW, wmH);
+      // Clean source frames from newpp.mp4 (no watermark block required)
 
       lastRenderedFrameVal = frameVal;
     }
