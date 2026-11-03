@@ -167,7 +167,7 @@ export default function ColorScrollerSection() {
 
       const isMobile = window.innerWidth < 1024;
       // Proportional luxury framing: 0.70 scale ensures watch floats cleanly with breathing room
-      const scale = Math.min(scaleW, scaleH) * (isMobile ? 0.80 : 0.70);
+      const scale = Math.min(scaleW, scaleH) * (isMobile ? 0.65 : 0.70);
 
       const drawW = Math.round(imgW * scale);
       const drawH = Math.round(imgH * scale);
@@ -401,7 +401,7 @@ export default function ColorScrollerSection() {
         </div>
 
         {/* Active Stage Callout Card */}
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 mb-16 sm:mb-20 md:mb-10 pointer-events-auto">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 mb-6 sm:mb-10 md:mb-10 pointer-events-auto">
           <div className="flex flex-col lg:flex-row items-stretch lg:items-end justify-between gap-4 sm:gap-6">
             {/* Left Detail Card */}
             <div className="w-full max-w-[320px] sm:max-w-[350px] lg:max-w-[360px] bg-black/90 backdrop-blur-xl border border-white/10 hover:border-[#39FF88]/40 rounded-2xl p-4 sm:p-5 shadow-2xl transition-all duration-300">

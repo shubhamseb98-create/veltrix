@@ -17,8 +17,8 @@ const PART_STAGES = [
     title: 'Grade 5 Titanium Chassis',
     desc: 'Precision 5-axis CNC sculpted from solid aerospace Ti-6Al-4V bar stock. Diamond-cut angular facets meet a hand-brushed satin finish with micro-tolerances.',
     position: 'left',
-    normX: 0.43,
-    normY: 0.36, // Points cleanly to the outer titanium faceted bezel
+    normX: 0.385,
+    normY: 0.490, // Points cleanly to outer titanium faceted bezel
     specs: [
       { label: 'ALLOY', val: 'Ti-6Al-4V' },
       { label: 'TOLERANCE', val: '±0.005mm' },
@@ -31,8 +31,8 @@ const PART_STAGES = [
     title: 'Dual-Curved Sapphire Crystal',
     desc: 'Mohs-9 hardness sapphire crystal lens engineered with 7-layer anti-reflective nanocoating. Floats above the high-contrast chronograph dial without glare.',
     position: 'left',
-    normX: 0.36,
-    normY: 0.36, // Points directly to the floating curved sapphire glass
+    normX: 0.420,
+    normY: 0.430, // Points directly to curved sapphire glass
     specs: [
       { label: 'HARDNESS', val: 'Mohs 9' },
       { label: 'COATING', val: '7-Layer AR' },
@@ -45,8 +45,8 @@ const PART_STAGES = [
     title: 'Neural Engine & Biometrics',
     desc: 'Multi-layer high-density substrate housing the 4nm neural co-processor. Paired with an 8-channel optical array delivering 1,000Hz continuous cardiac sampling.',
     position: 'left',
-    normX: 0.49,
-    normY: 0.62, // Accurately points to the 4nm Neural Engine co-processor on the substrate
+    normX: 0.470,
+    normY: 0.560, // Accurately points to 4nm Neural Engine co-processor
     specs: [
       { label: 'SAMPLING', val: '1,000Hz Bio' },
       { label: 'PROCESSOR', val: '4nm Neural' },
@@ -59,8 +59,8 @@ const PART_STAGES = [
     title: 'Solid Polymer Cell & Acoustics',
     desc: '580mAh solid-electrolyte cell engineered for 14 days of unbroken power. Flanked by an airtight acoustic chamber with laser-drilled resonance ports.',
     position: 'right',
-    normX: 0.55,
-    normY: 0.70, // Points to the battery & acoustic cavity base
+    normX: 0.585,
+    normY: 0.630, // Points to battery & acoustic cavity base
     specs: [
       { label: 'ENDURANCE', val: '336 Hours' },
       { label: 'CHARGE', val: '0-80% in 35m' },
@@ -73,8 +73,8 @@ const PART_STAGES = [
     title: 'Tactile Crown & Link Clasp',
     desc: 'Micro-knurled digital crown with instantaneous haptic feedback. Integrated solid titanium link bracelet with dual deployment butterfly clasp.',
     position: 'right',
-    normX: 0.68,
-    normY: 0.62, // Points directly to the digital crown knob
+    normX: 0.615,
+    normY: 0.440, // Points directly to digital crown knob
     specs: [
       { label: 'FEEDBACK', val: 'Linear Haptic' },
       { label: 'SEAL', val: '10 ATM (100M)' },
@@ -122,17 +122,17 @@ export default function WatchScrollCanvas() {
 
     function updatePinPosition() {
       const isMobile = window.innerWidth < 1024;
-      const scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080) * (isMobile ? 0.92 : 0.84);
+      const scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080) * (isMobile ? 0.64 : 0.80);
       const drawW = 1920 * scale;
       const drawH = 1080 * scale;
       const drawX = (window.innerWidth - drawW) / 2;
-      const drawY = (window.innerHeight - drawH) / 2;
+      const drawY = (window.innerHeight - drawH) / 2 + (isMobile ? -window.innerHeight * 0.06 : 0);
 
       const current = PART_STAGES[activeStageRef.current];
       if (current) {
         const targetX = drawX + (current.normX * drawW);
         const targetY = drawY + (current.normY * drawH);
-        setPinPos({ x: targetX, y: targetY, visible: true });
+        setPinPos({ x: targetX, y: targetY, visible: !isMobile });
 
         // Connect cleanly to card border
         if (current.position === 'left' && leftCardRef.current) {
@@ -178,12 +178,12 @@ export default function WatchScrollCanvas() {
       const scaleH = canvasH / imgH;
 
       const isMobile = window.innerWidth < 1024;
-      const scale = Math.min(scaleW, scaleH) * (isMobile ? 0.92 : 0.84);
+      const scale = Math.min(scaleW, scaleH) * (isMobile ? 0.64 : 0.80);
 
       const drawW = imgW * scale;
       const drawH = imgH * scale;
       const drawX = (canvasW - drawW) / 2;
-      const drawY = (canvasH - drawH) / 2;
+      const drawY = (canvasH - drawH) / 2 + (isMobile ? -canvasH * 0.06 : 0);
 
       ctx.drawImage(img, 0, 0, imgW, imgH, drawX, drawY, drawW, drawH);
       lastDrawnFrame = idx;
@@ -263,35 +263,31 @@ export default function WatchScrollCanvas() {
         nextStage = 0;
       } else if (progress < 0.44) {
         nextStage = 1;
-      } else if (progress < 0.68) {
+      } else if (progress < 0.65) {
         nextStage = 2;
-      } else if (progress < 0.88) {
+      } else if (progress < 0.85) {
         nextStage = 3;
       } else {
         nextStage = 4;
       }
 
-      if (activeStageRef.current !== nextStage) {
-        activeStageRef.current = nextStage;
+      if (nextStage !== activeStageRef.current) {
         setActiveStage(nextStage);
       }
-
-      updatePinPosition();
     }
 
     function renderLoop() {
-      // Smooth lerp physics without jumping back to previous frames
+      // Cinematic continuous deceleration
       const diff = targetFrame - currentFrame;
-      if (Math.abs(diff) < 0.04) {
-        currentFrame = targetFrame;
+      if (Math.abs(diff) > 0.05) {
+        currentFrame += diff * 0.12;
       } else {
-        currentFrame += diff * 0.14;
+        currentFrame = targetFrame;
       }
 
-      const frameToDraw = Math.round(currentFrame);
-
-      if (frameToDraw !== lastDrawnFrame && frameToDraw >= 1 && frameToDraw <= TOTAL_FRAMES) {
-        drawFrame(frameToDraw);
+      const idx = Math.round(currentFrame);
+      if (idx !== lastDrawnFrame) {
+        drawFrame(idx);
       }
 
       animationId = requestAnimationFrame(renderLoop);
@@ -301,7 +297,6 @@ export default function WatchScrollCanvas() {
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     resizeCanvas();
-    handleScroll();
     renderLoop();
 
     return () => {
@@ -309,23 +304,23 @@ export default function WatchScrollCanvas() {
       window.removeEventListener('scroll', handleScroll);
       cancelAnimationFrame(animationId);
     };
-  }, []); // Run ONCE on mount — NEVER reset canvas engine on stage change!
+  }, []);
 
   // Re-sync pin position when activeStage changes
   useEffect(() => {
     activeStageRef.current = activeStage;
     const isMobile = window.innerWidth < 1024;
-    const scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080) * (isMobile ? 0.92 : 0.84);
+    const scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080) * (isMobile ? 0.64 : 0.80);
     const drawW = 1920 * scale;
     const drawH = 1080 * scale;
     const drawX = (window.innerWidth - drawW) / 2;
-    const drawY = (window.innerHeight - drawH) / 2;
+    const drawY = (window.innerHeight - drawH) / 2 + (isMobile ? -window.innerHeight * 0.06 : 0);
 
     const current = PART_STAGES[activeStage];
     if (current) {
       const targetX = drawX + (current.normX * drawW);
       const targetY = drawY + (current.normY * drawH);
-      setPinPos({ x: targetX, y: targetY, visible: true });
+      setPinPos({ x: targetX, y: targetY, visible: !isMobile });
 
       if (current.position === 'left' && leftCardRef.current) {
         const cardRect = leftCardRef.current.getBoundingClientRect();
@@ -340,12 +335,14 @@ export default function WatchScrollCanvas() {
   const progressPct = Math.round((loadedCount / TOTAL_FRAMES) * 100);
   const currentPart = PART_STAGES[activeStage];
 
-  // SVG Leader Line Path (Thin, subtle, elegant hairline)
+  // SVG Leader Line Path: precise clean diagonal from card anchor to pinpoint on watch
   let linePath = '';
   if (pinPos.visible && cardAnchor.x > 0) {
     const isLeft = currentPart.position === 'left';
-    const midX = isLeft ? pinPos.x - 30 : pinPos.x + 30;
-    linePath = `M ${pinPos.x} ${pinPos.y} L ${midX} ${cardAnchor.y} L ${cardAnchor.x} ${cardAnchor.y}`;
+    const midX = isLeft
+      ? cardAnchor.x + (pinPos.x - cardAnchor.x) * 0.50
+      : cardAnchor.x + (pinPos.x - cardAnchor.x) * 0.50;
+    linePath = `M ${cardAnchor.x} ${cardAnchor.y} L ${midX} ${cardAnchor.y} L ${pinPos.x} ${pinPos.y}`;
   }
 
   return (
@@ -355,6 +352,64 @@ export default function WatchScrollCanvas() {
       className="relative w-full h-[450vh] bg-black select-none"
     >
       <div className="sticky top-0 left-0 w-full h-screen bg-black overflow-hidden flex items-center justify-center">
+
+        {/* ========================================================
+            1. AMBIENT BACKGROUND GLOW & SPOTLIGHTS (Layer 0 - BEHIND WATCH)
+           ======================================================== */}
+        <div className="absolute inset-0 pointer-events-none z-0 mix-blend-screen overflow-hidden">
+          {/* Central Watch Holographic Spotlight */}
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[550px] sm:w-[850px] sm:h-[700px] rounded-full pointer-events-none transition-all duration-700"
+            style={{
+              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.16) 0%, rgba(109, 143, 99, 0.08) 45%, transparent 70%)',
+              filter: 'blur(95px)',
+            }}
+          />
+
+          {/* Top-Left Ambient Spotlight */}
+          <div
+            className="absolute -top-16 -left-16 sm:-top-20 sm:-left-10 w-[450px] h-[400px] sm:w-[600px] sm:h-[500px] rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.12) 0%, rgba(109, 143, 99, 0.05) 45%, transparent 70%)',
+              filter: 'blur(90px)',
+            }}
+          />
+
+          {/* Bottom-Right Ambient Spotlight */}
+          <div
+            className="absolute -bottom-16 -right-16 sm:-bottom-20 sm:-right-10 w-[500px] h-[420px] sm:w-[650px] sm:h-[550px] rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.10) 0%, rgba(109, 143, 99, 0.05) 45%, transparent 70%)',
+              filter: 'blur(90px)',
+            }}
+          />
+        </div>
+
+        {/* ========================================================
+            2. SUBTLE ARCHITECTURAL BLUEPRINT GRID TEXTURE (Layer 0)
+           ======================================================== */}
+        <div
+          className="absolute inset-0 pointer-events-none z-0 opacity-25"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px)
+            `,
+            backgroundSize: '44px 44px',
+            maskImage: 'radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, transparent 95%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, transparent 95%)',
+          }}
+        />
+
+        {/* Ambient Horology Radar Rings behind Watch */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-[#39FF88]/10 pointer-events-none z-0 flex items-center justify-center">
+          <div className="w-[420px] h-[420px] rounded-full border border-dashed border-[#6D8F63]/25 animate-[spin_60s_linear_infinite]" />
+          <div className="absolute w-[320px] h-[320px] rounded-full border border-[#39FF88]/5" />
+        </div>
+
+        {/* Ambient Top & Bottom Vignettes for Seamless Section Blending */}
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black via-black/60 to-transparent pointer-events-none z-15" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none z-15" />
 
         {/* Luxury Glass Preloader Pill (Theme-matched, non-blocking, NO full black screen) */}
         <div
@@ -386,56 +441,67 @@ export default function WatchScrollCanvas() {
           </defs>
 
           {linePath && (
-            <path
-              d={linePath}
-              fill="none"
-              stroke="url(#mintLineGrad)"
-              strokeWidth="1"
-              strokeDasharray="3 3"
-              className="transition-all duration-300 ease-out"
-            />
+            <>
+              {/* Leader Line Path */}
+              <path
+                d={linePath}
+                fill="none"
+                stroke="url(#mintLineGrad)"
+                strokeWidth="1.2"
+                strokeDasharray="4 3"
+                className="transition-all duration-300 ease-out"
+              />
+              {/* Card Anchor Node Dot */}
+              <circle
+                cx={cardAnchor.x}
+                cy={cardAnchor.y}
+                r="3"
+                fill="#39FF88"
+                className="transition-all duration-300"
+              />
+            </>
           )}
         </svg>
 
-        {/* Ultra-Minimal Micro Pinpoint (Tiny, elegant Apple-style laser dot) */}
+        {/* Ultra-Minimal Micro Pinpoint (Illuminated Laser Target Dot) */}
         {pinPos.visible && (
           <div
             className="absolute z-20 pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out"
             style={{ left: `${pinPos.x}px`, top: `${pinPos.y}px` }}
           >
-            <div className="relative flex items-center justify-center w-5 h-5">
-              {/* Subtle small pulse ring */}
-              <span className="absolute w-4 h-4 rounded-full border border-[#39FF88]/50 animate-ping" />
-              {/* Thin static micro ring */}
-              <span className="absolute w-3.5 h-3.5 rounded-full border border-[#6D8F63]/70" />
-              {/* Tiny precision laser center dot (4px) */}
-              <span className="w-1.5 h-1.5 rounded-full bg-[#39FF88] shadow-[0_0_10px_#39FF88]" />
+            <div className="relative flex items-center justify-center w-6 h-6">
+              {/* Pulsing Target Halo */}
+              <span className="absolute w-5 h-5 rounded-full border border-[#39FF88]/60 animate-ping" />
+              {/* Crisp Technical Ring */}
+              <span className="absolute w-4 h-4 rounded-full border border-[#39FF88]/40 bg-[#39FF88]/10" />
+              {/* Neon Mint Laser Target Center (3.5px) */}
+              <span className="w-1.5 h-1.5 rounded-full bg-[#39FF88] shadow-[0_0_12px_#39FF88]" />
             </div>
           </div>
         )}
 
         {/* Top Floating Stage HUD */}
-        <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-4 py-2 bg-black/85 border border-[#6D8F63]/30 rounded-full backdrop-blur-xl shadow-lg pointer-events-none">
-          <span className="w-2 h-2 rounded-full bg-[#39FF88] animate-pulse" />
-          <span className="font-mono text-[11px] text-[#39FF88] font-semibold tracking-widest">
+        <div className="absolute top-5 sm:top-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 bg-neutral-950/85 border border-[#6D8F63]/30 rounded-full backdrop-blur-xl shadow-lg pointer-events-none max-w-[90vw]">
+          <span className="w-2 h-2 rounded-full bg-[#39FF88] animate-pulse flex-shrink-0" />
+          <span className="font-mono text-[10px] sm:text-[11px] text-[#39FF88] font-semibold tracking-widest uppercase truncate">
             3D EXPLODED INSPECTION
           </span>
           <span className="text-white/20 font-mono text-xs">|</span>
-          <span className="font-mono text-[11px] text-slate-300 tracking-wider">
+          <span className="font-mono text-[10px] sm:text-[11px] text-slate-300 tracking-wider truncate">
             {currentPart.title}
           </span>
         </div>
 
-        {/* Part Details Cards - Constrained strictly to max-w-7xl Container */}
+        {/* Part Details Cards - Intimate max-w-5xl Container for tight, balanced ~80-100px gap */}
         <div className="absolute inset-0 pointer-events-none z-20 flex items-center justify-center">
-          <div className="w-full max-w-7xl mx-auto px-6 flex items-center justify-between pointer-events-none">
+          <div className="w-full max-w-5xl mx-auto px-6 flex items-center justify-between pointer-events-none">
             {/* Left Side Callout */}
-            <div className="hidden lg:flex flex-col justify-center w-[290px] pointer-events-auto">
+            <div className="hidden lg:flex flex-col justify-center w-[310px] pointer-events-auto">
               {currentPart.position === 'left' && (
                 <div
                   ref={leftCardRef}
                   key={currentPart.id}
-                  className="bg-black/85 border border-[#6D8F63]/30 hover:border-[#39FF88]/50 rounded-2xl px-5 py-4 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.85),inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-300 animate-[fadeIn_0.3s_ease-out] group"
+                  className="bg-neutral-950/85 border border-[#6D8F63]/30 hover:border-[#39FF88]/50 rounded-2xl p-5 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.85),inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-300 animate-[fadeIn_0.3s_ease-out] group"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
@@ -444,24 +510,39 @@ export default function WatchScrollCanvas() {
                         {currentPart.tag}
                       </span>
                     </div>
-                    <span className="font-mono text-[10px] text-[#6D8F63] font-medium">
+                    <span className="font-mono text-[10px] text-[#6D8F63] font-bold px-2 py-0.5 rounded bg-[#6D8F63]/10 border border-[#6D8F63]/25">
                       0{activeStage + 1}
                     </span>
                   </div>
-                  <h3 className="font-heading font-extrabold text-xl text-white tracking-tight leading-snug">
+                  <h3 className="font-heading font-extrabold text-xl text-white tracking-tight leading-snug mb-2">
                     {currentPart.title}
                   </h3>
+                  <p className="text-slate-300 text-xs font-light leading-relaxed mb-4">
+                    {currentPart.desc}
+                  </p>
+                  <div className="grid grid-cols-2 gap-2 pt-3 border-t border-white/10">
+                    {currentPart.specs.map((sp, idx) => (
+                      <div key={idx} className="bg-white/[0.03] rounded-lg px-2.5 py-1.5 border border-white/5">
+                        <span className="block font-mono text-[9px] text-slate-400 uppercase tracking-wider mb-0.5">
+                          {sp.label}
+                        </span>
+                        <span className="block font-mono text-[11px] font-bold text-[#39FF88] truncate">
+                          {sp.val}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
 
             {/* Right Side Callout */}
-            <div className="hidden lg:flex flex-col justify-center w-[290px] pointer-events-auto ml-auto">
+            <div className="hidden lg:flex flex-col justify-center w-[310px] pointer-events-auto ml-auto">
               {currentPart.position === 'right' && (
                 <div
                   ref={rightCardRef}
                   key={currentPart.id}
-                  className="bg-black/85 border border-[#6D8F63]/30 hover:border-[#39FF88]/50 rounded-2xl px-5 py-4 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.85),inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-300 animate-[fadeIn_0.3s_ease-out] group"
+                  className="bg-neutral-950/85 border border-[#6D8F63]/30 hover:border-[#39FF88]/50 rounded-2xl p-5 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.85),inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-300 animate-[fadeIn_0.3s_ease-out] group"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
@@ -470,38 +551,69 @@ export default function WatchScrollCanvas() {
                         {currentPart.tag}
                       </span>
                     </div>
-                    <span className="font-mono text-[10px] text-[#6D8F63] font-medium">
+                    <span className="font-mono text-[10px] text-[#6D8F63] font-bold px-2 py-0.5 rounded bg-[#6D8F63]/10 border border-[#6D8F63]/25">
                       0{activeStage + 1}
                     </span>
                   </div>
-                  <h3 className="font-heading font-extrabold text-xl text-white tracking-tight leading-snug">
+                  <h3 className="font-heading font-extrabold text-xl text-white tracking-tight leading-snug mb-2">
                     {currentPart.title}
                   </h3>
+                  <p className="text-slate-300 text-xs font-light leading-relaxed mb-4">
+                    {currentPart.desc}
+                  </p>
+                  <div className="grid grid-cols-2 gap-2 pt-3 border-t border-white/10">
+                    {currentPart.specs.map((sp, idx) => (
+                      <div key={idx} className="bg-white/[0.03] rounded-lg px-2.5 py-1.5 border border-white/5">
+                        <span className="block font-mono text-[9px] text-slate-400 uppercase tracking-wider mb-0.5">
+                          {sp.label}
+                        </span>
+                        <span className="block font-mono text-[11px] font-bold text-[#39FF88] truncate">
+                          {sp.val}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
           </div>
         </div>
 
-        {/* Mobile Callout Card - Constrained to max-w-7xl Container */}
-        <div className="lg:hidden absolute bottom-6 inset-x-0 z-20 pointer-events-none px-6 max-w-7xl mx-auto">
-          <div className="bg-black/90 border border-[#6D8F63]/30 rounded-xl px-4 py-3 backdrop-blur-xl shadow-2xl">
+        {/* Mobile Callout Card - Responsive & Touch-Optimized */}
+        <div className="lg:hidden absolute bottom-4 sm:bottom-6 inset-x-0 z-20 pointer-events-none px-4 sm:px-6 max-w-lg mx-auto">
+          <div className="bg-neutral-950/90 border border-[#6D8F63]/30 rounded-2xl p-4 backdrop-blur-xl shadow-2xl">
             <div className="flex items-center justify-between mb-1.5">
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#39FF88]" />
-                <span className="font-mono text-[10px] text-[#39FF88] tracking-wider font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#39FF88] shadow-[0_0_6px_#39FF88]" />
+                <span className="font-mono text-[10px] text-[#39FF88] tracking-wider font-semibold uppercase">
                   {currentPart.tag}
                 </span>
               </div>
-              <span className="font-mono text-[10px] text-slate-500">
+              <span className="font-mono text-[10px] text-[#6D8F63] font-bold px-2 py-0.5 rounded bg-[#6D8F63]/10 border border-[#6D8F63]/25">
                 0{activeStage + 1} / 0{PART_STAGES.length}
               </span>
             </div>
-            <h4 className="font-heading font-bold text-base text-white">
+            <h4 className="font-heading font-extrabold text-base text-white mb-1 tracking-tight">
               {currentPart.title}
             </h4>
+            <p className="text-slate-300 text-xs font-light leading-relaxed mb-2 line-clamp-2">
+              {currentPart.desc}
+            </p>
+            <div className="flex items-center gap-2 pt-2 border-t border-white/10">
+              {currentPart.specs.map((sp, idx) => (
+                <div key={idx} className="flex-1 bg-white/[0.03] rounded-lg px-2 py-1 border border-white/5 text-center">
+                  <span className="block font-mono text-[8px] text-slate-400 uppercase">
+                    {sp.label}
+                  </span>
+                  <span className="block font-mono text-[10px] font-bold text-[#39FF88] truncate">
+                    {sp.val}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+
       </div>
     </section>
   );
