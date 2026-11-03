@@ -189,35 +189,59 @@ export default function WatchScrollCanvas() {
       lastDrawnFrame = idx;
     }
 
-    // Preload all frames once on mount
-    let count = 0;
-    const firstImg = new Image();
-    firstImg.src = getFramePath(1);
-    firstImg.onload = () => {
-      frameImages[1] = firstImg;
-      count++;
-      setLoadedCount(count);
-      drawFrame(1);
-      updatePinPosition();
+    // Two-tier Preloading:
+    // 1. Immediately fire requests for key anchor frames across the sequence in parallel
+    const keyIndices = [];
+    for (let i = 1; i <= TOTAL_FRAMES; i += 10) {
+      keyIndices.push(i);
+    }
+    if (!keyIndices.includes(TOTAL_FRAMES)) keyIndices.push(TOTAL_FRAMES);
 
-      // Preload rest of frames in background
-      for (let i = 2; i <= TOTAL_FRAMES; i++) {
-        const img = new Image();
-        img.src = getFramePath(i);
-        img.onload = () => {
-          frameImages[i] = img;
-          count++;
-          setLoadedCount(count);
-          if (count >= 15) {
-            setIsReady(true);
-          }
-        };
-        img.onerror = () => {
-          count++;
-          setLoadedCount(count);
-        };
-      }
-    };
+    let keyLoadedCount = 0;
+    let totalLoaded = 0;
+
+    keyIndices.forEach((idx) => {
+      const img = new Image();
+      img.src = getFramePath(idx);
+      img.onload = () => {
+        frameImages[idx] = img;
+        keyLoadedCount++;
+        totalLoaded++;
+        setLoadedCount(totalLoaded);
+
+        // Frame 1 draws immediately upon arrival - watch is visible right away!
+        if (idx === 1) {
+          drawFrame(1);
+          updatePinPosition();
+        }
+
+        // Ready as soon as key milestone frames are loaded (<150ms)
+        if (keyLoadedCount >= Math.min(8, keyIndices.length)) {
+          setIsReady(true);
+        }
+      };
+      img.onerror = () => {
+        keyLoadedCount++;
+        totalLoaded++;
+        setLoadedCount(totalLoaded);
+      };
+    });
+
+    // 2. Preload remaining frames smoothly in background
+    for (let i = 1; i <= TOTAL_FRAMES; i++) {
+      if (keyIndices.includes(i)) continue;
+      const img = new Image();
+      img.src = getFramePath(i);
+      img.onload = () => {
+        frameImages[i] = img;
+        totalLoaded++;
+        setLoadedCount(totalLoaded);
+      };
+      img.onerror = () => {
+        totalLoaded++;
+        setLoadedCount(totalLoaded);
+      };
+    }
 
     function handleScroll() {
       if (!container) return;
@@ -332,15 +356,17 @@ export default function WatchScrollCanvas() {
     >
       <div className="sticky top-0 left-0 w-full h-screen bg-black overflow-hidden flex items-center justify-center">
 
-        {/* Minimal Preloader */}
+        {/* Luxury Glass Preloader Pill (Theme-matched, non-blocking, NO full black screen) */}
         <div
-          className={`absolute inset-0 bg-black flex flex-col items-center justify-center gap-4 z-30 transition-opacity duration-500 ${
-            isReady ? 'opacity-0 pointer-events-none' : 'opacity-100'
+          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 transition-all duration-500 pointer-events-none ${
+            isReady ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
           }`}
         >
-          <div className="w-9 h-9 border-2 border-cyan-500/20 border-t-cyan-400 rounded-full animate-spin" />
-          <div className="font-mono text-xs text-cyan-400 tracking-widest">
-            LOADING 3D SEQUENCE // {progressPct}%
+          <div className="bg-neutral-950/85 backdrop-blur-xl border border-[#6D8F63]/30 px-5 py-3 rounded-full flex items-center gap-3 shadow-[0_0_30px_rgba(57,255,136,0.15)]">
+            <div className="w-4 h-4 border-2 border-[#39FF88]/20 border-t-[#39FF88] rounded-full animate-spin flex-shrink-0" />
+            <div className="font-mono text-[11px] text-slate-300 tracking-wider">
+              INITIALIZING 3D ENGINE <span className="text-[#39FF88] font-bold">// {progressPct}%</span>
+            </div>
           </div>
         </div>
 
@@ -353,7 +379,7 @@ export default function WatchScrollCanvas() {
         {/* Ultra-Delicate SVG Leader Line (1px hairline) */}
         <svg className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none z-20 overflow-visible">
           <defs>
-            <linearGradient id="cyanLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <linearGradient id="mintLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#39FF88" stopOpacity="0.85" />
               <stop offset="100%" stopColor="#6D8F63" stopOpacity="0.3" />
             </linearGradient>
@@ -363,7 +389,7 @@ export default function WatchScrollCanvas() {
             <path
               d={linePath}
               fill="none"
-              stroke="url(#cyanLineGrad)"
+              stroke="url(#mintLineGrad)"
               strokeWidth="1"
               strokeDasharray="3 3"
               className="transition-all duration-300 ease-out"
