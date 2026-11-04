@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowUp, ArrowUpRight, Sparkles, ShieldCheck, Globe, Truck } from 'lucide-react';
+import { ArrowUp, ArrowUpRight } from 'lucide-react';
 import ChronosLogo from './ChronosLogo';
 
 export default function Footer() {
@@ -113,30 +113,8 @@ export default function Footer() {
 
       </div>
 
-      {/* Luxury Trust Pillars Strip */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mt-14 pt-8 border-t border-white/5">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center sm:text-left">
-          <div className="flex items-center gap-3 justify-center sm:justify-start">
-            <ShieldCheck className="w-4 h-4 text-[#39FF88] flex-shrink-0" />
-            <span className="font-mono text-[11px] text-slate-400 tracking-wider">5-YEAR SWISS WARRANTY</span>
-          </div>
-          <div className="flex items-center gap-3 justify-center sm:justify-start">
-            <Sparkles className="w-4 h-4 text-[#39FF88] flex-shrink-0" />
-            <span className="font-mono text-[11px] text-slate-400 tracking-wider">GRADE 5 TI-6AL-4V</span>
-          </div>
-          <div className="flex items-center gap-3 justify-center sm:justify-start">
-            <Globe className="w-4 h-4 text-[#39FF88] flex-shrink-0" />
-            <span className="font-mono text-[11px] text-slate-400 tracking-wider">10 ATM / 100M PRESSURE</span>
-          </div>
-          <div className="flex items-center gap-3 justify-center sm:justify-start">
-            <Truck className="w-4 h-4 text-[#39FF88] flex-shrink-0" />
-            <span className="font-mono text-[11px] text-slate-400 tracking-wider">ARMORED GLOBAL TRANSIT</span>
-          </div>
-        </div>
-      </div>
-
       {/* Middle Row: Copyright & Compliance */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-500 font-mono text-[10px] sm:text-[11px] uppercase tracking-wider">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mt-16 sm:mt-20 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-500 font-mono text-[10px] sm:text-[11px] uppercase tracking-wider">
         <div>
           &copy; {new Date().getFullYear()} VELTRIX HOROLOGY LABS INC. ALL RIGHTS RESERVED.
         </div>
