@@ -367,7 +367,7 @@ export default function ColorScrollerSection() {
         {/* Fullscreen Canvas Rendering Watch Video Frames (Layer 10 - IN FRONT of Grid & Glow) */}
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 w-full h-full block z-10"
+          className="absolute inset-0 w-full h-full block z-10 mix-blend-screen"
         />
 
         {/* Ambient Top & Bottom Vignettes for Seamless Blending */}

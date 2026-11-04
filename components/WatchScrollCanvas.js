@@ -354,57 +354,75 @@ export default function WatchScrollCanvas() {
       <div className="sticky top-0 left-0 w-full h-screen bg-black overflow-hidden flex items-center justify-center">
 
         {/* ========================================================
-            1. AMBIENT BACKGROUND GLOW & SPOTLIGHTS (Layer 0 - BEHIND WATCH)
+            1. VIBRANT LUMINOUS BACKGROUND GLOW & SPOTLIGHTS (Layer 0 - BEHIND WATCH)
            ======================================================== */}
         <div className="absolute inset-0 pointer-events-none z-0 mix-blend-screen overflow-hidden">
-          {/* Central Watch Holographic Spotlight */}
+          {/* Broad Atmospheric Neon Mint & Forest Sage Spotlight Halo */}
           <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[550px] sm:w-[850px] sm:h-[700px] rounded-full pointer-events-none transition-all duration-700"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[750px] sm:w-[1100px] sm:h-[900px] rounded-full pointer-events-none transition-all duration-700"
             style={{
-              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.16) 0%, rgba(109, 143, 99, 0.08) 45%, transparent 70%)',
-              filter: 'blur(95px)',
+              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.32) 0%, rgba(109, 143, 99, 0.18) 38%, rgba(57, 255, 136, 0.06) 62%, transparent 75%)',
+              filter: 'blur(85px)',
+            }}
+          />
+
+          {/* High-Intensity Core Watch Backlight Aura */}
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] sm:w-[550px] sm:h-[550px] rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.45) 0%, rgba(57, 255, 136, 0.18) 50%, transparent 70%)',
+              filter: 'blur(50px)',
+            }}
+          />
+
+          {/* Horizontal Ambient Horizon Glow Beam */}
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[90px] rounded-full pointer-events-none opacity-60"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(57, 255, 136, 0.35) 0%, rgba(109, 143, 99, 0.18) 50%, transparent 80%)',
+              filter: 'blur(40px)',
             }}
           />
 
           {/* Top-Left Ambient Spotlight */}
           <div
-            className="absolute -top-16 -left-16 sm:-top-20 sm:-left-10 w-[450px] h-[400px] sm:w-[600px] sm:h-[500px] rounded-full pointer-events-none"
+            className="absolute -top-20 -left-20 sm:-top-24 sm:-left-16 w-[550px] h-[500px] sm:w-[750px] sm:h-[650px] rounded-full pointer-events-none"
             style={{
-              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.12) 0%, rgba(109, 143, 99, 0.05) 45%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.22) 0%, rgba(109, 143, 99, 0.12) 45%, transparent 70%)',
               filter: 'blur(90px)',
             }}
           />
 
           {/* Bottom-Right Ambient Spotlight */}
           <div
-            className="absolute -bottom-16 -right-16 sm:-bottom-20 sm:-right-10 w-[500px] h-[420px] sm:w-[650px] sm:h-[550px] rounded-full pointer-events-none"
+            className="absolute -bottom-20 -right-20 sm:-bottom-24 sm:-right-16 w-[600px] h-[550px] sm:w-[800px] sm:h-[700px] rounded-full pointer-events-none"
             style={{
-              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.10) 0%, rgba(109, 143, 99, 0.05) 45%, transparent 70%)',
-              filter: 'blur(90px)',
+              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.20) 0%, rgba(109, 143, 99, 0.10) 45%, transparent 70%)',
+              filter: 'blur(95px)',
             }}
           />
         </div>
 
         {/* ========================================================
-            2. SUBTLE ARCHITECTURAL BLUEPRINT GRID TEXTURE (Layer 0)
+            2. FINE TECHNICAL BLUEPRINT GRID TEXTURE (Layer 0)
            ======================================================== */}
         <div
-          className="absolute inset-0 pointer-events-none z-0 opacity-25"
+          className="absolute inset-0 pointer-events-none z-0 opacity-35"
           style={{
             backgroundImage: `
-              linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px)
+              linear-gradient(to right, rgba(57, 255, 136, 0.12) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(57, 255, 136, 0.12) 1px, transparent 1px)
             `,
-            backgroundSize: '44px 44px',
-            maskImage: 'radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, transparent 95%)',
-            WebkitMaskImage: 'radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, transparent 95%)',
+            backgroundSize: '48px 48px',
+            maskImage: 'radial-gradient(ellipse 85% 75% at 50% 50%, #000 40%, transparent 95%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 85% 75% at 50% 50%, #000 40%, transparent 95%)',
           }}
         />
 
-        {/* Ambient Horology Radar Rings behind Watch */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-[#39FF88]/10 pointer-events-none z-0 flex items-center justify-center">
-          <div className="w-[420px] h-[420px] rounded-full border border-dashed border-[#6D8F63]/25 animate-[spin_60s_linear_infinite]" />
-          <div className="absolute w-[320px] h-[320px] rounded-full border border-[#39FF88]/5" />
+        {/* Glowing Horology Radar & Orbit Rings behind Watch */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[560px] h-[560px] sm:w-[680px] sm:h-[680px] rounded-full border border-[#39FF88]/25 pointer-events-none z-0 flex items-center justify-center shadow-[0_0_40px_rgba(57,255,136,0.18)]">
+          <div className="w-[440px] h-[440px] sm:w-[540px] sm:h-[540px] rounded-full border border-dashed border-[#6D8F63]/40 animate-[spin_60s_linear_infinite]" />
+          <div className="absolute w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] rounded-full border border-[#39FF88]/15 shadow-[inset_0_0_30px_rgba(57,255,136,0.10)]" />
         </div>
 
         {/* Ambient Top & Bottom Vignettes for Seamless Section Blending */}
@@ -425,10 +443,10 @@ export default function WatchScrollCanvas() {
           </div>
         </div>
 
-        {/* Full Viewport Canvas */}
+        {/* Full Viewport Canvas (Transparent mix-blend-screen so glows & grid shine through!) */}
         <canvas
           ref={canvasRef}
-          className="w-full h-full block bg-black pointer-events-none z-10"
+          className="absolute inset-0 w-full h-full block z-10 mix-blend-screen pointer-events-none"
         />
 
         {/* Ultra-Delicate SVG Leader Line (1px hairline) */}
