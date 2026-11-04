@@ -1,3 +1,4 @@
+import WebsiteLoader from '@/components/WebsiteLoader';
 import Navbar from '@/components/Navbar';
 import WatchScrollCanvas from '@/components/WatchScrollCanvas';
 import ColorScrollerSection from '@/components/ColorScrollerSection';
@@ -10,6 +11,7 @@ import Footer from '@/components/Footer';
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-slate-100">
+      <WebsiteLoader />
       <Navbar />
       <WatchScrollCanvas />
       <ColorScrollerSection />
