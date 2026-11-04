@@ -12,7 +12,6 @@ export default function Navbar() {
     { href: '#metallurgy', label: 'FINISHES' },
     { href: '#collection', label: 'COLLECTION' },
     { href: '#watch-faces', label: 'WATCH FACES' },
-    { href: '#health', label: 'PERFORMANCE' },
     { href: '#specs', label: 'SPECS' },
   ];
 

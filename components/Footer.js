@@ -14,7 +14,7 @@ export default function Footer() {
     { href: '#metallurgy', label: 'METALLURGY FINISHES' },
     { href: '#collection', label: 'TITANIUM COLLECTION' },
     { href: '#watch-faces', label: 'DYNAMIC WATCH FACES' },
-    { href: '#health', label: '4NM NEURAL CORE' },
+    { href: '#specs', label: '4NM NEURAL CORE' },
     { href: '#specs', label: 'TECHNICAL BLUEPRINTS' },
   ];
 

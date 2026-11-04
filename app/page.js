@@ -4,7 +4,6 @@ import WatchScrollCanvas from '@/components/WatchScrollCanvas';
 import ColorScrollerSection from '@/components/ColorScrollerSection';
 import ProductsSection from '@/components/ProductsSection';
 import WatchFacesSection from '@/components/WatchFacesSection';
-import HealthFeaturesSection from '@/components/HealthFeaturesSection';
 import InteractiveSpecsSection from '@/components/InteractiveSpecsSection';
 import Footer from '@/components/Footer';
 
@@ -17,7 +16,6 @@ export default function Home() {
       <ColorScrollerSection />
       <ProductsSection />
       <WatchFacesSection />
-      <HealthFeaturesSection />
       <InteractiveSpecsSection />
       <Footer />
     </main>
