@@ -328,7 +328,7 @@ export default function ColorScrollerSection() {
     <section
       id="metallurgy"
       ref={containerRef}
-      className="relative w-full h-[280vh] sm:h-[300vh] bg-black font-sans selection:bg-cyan-500/20"
+      className="relative w-full h-[280vh] sm:h-[300vh] bg-black font-sans selection:bg-[#39FF88]/20"
     >
       {/* Sticky Viewport Container */}
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex flex-col justify-between pointer-events-none">

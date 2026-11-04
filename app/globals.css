@@ -42,9 +42,9 @@ h1, h2, h3, h4, .font-heading {
 }
 
 .custom-banner-bullet-active {
-  background: #00f0ff !important;
+  background: #39FF88 !important;
   width: 46px !important;
-  box-shadow: 0 0 12px rgba(0, 240, 255, 0.7);
+  box-shadow: 0 0 12px rgba(57, 255, 136, 0.7);
 }
 
 /* Fallback pagination classes */
@@ -59,9 +59,9 @@ h1, h2, h3, h4, .font-heading {
 }
 
 .custom-bullet-active {
-  background: #00f0ff !important;
+  background: #39FF88 !important;
   width: 46px !important;
-  box-shadow: 0 0 12px rgba(0, 240, 255, 0.7);
+  box-shadow: 0 0 12px rgba(57, 255, 136, 0.7);
 }
 
 @keyframes pulseGlow {

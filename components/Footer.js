@@ -61,7 +61,7 @@ export default function Footer() {
           {/* Right Newsletter Input Form */}
           <div className="w-full max-w-md">
             {subscribed ? (
-              <div className="flex items-center gap-3 p-4 rounded-xl bg-cyan-950/40 border border-cyan-500/40 text-[#39FF88] font-mono text-xs shadow-[0_0_25px_rgba(0,240,255,0.15)] animate-fade-in">
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-[#6D8F63]/15 border border-[#39FF88]/40 text-[#39FF88] font-mono text-xs shadow-[0_0_25px_rgba(57,255,136,0.15)] animate-fade-in">
                 <CheckCircle2 className="w-5 h-5 text-[#39FF88] flex-shrink-0" />
                 <span>ALLOCATION REQUEST CONFIRMED // WELCOME TO THE CIRCLE.</span>
               </div>
@@ -226,7 +226,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="pt-2 border-t border-white/5">
-                <a href="#metallurgy" className="hover:text-[#39FF88] transition-colors flex items-center gap-1 text-[11px] font-mono text-cyan-300">
+                <a href="#metallurgy" className="hover:text-[#39FF88] transition-colors flex items-center gap-1 text-[11px] font-mono text-[#39FF88]">
                   <span>METALLURGY FINISHES</span>
                   <ArrowUpRight className="w-3 h-3" />
                 </a>
@@ -272,7 +272,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#specs" className="hover:text-[#39FF88] transition-colors flex items-center gap-1 text-[11px] font-mono text-cyan-300 pt-2 border-t border-white/5">
+                <a href="#specs" className="hover:text-[#39FF88] transition-colors flex items-center gap-1 text-[11px] font-mono text-[#39FF88] pt-2 border-t border-white/5">
                   <span>ALL TECHNICAL SPECS</span>
                   <ArrowUpRight className="w-3 h-3" />
                 </a>

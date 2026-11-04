@@ -259,7 +259,7 @@ export default function ProductsSection() {
                         <span className="block font-mono text-xs font-bold text-white truncate">
                           {s.val}
                         </span>
-                        <span className="block text-[10px] text-cyan-400 font-mono mt-0.5 truncate">
+                        <span className="block text-[10px] text-[#39FF88] font-mono mt-0.5 truncate">
                           {s.sub}
                         </span>
                       </div>
@@ -270,7 +270,7 @@ export default function ProductsSection() {
                   <div className="space-y-2 mb-6">
                     {inspectEdition.features.slice(0, 3).map((f, idx) => (
                       <div key={idx} className="flex items-center gap-2.5 text-xs text-slate-300">
-                        <Check className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0" />
+                        <Check className="w-3.5 h-3.5 text-[#39FF88] flex-shrink-0" />
                         <span>{f}</span>
                       </div>
                     ))}
