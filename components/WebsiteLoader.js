@@ -3,8 +3,6 @@
 import { useState, useEffect } from 'react';
 
 export default function WebsiteLoader() {
-  const [progress, setProgress] = useState(0);
-  const [statusText, setStatusText] = useState('INITIALIZING HOROLOGY CORE');
   const [isExiting, setIsExiting] = useState(false);
   const [isDestroyed, setIsDestroyed] = useState(false);
 
@@ -12,43 +10,21 @@ export default function WebsiteLoader() {
     // Lock body scroll while loader is active
     document.body.style.overflow = 'hidden';
 
-    const statusMilestones = [
-      { at: 15, text: 'SYNCHRONIZING SWISS TELEMETRY' },
-      { at: 40, text: 'CALIBRATING 4NM NEURAL CORE' },
-      { at: 70, text: 'PRELOADING GRADE 5 TITANIUM CHASSIS' },
-      { at: 92, text: 'ACTIVATING 3D HOROLOGY ENGINE' },
-      { at: 100, text: 'VELTRIX EXPERIENCE READY' },
-    ];
+    // Show logo with elegant ambient glow, then smoothly slide up from bottom to top
+    const timer = setTimeout(() => {
+      setIsExiting(true);
+      document.body.style.overflow = '';
 
-    let currentVal = 0;
-    const interval = setInterval(() => {
-      // Natural non-linear easing for realistic luxury boot feel
-      const increment = currentVal < 60 ? Math.floor(Math.random() * 8) + 4 : Math.floor(Math.random() * 5) + 3;
-      currentVal = Math.min(100, currentVal + increment);
-      setProgress(currentVal);
+      // Completely remove from DOM once the slide-up transition finishes
+      const removeTimer = setTimeout(() => {
+        setIsDestroyed(true);
+      }, 1100);
 
-      const matchingStatus = statusMilestones.filter((m) => currentVal >= m.at).pop();
-      if (matchingStatus) {
-        setStatusText(matchingStatus.text);
-      }
-
-      if (currentVal >= 100) {
-        clearInterval(interval);
-        // Brief pause at 100% to let patron read status
-        setTimeout(() => {
-          setIsExiting(true);
-          // Restore body scrolling
-          document.body.style.overflow = '';
-          // Remove from DOM after smooth bottom-to-top slide completes
-          setTimeout(() => {
-            setIsDestroyed(true);
-          }, 1100);
-        }, 350);
-      }
-    }, 45);
+      return () => clearTimeout(removeTimer);
+    }, 1300);
 
     return () => {
-      clearInterval(interval);
+      clearTimeout(timer);
       document.body.style.overflow = '';
     };
   }, []);
@@ -63,7 +39,7 @@ export default function WebsiteLoader() {
       style={{ willChange: 'transform' }}
     >
       {/* Ambient Radial Spotlight Halo */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full bg-[#39FF88]/15 blur-[120px] pointer-events-none animate-pulse" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-[#39FF88]/15 blur-[130px] pointer-events-none animate-pulse" />
 
       {/* Fine Technical Blueprint Grid */}
       <div
@@ -79,46 +55,23 @@ export default function WebsiteLoader() {
         }}
       />
 
-      {/* Main Center Stage */}
-      <div className="relative z-10 flex flex-col items-center px-6 max-w-md w-full text-center">
-        {/* Logo Container with Shimmer & Glow */}
-        <div className="relative mb-8 flex items-center justify-center group">
-          <div className="absolute inset-0 bg-[#39FF88]/25 rounded-full blur-xl scale-125 animate-pulse" />
+      {/* Main Center Stage: Pure Brand Logo with Luxury Aura */}
+      <div className="relative z-10 flex flex-col items-center px-6 text-center">
+        <div className="relative flex items-center justify-center">
+          {/* Pulsing Emerald Spotlight Halo */}
+          <div className="absolute inset-0 bg-[#39FF88]/25 rounded-full blur-2xl scale-150 animate-pulse pointer-events-none" />
+          
+          {/* Official Veltrix Brand Logo */}
           <img
             src="/watch-logo.png"
             alt="VELTRIX Logo"
-            className="h-12 sm:h-16 w-auto object-contain relative z-10 drop-shadow-[0_0_25px_rgba(57,255,136,0.5)] transition-transform duration-500 scale-100"
+            className="h-14 sm:h-20 w-auto object-contain relative z-10 drop-shadow-[0_0_30px_rgba(57,255,136,0.6)] animate-[pulse_2.2s_ease-in-out_infinite]"
           />
-        </div>
-
-        {/* Progress Percentage Display */}
-        <div className="flex items-baseline justify-center gap-1 font-mono text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-tighter">
-          <span className="text-[#39FF88] drop-shadow-[0_0_15px_rgba(57,255,136,0.6)]">
-            {progress.toString().padStart(2, '0')}
-          </span>
-          <span className="text-xs text-slate-500 font-mono tracking-widest">%</span>
-        </div>
-
-        {/* Precision Progress Bar */}
-        <div className="w-64 sm:w-80 h-[3px] bg-neutral-900 border border-white/10 rounded-full overflow-hidden relative mb-4 p-[1px]">
-          <div
-            className="h-full bg-gradient-to-r from-[#6D8F63] via-[#39FF88] to-[#39FF88] rounded-full transition-all duration-150 ease-out shadow-[0_0_15px_#39FF88]"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
-
-        {/* Telemetry Status HUD Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-950/80 border border-[#6D8F63]/30 backdrop-blur-md">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#39FF88] animate-ping" />
-          <span className="font-mono text-[10px] sm:text-[11px] text-slate-300 tracking-[0.2em] uppercase">
-            {statusText}
-          </span>
         </div>
       </div>
 
-      {/* Futuristic Bottom Laser Hairline (Sweeps upwards as curtain lifts!) */}
-      <div className="absolute bottom-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#39FF88] to-transparent shadow-[0_0_20px_#39FF88]" />
+      {/* Futuristic Bottom Laser Hairline (Sweeps upwards as curtain lifts from bottom to top!) */}
+      <div className="absolute bottom-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#39FF88] to-transparent shadow-[0_0_25px_#39FF88]" />
     </div>
   );
 }
-
