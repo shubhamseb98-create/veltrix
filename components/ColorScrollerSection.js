@@ -328,44 +328,16 @@ export default function ColorScrollerSection() {
     <section
       id="metallurgy"
       ref={containerRef}
-      className="relative w-full h-[280vh] sm:h-[300vh] bg-[#0b120d] font-sans selection:bg-[#39FF88]/20 border-t border-[#6D8F63]/25"
-      style={{
-        background: 'radial-gradient(ellipse 95% 80% at 50% 50%, #131c15 0%, #0b120d 55%, #050806 100%)',
-      }}
+      className="relative w-full h-[280vh] sm:h-[300vh] bg-black font-sans selection:bg-[#39FF88]/20 border-t border-[#6D8F63]/25"
     >
-      {/* Sticky Viewport Container */}
-      <div
-        className="sticky top-0 left-0 w-full h-screen overflow-hidden flex flex-col justify-between pointer-events-none bg-[#0b120d]"
-        style={{
-          background: 'radial-gradient(ellipse 95% 85% at 50% 50%, #131c15 0%, #0b120d 55%, #050806 100%)',
-        }}
-      >
-        {/* Subtle Minimal Background Texture (Zero Circles - Placed in BACKGROUND z-0 BEHIND watch) */}
-        <div
-          className="absolute inset-0 pointer-events-none z-0 opacity-25"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px)
-            `,
-            backgroundSize: '44px 44px',
-            maskImage: 'radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, transparent 95%)',
-            WebkitMaskImage: 'radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, transparent 95%)',
-          }}
-        />
-
-        {/* Exact Same Central Ambient Radial Backlight as WatchFacesSection */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] bg-[#6D8F63]/18 rounded-full blur-[180px] pointer-events-none z-0" />
-
-        {/* Fullscreen Canvas Rendering Watch Video Frames (Layer 10 - IN FRONT of Grid & Glow) */}
+      {/* Sticky Viewport Container: Pure Solid Black Stage for 100% Crisp 3D Watch Contrast */}
+      <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex flex-col justify-between pointer-events-none bg-black">
+        
+        {/* Fullscreen Canvas Rendering Watch Video Frames (Pure Solid Black Backdrop) */}
         <canvas
           ref={canvasRef}
           className="absolute inset-0 w-full h-full block z-10 mix-blend-screen"
         />
-
-        {/* Subtle Edge Vignettes */}
-        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/40 to-transparent pointer-events-none z-10" />
-        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none z-10" />
 
         {/* Top Header & Frame Scrubber */}
         <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pt-20 sm:pt-24 md:pt-28 flex flex-col md:flex-row md:items-end justify-between gap-3 pointer-events-auto">
