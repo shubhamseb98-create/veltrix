@@ -190,7 +190,7 @@ export default function ProductsSection() {
                   </h3>
                 </div>
 
-                <div className="w-9 h-9 rounded-full bg-[#001d3d] backdrop-blur-md border border-[#3a86ff]/40 flex items-center justify-center text-white font-bold shadow-[0_0_15px_rgba(0,29,61,0.5)] opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 shadow-lg">
+                <div className="w-9 h-9 rounded-full bg-gradient-to-r from-[#173296] to-[#2563EB] backdrop-blur-md border border-[#3b82f6]/50 flex items-center justify-center text-white font-bold shadow-[0_0_18px_rgba(37,99,235,0.65)] opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 shadow-lg">
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
               </div>
@@ -307,7 +307,7 @@ export default function ProductsSection() {
                         </div>
                         <button
                           type="submit"
-                          className="w-full bg-[#001d3d] hover:bg-[#003566] text-white border border-[#003566] font-mono font-bold text-xs tracking-wider py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(0,29,61,0.5)]"
+                          className="w-full bg-gradient-to-r from-[#173296] to-[#2563EB] hover:from-[#1e3eb8] hover:to-[#3b82f6] text-white border border-[#3b82f6]/40 font-mono font-bold text-xs tracking-wider py-3.5 rounded-xl transition-all shadow-[0_0_22px_rgba(37,99,235,0.6)]"
                         >
                           CONFIRM PRE-ORDER RESERVATION ({inspectEdition.price} USD)
                         </button>
@@ -317,7 +317,7 @@ export default function ProductsSection() {
                 ) : (
                   <button
                     onClick={() => setIsOrderModalOpen(true)}
-                    className="w-full bg-[#001d3d] hover:bg-[#003566] text-white border border-[#003566] font-mono font-bold text-xs tracking-wider py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(0,29,61,0.5)] flex items-center justify-center gap-2"
+                    className="w-full bg-gradient-to-r from-[#173296] to-[#2563EB] hover:from-[#1e3eb8] hover:to-[#3b82f6] text-white border border-[#3b82f6]/40 font-mono font-bold text-xs tracking-wider py-3.5 rounded-xl transition-all shadow-[0_0_22px_rgba(37,99,235,0.6)] flex items-center justify-center gap-2"
                   >
                     <span>PRE-ORDER THIS TIMEPIECE</span>
                     <ArrowUpRight className="w-4 h-4" />
