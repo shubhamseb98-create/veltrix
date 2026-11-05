@@ -169,10 +169,10 @@ export default function ColorScrollerSection() {
       let scale;
       let drawY;
       if (isMobile) {
-        // Mobile Framing: scaled comfortably to keep watch centered and unobstructed
-        const targetW = Math.min(canvasW * 0.62, canvasH * 0.32);
+        // Mobile Framing: watch centered vertically between top header and bottom controls
+        const targetW = Math.min(canvasW * 0.58, canvasH * 0.30);
         scale = targetW / 602;
-        drawY = Math.round((canvasH - Math.round(imgH * scale)) / 2) - Math.round(canvasH * 0.12);
+        drawY = Math.round((canvasH - Math.round(imgH * scale)) / 2) - Math.round(canvasH * 0.015);
       } else {
         scale = Math.min(scaleW, scaleH) * 0.70;
         drawY = Math.round((canvasH - Math.round(imgH * scale)) / 2) - Math.round(canvasH * 0.04);
@@ -347,26 +347,26 @@ export default function ColorScrollerSection() {
         />
 
         {/* Top Header & Frame Scrubber */}
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pt-16 sm:pt-20 md:pt-24 flex flex-col md:flex-row md:items-end justify-between gap-2.5 sm:gap-3 pointer-events-auto">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#3a86ff]/10 border border-[#001d3d]/25 text-[#3a86ff] font-mono text-[10px] sm:text-xs tracking-widest uppercase mb-2">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-14 sm:pt-20 md:pt-24 flex items-center justify-between gap-3 pointer-events-auto">
+          <div className="min-w-0">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#3a86ff]/10 border border-[#001d3d]/25 text-[#3a86ff] font-mono text-[9px] sm:text-xs tracking-widest uppercase mb-1 sm:mb-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] animate-pulse" />
               <span>METALLURGY ATELIER</span>
             </div>
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight truncate">
               Crafted in Every Light.
             </h2>
           </div>
 
-          {/* Real-time Scrubbing Meter */}
-          <div className="self-start md:self-auto flex items-center gap-3 sm:gap-4 bg-[#000e1f]/92 backdrop-blur-md px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-[#001d3d]/25 shadow-lg">
-            <div className="flex flex-col text-left md:text-right">
-              <span className="font-mono text-[9px] sm:text-[10px] text-slate-400 tracking-wider">SCRUB PROGRESS</span>
-              <span ref={frameTextRef} className="font-mono text-[11px] sm:text-xs font-bold text-[#3a86ff]">
+          {/* Real-time Scrubbing Meter - Compact on Mobile */}
+          <div className="flex items-center gap-2 sm:gap-4 bg-[#000e1f]/92 backdrop-blur-md px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-[#001d3d]/25 shadow-lg flex-shrink-0">
+            <div className="flex flex-col text-right">
+              <span className="font-mono text-[8px] sm:text-[10px] text-slate-400 tracking-wider">SCRUB PROGRESS</span>
+              <span ref={frameTextRef} className="font-mono text-[10px] sm:text-xs font-bold text-[#3a86ff]">
                 FRAME 001 / {TOTAL_FRAMES}
               </span>
             </div>
-            <div className="w-16 sm:w-24 h-1.5 bg-white/10 rounded-full overflow-hidden">
+            <div className="w-12 sm:w-24 h-1.5 bg-white/10 rounded-full overflow-hidden">
               <div
                 ref={progressBarRef}
                 className="h-full bg-[#3a86ff] rounded-full transition-all duration-75"
@@ -377,7 +377,7 @@ export default function ColorScrollerSection() {
         </div>
 
         {/* Active Stage Callout Card & Swatch Controls */}
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 mb-2 sm:mb-6 md:mb-10 pointer-events-auto">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 mt-auto mb-3 sm:mb-6 md:mb-10 pointer-events-auto">
           {/* DESKTOP LAYOUT (lg:flex) - Preserves original multi-column atelier card */}
           <div className="hidden lg:flex items-end justify-between gap-6">
             {/* Left Detail Card */}
@@ -524,7 +524,7 @@ export default function ColorScrollerSection() {
         </div>
 
         {/* Scroll Instruction Hint at bottom center */}
-        <div className="relative z-20 pb-4 text-center pointer-events-auto">
+        <div className="relative z-20 pb-4 text-center pointer-events-auto hidden sm:block">
           <div className="hidden sm:inline-flex items-center gap-2 text-xs font-mono text-slate-400 animate-bounce">
             <span>SCROLL DOWN TO EXPLORE FINISHES</span>
             <span>↓</span>
