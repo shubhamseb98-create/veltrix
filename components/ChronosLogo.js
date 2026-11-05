@@ -14,7 +14,7 @@ export default function ChronosLogo({ size = 'md', className = '', withText = tr
       <img
         src="/watch-logo.png"
         alt="Chronos Horology Lab"
-        className={`${heightClass} w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_16px_rgba(44,52,128,0.45)]`}
+        className={`${heightClass} w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_16px_rgba(0,29,61,0.45)]`}
       />
     </div>
   );

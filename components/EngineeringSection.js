@@ -31,9 +31,9 @@ const CRAFT_PILLARS = [
     category: 'SURFACE ARTISTRY',
     desc: 'Master hand-lapping pairs 45° directional micro-satin brushing with diamond-buffed mirror chamfers.',
     icon: Sparkles,
-    accentColor: '#2C3480',
-    glowClass: 'bg-[#2C3480]/20',
-    badgeClass: 'text-[#2C3480] border-[#2C3480]/40 bg-[#2C3480]/10',
+    accentColor: '#001d3d',
+    glowClass: 'bg-[#001d3d]/20',
+    badgeClass: 'text-[#001d3d] border-[#001d3d]/40 bg-[#001d3d]/10',
     specs: [
       { label: 'GRAIN ANGLE', val: '45° Directional' },
       { label: 'CHAMFERS', val: '8 Mirror Facets' },
@@ -69,11 +69,11 @@ export default function EngineeringSection() {
   return (
     <section
       id="engineering"
-      className="relative w-full min-h-screen pt-[80px] pb-[80px] px-4 sm:px-6 lg:px-8 bg-black border-t border-[#2C3480]/20 select-none overflow-hidden font-sans flex flex-col justify-center"
+      className="relative w-full min-h-screen pt-[80px] pb-[80px] px-4 sm:px-6 lg:px-8 bg-black border-t border-[#001d3d]/20 select-none overflow-hidden font-sans flex flex-col justify-center"
     >
       {/* Ambient Radial Spotlights */}
-      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 w-[800px] h-[450px] bg-[#5C72FF]/10 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-[600px] h-[350px] bg-[#5C72FF]/6 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 w-[800px] h-[450px] bg-[#3a86ff]/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 w-[600px] h-[350px] bg-[#3a86ff]/6 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
 
@@ -94,13 +94,13 @@ export default function EngineeringSection() {
           {HERO_STATS.map((item, idx) => (
             <div
               key={idx}
-              className="group p-4 sm:p-5 rounded-2xl bg-[#000000] border border-white/10 hover:border-[#5C72FF]/50 hover:bg-[#2C3480]/10 transition-all duration-300"
+              className="group p-4 sm:p-5 rounded-2xl bg-[#000000] border border-white/10 hover:border-[#3a86ff]/50 hover:bg-[#001d3d]/10 transition-all duration-300"
             >
               <div className="flex items-center justify-between mb-2">
                 <span className="font-mono text-[9px] sm:text-[10px] text-slate-400 tracking-wider uppercase">
                   {item.label}
                 </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#5C72FF] group-hover:scale-125 shadow-[0_0_8px_#5C72FF] transition-transform" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] group-hover:scale-125 shadow-[0_0_8px_#3a86ff] transition-transform" />
               </div>
               <div className="text-xl sm:text-2xl font-bold font-mono text-white mb-1 tracking-tight">
                 {item.value}
@@ -119,7 +119,7 @@ export default function EngineeringSection() {
             return (
               <div
                 key={pillar.num}
-                className="group relative flex flex-col justify-between rounded-2xl p-5 sm:p-6 bg-gradient-to-b from-white/[0.05] via-zinc-950/80 to-black border border-white/10 hover:border-[#5C72FF]/60 hover:shadow-[0_20px_45px_rgba(92,114,255,0.14)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(0,0,0,0.8)] overflow-hidden"
+                className="group relative flex flex-col justify-between rounded-2xl p-5 sm:p-6 bg-gradient-to-b from-white/[0.05] via-zinc-950/80 to-black border border-white/10 hover:border-[#3a86ff]/60 hover:shadow-[0_20px_45px_rgba(58,134,255,0.14)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(0,0,0,0.8)] overflow-hidden"
               >
                 {/* Ambient Top Glow */}
                 <div
@@ -146,7 +146,7 @@ export default function EngineeringSection() {
                   </div>
 
                   {/* Title & Category */}
-                  <span className="block font-mono text-[10px] text-[#5C72FF] font-semibold tracking-wider uppercase mb-1">
+                  <span className="block font-mono text-[10px] text-[#3a86ff] font-semibold tracking-wider uppercase mb-1">
                     {pillar.category}
                   </span>
                   <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight mb-2">
@@ -160,7 +160,7 @@ export default function EngineeringSection() {
 
                 {/* Micro Specs Grid & Minimal Footer */}
                 <div>
-                  <div className="grid grid-cols-2 gap-2 pt-3 border-t border-[#2C3480]/20 mb-3.5">
+                  <div className="grid grid-cols-2 gap-2 pt-3 border-t border-[#001d3d]/20 mb-3.5">
                     {pillar.specs.map((s, sIdx) => (
                       <div key={sIdx} className="bg-white/5 rounded-lg p-2 border border-white/5">
                         <span className="block font-mono text-[8px] sm:text-[9px] text-slate-400 tracking-wider uppercase mb-0.5">
@@ -175,10 +175,10 @@ export default function EngineeringSection() {
 
                   <div className="flex items-center justify-between pt-2.5 border-t border-white/5 font-mono text-[10px] text-slate-400">
                     <span className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#5C72FF] shadow-[0_0_6px_#5C72FF]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_6px_#3a86ff]" />
                       {pillar.footerTag}
                     </span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#5C72FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#3a86ff] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </div>
                 </div>
               </div>

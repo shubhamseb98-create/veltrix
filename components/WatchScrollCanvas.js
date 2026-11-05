@@ -206,16 +206,16 @@ export default function WatchScrollCanvas() {
     >
       <div className="sticky top-0 left-0 w-full h-screen bg-black overflow-hidden flex items-center justify-center">
 
-        {/* Luxury Glass Preloader Pill - Deep Royal Navy #2C3480 */}
+        {/* Luxury Glass Preloader Pill - Deep Royal Navy #001d3d */}
         <div
           className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 transition-all duration-500 pointer-events-none ${
             isReady ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
           }`}
         >
-          <div className="bg-neutral-950/85 backdrop-blur-xl border border-[#2C3480]/50 px-5 py-3 rounded-full flex items-center gap-3 shadow-[0_0_30px_rgba(44,52,128,0.35)]">
-            <div className="w-4 h-4 border-2 border-[#5C72FF]/20 border-t-[#5C72FF] rounded-full animate-spin flex-shrink-0" />
+          <div className="bg-neutral-950/85 backdrop-blur-xl border border-[#001d3d]/50 px-5 py-3 rounded-full flex items-center gap-3 shadow-[0_0_30px_rgba(0,29,61,0.35)]">
+            <div className="w-4 h-4 border-2 border-[#3a86ff]/20 border-t-[#3a86ff] rounded-full animate-spin flex-shrink-0" />
             <div className="font-mono text-[11px] text-slate-300 tracking-wider">
-              INITIALIZING 3D ENGINE <span className="text-[#5C72FF] font-bold">// {progressPct}%</span>
+              INITIALIZING 3D ENGINE <span className="text-[#3a86ff] font-bold">// {progressPct}%</span>
             </div>
           </div>
         </div>
@@ -226,10 +226,10 @@ export default function WatchScrollCanvas() {
           className="absolute inset-0 w-full h-full block z-10 pointer-events-none"
         />
 
-        {/* Top Floating Stage HUD - Minimal & Sleek in Royal Blue #2C3480 */}
-        <div className="absolute top-5 sm:top-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 bg-neutral-950/85 border border-[#2C3480]/40 rounded-full backdrop-blur-xl shadow-lg pointer-events-none max-w-[90vw]">
-          <span className="w-2 h-2 rounded-full bg-[#5C72FF] animate-pulse flex-shrink-0" />
-          <span className="font-mono text-[10px] sm:text-[11px] text-[#5C72FF] font-semibold tracking-widest uppercase truncate">
+        {/* Top Floating Stage HUD - Minimal & Sleek in Royal Blue #001d3d */}
+        <div className="absolute top-5 sm:top-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 bg-neutral-950/85 border border-[#001d3d]/40 rounded-full backdrop-blur-xl shadow-lg pointer-events-none max-w-[90vw]">
+          <span className="w-2 h-2 rounded-full bg-[#3a86ff] animate-pulse flex-shrink-0" />
+          <span className="font-mono text-[10px] sm:text-[11px] text-[#3a86ff] font-semibold tracking-widest uppercase truncate">
             VELTRIX // 3D APEX HOROLOGY
           </span>
           <span className="text-white/20 font-mono text-xs">|</span>

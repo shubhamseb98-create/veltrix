@@ -34,25 +34,25 @@ export default function Footer() {
 
   return (
     <footer
-      className="relative w-full bg-[#080B1C] text-white font-sans select-none border-t border-[#2C3480]/25 overflow-hidden"
+      className="relative w-full bg-[#000814] text-white font-sans select-none border-t border-[#001d3d]/25 overflow-hidden"
       style={{
-        background: 'radial-gradient(ellipse 95% 75% at 50% 30%, #0F1538 0%, #080B1C 55%, #04050E 100%)',
+        background: 'radial-gradient(ellipse 95% 75% at 50% 30%, #001d3d 0%, #000c1a 55%, #00050d 100%)',
       }}
     >
       {/* Subtle Ambient Radial Backlight */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[950px] h-[400px] bg-[#5C72FF]/12 rounded-full blur-[190px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-[#5C72FF]/6 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[950px] h-[400px] bg-[#3a86ff]/12 rounded-full blur-[190px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-[#3a86ff]/6 rounded-full blur-[160px] pointer-events-none" />
 
       {/* ========================================================
           1. PRE-FOOTER: COLLECTORS CIRCLE & PRIVATE ALLOCATIONS
          ======================================================== */}
-      <div className="relative border-b border-[#2C3480]/20 bg-gradient-to-b from-[#0E1433]/80 to-[#080B1C] py-14 sm:py-16 px-6">
+      <div className="relative border-b border-[#001d3d]/20 bg-gradient-to-b from-[#001d3d]/70 to-[#000814] py-14 sm:py-16 px-6">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           
           {/* Left Callout */}
           <div className="max-w-xl text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[#5C72FF] font-mono text-[10px] tracking-widest uppercase mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#5C72FF] animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[#3a86ff] font-mono text-[10px] tracking-widest uppercase mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] animate-pulse" />
               <span>COLLECTORS CIRCLE // BATCH 04 ALLOCATIONS</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-snug">
@@ -66,8 +66,8 @@ export default function Footer() {
           {/* Right Newsletter Input Form */}
           <div className="w-full max-w-md">
             {subscribed ? (
-              <div className="flex items-center gap-3 p-4 rounded-xl bg-[#2C3480]/15 border border-[#5C72FF]/40 text-[#5C72FF] font-mono text-xs shadow-[0_0_25px_rgba(44,52,128,0.35)] animate-fade-in">
-                <CheckCircle2 className="w-5 h-5 text-[#5C72FF] flex-shrink-0" />
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-[#001d3d]/15 border border-[#3a86ff]/40 text-[#3a86ff] font-mono text-xs shadow-[0_0_25px_rgba(0,29,61,0.35)] animate-fade-in">
+                <CheckCircle2 className="w-5 h-5 text-[#3a86ff] flex-shrink-0" />
                 <span>ALLOCATION REQUEST CONFIRMED // WELCOME TO THE CIRCLE.</span>
               </div>
             ) : (
@@ -80,12 +80,12 @@ export default function Footer() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter collector email..."
                     required
-                    className="w-full pl-10 pr-4 py-3 bg-[#0A0E26]/90 border border-[#2C3480]/30 rounded-xl text-white placeholder-slate-400 text-xs font-mono focus:outline-none focus:border-[#5C72FF] focus:ring-1 focus:ring-[#5C72FF]/50 transition-all"
+                    className="w-full pl-10 pr-4 py-3 bg-[#000e1f]/90 border border-[#001d3d]/30 rounded-xl text-white placeholder-slate-400 text-xs font-mono focus:outline-none focus:border-[#3a86ff] focus:ring-1 focus:ring-[#3a86ff]/50 transition-all"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#2C3480] hover:bg-[#38439E] text-white font-mono text-xs font-bold rounded-xl transition-all hover:shadow-[0_0_20px_rgba(44,52,128,0.5)] hover:-translate-y-0.5 active:scale-95 flex-shrink-0"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#001d3d] hover:bg-[#003566] text-white border border-[#003566] font-mono text-xs font-bold rounded-xl transition-all hover:shadow-[0_0_20px_rgba(0,29,61,0.5)] hover:-translate-y-0.5 active:scale-95 flex-shrink-0"
                 >
                   <span>JOIN CIRCLE</span>
                   <Send className="w-3.5 h-3.5" />
@@ -109,11 +109,11 @@ export default function Footer() {
       {/* ========================================================
           2. LUXURY TRUST PILLARS (WARRANTY & ASSURANCE BADGES)
          ======================================================== */}
-      <div className="border-b border-[#2C3480]/20 bg-[#060817]/70 py-8 px-6">
+      <div className="border-b border-[#001d3d]/20 bg-[#000e1f]/70 py-8 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
           
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-xl bg-[#5C72FF]/10 border border-[#5C72FF]/25 flex items-center justify-center text-[#5C72FF] flex-shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#3a86ff]/10 border border-[#3a86ff]/25 flex items-center justify-center text-[#3a86ff] flex-shrink-0">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
@@ -123,7 +123,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-xl bg-[#5C72FF]/10 border border-[#5C72FF]/25 flex items-center justify-center text-[#5C72FF] flex-shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#3a86ff]/10 border border-[#3a86ff]/25 flex items-center justify-center text-[#3a86ff] flex-shrink-0">
               <Truck className="w-5 h-5" />
             </div>
             <div>
@@ -133,7 +133,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-xl bg-[#5C72FF]/10 border border-[#5C72FF]/25 flex items-center justify-center text-[#5C72FF] flex-shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#3a86ff]/10 border border-[#3a86ff]/25 flex items-center justify-center text-[#3a86ff] flex-shrink-0">
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
@@ -143,7 +143,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-xl bg-[#5C72FF]/10 border border-[#5C72FF]/25 flex items-center justify-center text-[#5C72FF] flex-shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#3a86ff]/10 border border-[#3a86ff]/25 flex items-center justify-center text-[#3a86ff] flex-shrink-0">
               <Globe className="w-5 h-5" />
             </div>
             <div>
@@ -189,10 +189,10 @@ export default function Footer() {
             <div className="mt-8 pt-6 border-t border-white/5">
               <button
                 onClick={scrollToTop}
-                className="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-[#5C72FF] transition-colors group"
+                className="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-[#3a86ff] transition-colors group"
               >
-                <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#5C72FF]/50 group-hover:-translate-y-0.5 transition-all">
-                  <ArrowUp className="w-3.5 h-3.5 text-[#5C72FF]" />
+                <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-[#3a86ff]/50 group-hover:-translate-y-0.5 transition-all">
+                  <ArrowUp className="w-3.5 h-3.5 text-[#3a86ff]" />
                 </div>
                 <span>RETURN TO APEX // TOP</span>
               </button>
@@ -202,42 +202,42 @@ export default function Footer() {
           {/* Col 2: The Collection */}
           <div>
             <div className="font-mono text-[11px] font-bold tracking-widest uppercase text-white mb-4 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#5C72FF]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff]" />
               <span>COLLECTION</span>
             </div>
             <ul className="space-y-2.5 text-xs font-light text-slate-400">
               <li>
-                <a href="#collection" className="hover:text-[#5C72FF] transition-colors flex items-center justify-between group">
+                <a href="#collection" className="hover:text-[#3a86ff] transition-colors flex items-center justify-between group">
                   <span>Chrome Silver 2.0</span>
-                  <span className="text-[10px] font-mono text-slate-600 group-hover:text-[#5C72FF] transition-colors">$449</span>
+                  <span className="text-[10px] font-mono text-slate-600 group-hover:text-[#3a86ff] transition-colors">$449</span>
                 </a>
               </li>
               <li>
-                <a href="#collection" className="hover:text-[#5C72FF] transition-colors flex items-center justify-between group">
+                <a href="#collection" className="hover:text-[#3a86ff] transition-colors flex items-center justify-between group">
                   <span>Gunmetal Black 2.0</span>
-                  <span className="text-[10px] font-mono text-slate-600 group-hover:text-[#5C72FF] transition-colors">$479</span>
+                  <span className="text-[10px] font-mono text-slate-600 group-hover:text-[#3a86ff] transition-colors">$479</span>
                 </a>
               </li>
               <li>
-                <a href="#collection" className="hover:text-[#5C72FF] transition-colors flex items-center justify-between group">
+                <a href="#collection" className="hover:text-[#3a86ff] transition-colors flex items-center justify-between group">
                   <span>Ice Blue Chrono</span>
-                  <span className="text-[10px] font-mono text-slate-600 group-hover:text-[#5C72FF] transition-colors">$469</span>
+                  <span className="text-[10px] font-mono text-slate-600 group-hover:text-[#3a86ff] transition-colors">$469</span>
                 </a>
               </li>
               <li>
-                <a href="#collection" className="hover:text-[#5C72FF] transition-colors flex items-center justify-between group">
+                <a href="#collection" className="hover:text-[#3a86ff] transition-colors flex items-center justify-between group">
                   <span>Dark Green Expedition</span>
-                  <span className="text-[10px] font-mono text-slate-600 group-hover:text-[#5C72FF] transition-colors">$489</span>
+                  <span className="text-[10px] font-mono text-slate-600 group-hover:text-[#3a86ff] transition-colors">$489</span>
                 </a>
               </li>
               <li className="pt-2 border-t border-white/5">
-                <a href="#metallurgy" className="hover:text-[#5C72FF] transition-colors flex items-center gap-1 text-[11px] font-mono text-[#5C72FF]">
+                <a href="#metallurgy" className="hover:text-[#3a86ff] transition-colors flex items-center gap-1 text-[11px] font-mono text-[#3a86ff]">
                   <span>METALLURGY FINISHES</span>
                   <ArrowUpRight className="w-3 h-3" />
                 </a>
               </li>
               <li>
-                <a href="#collection" className="hover:text-[#5C72FF] transition-colors text-[11px] font-mono text-slate-500">
+                <a href="#collection" className="hover:text-[#3a86ff] transition-colors text-[11px] font-mono text-slate-500">
                   BESPOKE COMMISSIONING
                 </a>
               </li>
@@ -247,37 +247,37 @@ export default function Footer() {
           {/* Col 3: Horology Engineering */}
           <div>
             <div className="font-mono text-[11px] font-bold tracking-widest uppercase text-white mb-4 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#5C72FF]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff]" />
               <span>ENGINEERING</span>
             </div>
             <ul className="space-y-2.5 text-xs font-light text-slate-400">
               <li>
-                <a href="#scrolly-section" className="hover:text-[#5C72FF] transition-colors">
+                <a href="#scrolly-section" className="hover:text-[#3a86ff] transition-colors">
                   3D Exploded Inspection
                 </a>
               </li>
               <li>
-                <a href="#specs" className="hover:text-[#5C72FF] transition-colors">
+                <a href="#specs" className="hover:text-[#3a86ff] transition-colors">
                   Grade 5 Ti-6Al-4V Unibody
                 </a>
               </li>
               <li>
-                <a href="#specs" className="hover:text-[#5C72FF] transition-colors">
+                <a href="#specs" className="hover:text-[#3a86ff] transition-colors">
                   Dual-Curved Sapphire Lens
                 </a>
               </li>
               <li>
-                <a href="#specs" className="hover:text-[#5C72FF] transition-colors">
+                <a href="#specs" className="hover:text-[#3a86ff] transition-colors">
                   4nm Neural Horology Core
                 </a>
               </li>
               <li>
-                <a href="#specs" className="hover:text-[#5C72FF] transition-colors">
+                <a href="#specs" className="hover:text-[#3a86ff] transition-colors">
                   1,000Hz Optical Telemetry
                 </a>
               </li>
               <li>
-                <a href="#specs" className="hover:text-[#5C72FF] transition-colors flex items-center gap-1 text-[11px] font-mono text-[#5C72FF] pt-2 border-t border-white/5">
+                <a href="#specs" className="hover:text-[#3a86ff] transition-colors flex items-center gap-1 text-[11px] font-mono text-[#3a86ff] pt-2 border-t border-white/5">
                   <span>ALL TECHNICAL SPECS</span>
                   <ArrowUpRight className="w-3 h-3" />
                 </a>
@@ -288,37 +288,37 @@ export default function Footer() {
           {/* Col 4: Ecosystem & Client Care */}
           <div>
             <div className="font-mono text-[11px] font-bold tracking-widest uppercase text-white mb-4 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#5C72FF]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff]" />
               <span>CONCIERGE</span>
             </div>
             <ul className="space-y-2.5 text-xs font-light text-slate-400">
               <li>
-                <a href="#watch-faces" className="hover:text-[#5C72FF] transition-colors">
+                <a href="#watch-faces" className="hover:text-[#3a86ff] transition-colors">
                   Dynamic Watch Faces
                 </a>
               </li>
               <li>
-                <a href="#collection" className="hover:text-[#5C72FF] transition-colors">
+                <a href="#collection" className="hover:text-[#3a86ff] transition-colors">
                   Collector Vault &amp; Packaging
                 </a>
               </li>
               <li>
-                <a href="#specs" className="hover:text-[#5C72FF] transition-colors">
+                <a href="#specs" className="hover:text-[#3a86ff] transition-colors">
                   10 ATM Water Certification
                 </a>
               </li>
               <li>
-                <a href="#collection" className="hover:text-[#5C72FF] transition-colors">
+                <a href="#collection" className="hover:text-[#3a86ff] transition-colors">
                   NFC Authenticity Certificate
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#5C72FF] transition-colors">
+                <a href="#" className="hover:text-[#3a86ff] transition-colors">
                   Atelier Recalibration Service
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#5C72FF] transition-colors text-[11px] font-mono text-slate-500 pt-2 border-t border-white/5">
+                <a href="#" className="hover:text-[#3a86ff] transition-colors text-[11px] font-mono text-slate-500 pt-2 border-t border-white/5">
                   INTERNATIONAL CONCIERGE
                 </a>
               </li>
@@ -331,21 +331,21 @@ export default function Footer() {
       {/* ========================================================
           4. LEGAL, COPYRIGHT & HOROLOGY COMPLIANCE
          ======================================================== */}
-      <div className="border-t border-[#2C3480]/20 bg-[#040612]/80 py-8 px-6 max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-slate-400">
+      <div className="border-t border-[#001d3d]/20 bg-[#00050d]/80 py-8 px-6 max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-slate-400">
         <div>
           &copy; {new Date().getFullYear()} VELTRIX HOROLOGY LABS INC. SWISS PRECISION &amp; NEURAL SILICON. ALL RIGHTS RESERVED.
         </div>
         <div className="flex flex-wrap items-center gap-6">
-          <a href="#" className="hover:text-[#5C72FF] transition-colors">
+          <a href="#" className="hover:text-[#3a86ff] transition-colors">
             PRIVACY DOSSIER
           </a>
-          <a href="#" className="hover:text-[#5C72FF] transition-colors">
+          <a href="#" className="hover:text-[#3a86ff] transition-colors">
             TERMS OF OWNERSHIP
           </a>
-          <a href="#" className="hover:text-[#5C72FF] transition-colors">
+          <a href="#" className="hover:text-[#3a86ff] transition-colors">
             ISO CERTIFICATION
           </a>
-          <a href="#" className="hover:text-[#5C72FF] transition-colors">
+          <a href="#" className="hover:text-[#3a86ff] transition-colors">
             SAR COMPLIANCE
           </a>
         </div>

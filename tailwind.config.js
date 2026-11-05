@@ -9,9 +9,9 @@ module.exports = {
       colors: {
         brand: {
           black: '#000000',
-          blue: '#2C3480',
-          royal: '#2C3480',
-          accent: '#5C72FF',
+          blue: '#001d3d',
+          royal: '#001d3d',
+          accent: '#3a86ff',
           dark: '#000000',
           surface: '#04060F',
           card: '#080B1C',

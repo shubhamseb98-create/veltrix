@@ -73,7 +73,7 @@ export default function HeroBannerSlider() {
         <button
           type="button"
           aria-label="Previous Slide"
-          className="banner-prev-btn absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/20 bg-black/60 hover:bg-black/90 text-white hover:text-[#5C72FF] flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 hover:scale-110 shadow-2xl backdrop-blur-md"
+          className="banner-prev-btn absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/20 bg-black/60 hover:bg-black/90 text-white hover:text-[#3a86ff] flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 hover:scale-110 shadow-2xl backdrop-blur-md"
         >
           <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
@@ -81,7 +81,7 @@ export default function HeroBannerSlider() {
         <button
           type="button"
           aria-label="Next Slide"
-          className="banner-next-btn absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/20 bg-black/60 hover:bg-black/90 text-white hover:text-[#5C72FF] flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 hover:scale-110 shadow-2xl backdrop-blur-md"
+          className="banner-next-btn absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/20 bg-black/60 hover:bg-black/90 text-white hover:text-[#3a86ff] flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 hover:scale-110 shadow-2xl backdrop-blur-md"
         >
           <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>

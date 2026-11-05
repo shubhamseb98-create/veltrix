@@ -402,7 +402,7 @@ export default function InteractiveSpecsSection() {
     <section
       id="specs"
       ref={containerRef}
-      className="relative w-full h-[850vh] bg-black font-sans select-none border-t border-[#2C3480]/20"
+      className="relative w-full h-[850vh] bg-black font-sans select-none border-t border-[#001d3d]/20"
     >
       {/* ========================================================
           STICKY VIEWPORT STAGE (Locked 100vh stage during scroll)
@@ -422,7 +422,7 @@ export default function InteractiveSpecsSection() {
             WebkitMaskImage: 'radial-gradient(ellipse 110px 190px at 50% 50%, transparent 68%, black 100%)',
           }}
         >
-          <span className="font-heading font-black text-[14vw] sm:text-[15vw] md:text-[165px] lg:text-[180px] xl:text-[180px] 2xl:text-[180px] tracking-[0.14em] sm:tracking-[0.18em] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-b from-[#5C72FF] via-[#5C72FF]/75 to-[#2C3480]/30 drop-shadow-[0_0_45px_rgba(92,114,255,0.15)] pl-[0.14em]">
+          <span className="font-heading font-black text-[14vw] sm:text-[15vw] md:text-[165px] lg:text-[180px] xl:text-[180px] 2xl:text-[180px] tracking-[0.14em] sm:tracking-[0.18em] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-b from-[#3a86ff] via-[#3a86ff]/75 to-[#001d3d]/30 drop-shadow-[0_0_45px_rgba(58,134,255,0.15)] pl-[0.14em]">
             VELTRIX
           </span>
         </div>
@@ -444,14 +444,14 @@ export default function InteractiveSpecsSection() {
                 <span className="font-mono text-[9px] sm:text-[10px] text-slate-400 tracking-wider">
                   SPEC TIMELINE
                 </span>
-                <span ref={frameTextRef} className="font-mono text-[11px] sm:text-xs font-bold text-[#5C72FF]">
+                <span ref={frameTextRef} className="font-mono text-[11px] sm:text-xs font-bold text-[#3a86ff]">
                   FRAME 001 / {TOTAL_FRAMES}
                 </span>
               </div>
               <div className="w-16 sm:w-24 h-1.5 bg-white/10 rounded-full overflow-hidden">
                 <div
                   ref={progressBarRef}
-                  className="h-full bg-[#5C72FF] rounded-full transition-all duration-75"
+                  className="h-full bg-[#3a86ff] rounded-full transition-all duration-75"
                   style={{ width: '0%' }}
                 />
               </div>
@@ -462,7 +462,7 @@ export default function InteractiveSpecsSection() {
         {/* Loading Overlay */}
         {!isReady && (
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 bg-black/90 backdrop-blur-md border border-white/10 px-6 py-4 rounded-xl flex items-center gap-3">
-            <div className="w-5 h-5 border-2 border-[#5C72FF] border-t-transparent rounded-full animate-spin" />
+            <div className="w-5 h-5 border-2 border-[#3a86ff] border-t-transparent rounded-full animate-spin" />
             <div className="font-mono text-xs text-slate-300">
               SYNCHRONIZING SPECIFICATION FRAMES ({loadedCount}/{TOTAL_FRAMES})...
             </div>
@@ -477,16 +477,16 @@ export default function InteractiveSpecsSection() {
           ref={card0Ref}
           className="absolute inset-x-4 top-4 sm:top-6 lg:top-7 max-w-2xl mx-auto text-center z-20 pointer-events-none"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-white/5 border border-[#2C3480]/25 mb-2 text-[#5C72FF] font-mono text-[10px] sm:text-xs font-semibold tracking-widest uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#5C72FF] shadow-[0_0_8px_#5C72FF]" />
+          <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-white/5 border border-[#001d3d]/25 mb-2 text-[#3a86ff] font-mono text-[10px] sm:text-xs font-semibold tracking-widest uppercase">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff]" />
             <span>SUB-NANOSECOND HOROLOGY ARCHITECTURE</span>
           </div>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight leading-tight mb-2 sm:mb-2.5">
             Technical Specifications
           </h2>
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-950/80 border border-[#2C3480]/25 backdrop-blur-md text-[11px] sm:text-xs font-mono text-slate-300 shadow-xl">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-950/80 border border-[#001d3d]/25 backdrop-blur-md text-[11px] sm:text-xs font-mono text-slate-300 shadow-xl">
             <span>SCROLL DOWN TO EXPLORE ARCHITECTURE</span>
-            <ChevronDown className="w-3.5 h-3.5 text-[#5C72FF] animate-bounce" />
+            <ChevronDown className="w-3.5 h-3.5 text-[#3a86ff] animate-bounce" />
           </div>
         </div>
 
@@ -514,8 +514,8 @@ export default function InteractiveSpecsSection() {
               >
                 {/* Stage Tag */}
                 <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                  <span className="w-2 h-2 rounded-full bg-[#5C72FF] shadow-[0_0_8px_#5C72FF] animate-pulse" />
-                  <span className="font-mono text-xs tracking-widest text-[#5C72FF] font-semibold uppercase">
+                  <span className="w-2 h-2 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
+                  <span className="font-mono text-xs tracking-widest text-[#3a86ff] font-semibold uppercase">
                     01 // AEROSPACE CHASSIS
                   </span>
                   <span className="text-white/20 text-xs">/</span>
@@ -528,7 +528,7 @@ export default function InteractiveSpecsSection() {
                 </h3>
 
                 {/* Subtitle */}
-                <p className="font-mono text-xs sm:text-sm text-[#5C72FF]/90 mb-3 font-medium tracking-wide">
+                <p className="font-mono text-xs sm:text-sm text-[#3a86ff]/90 mb-3 font-medium tracking-wide">
                   Ti-6Al-4V Aerospace Ingot // 5-Axis CNC Facets
                 </p>
 
@@ -541,7 +541,7 @@ export default function InteractiveSpecsSection() {
                 <div className="grid grid-cols-2 gap-6 pt-4 border-t border-white/15 max-w-md">
                   <div>
                     <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
-                      3,200 <span className="text-xs font-mono font-bold text-[#5C72FF]">HV</span>
+                      3,200 <span className="text-xs font-mono font-bold text-[#3a86ff]">HV</span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
                       Diamond DLC Hardness
@@ -550,7 +550,7 @@ export default function InteractiveSpecsSection() {
 
                   <div>
                     <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
-                      64 <span className="text-xs font-mono font-bold text-[#5C72FF]">GRAMS</span>
+                      64 <span className="text-xs font-mono font-bold text-[#3a86ff]">GRAMS</span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
                       Featherlight Net Mass
@@ -559,8 +559,8 @@ export default function InteractiveSpecsSection() {
                 </div>
 
                 {/* Clean Feature Line */}
-                <div className="mt-4 pt-3 border-t border-[#2C3480]/20 flex items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
-                  <Sparkles className="w-3.5 h-3.5 text-[#5C72FF] flex-shrink-0" />
+                <div className="mt-4 pt-3 border-t border-[#001d3d]/20 flex items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
+                  <Sparkles className="w-3.5 h-3.5 text-[#3a86ff] flex-shrink-0" />
                   <span>Directional Satin Brushing + 45° Mirror Chamfers</span>
                 </div>
               </div>
@@ -573,8 +573,8 @@ export default function InteractiveSpecsSection() {
               >
                 {/* Stage Tag */}
                 <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                  <span className="w-2 h-2 rounded-full bg-[#5C72FF] shadow-[0_0_8px_#5C72FF] animate-pulse" />
-                  <span className="font-mono text-xs tracking-widest text-[#5C72FF] font-semibold uppercase">
+                  <span className="w-2 h-2 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
+                  <span className="font-mono text-xs tracking-widest text-[#3a86ff] font-semibold uppercase">
                     03 // BIONIC CORE & TELEMETRY
                   </span>
                   <span className="text-white/20 text-xs">/</span>
@@ -587,7 +587,7 @@ export default function InteractiveSpecsSection() {
                 </h3>
 
                 {/* Subtitle */}
-                <p className="font-mono text-xs sm:text-sm text-[#5C72FF]/90 mb-3 font-medium tracking-wide">
+                <p className="font-mono text-xs sm:text-sm text-[#3a86ff]/90 mb-3 font-medium tracking-wide">
                   4nm Neural Silicon Substrate // 8-Ch Optical Array
                 </p>
 
@@ -600,7 +600,7 @@ export default function InteractiveSpecsSection() {
                 <div className="grid grid-cols-2 gap-6 pt-4 border-t border-white/15 max-w-md">
                   <div>
                     <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
-                      4 <span className="text-xs font-mono font-bold text-[#5C72FF]">NM</span>
+                      4 <span className="text-xs font-mono font-bold text-[#3a86ff]">NM</span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
                       Neural Silicon Substrate
@@ -609,7 +609,7 @@ export default function InteractiveSpecsSection() {
 
                   <div>
                     <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
-                      1,000 <span className="text-xs font-mono font-bold text-[#5C72FF]">HZ</span>
+                      1,000 <span className="text-xs font-mono font-bold text-[#3a86ff]">HZ</span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
                       Continuous Biometric Array
@@ -618,8 +618,8 @@ export default function InteractiveSpecsSection() {
                 </div>
 
                 {/* Clean Feature Line */}
-                <div className="mt-4 pt-3 border-t border-[#2C3480]/20 flex items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
-                  <Compass className="w-3.5 h-3.5 text-[#5C72FF] flex-shrink-0" />
+                <div className="mt-4 pt-3 border-t border-[#001d3d]/20 flex items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
+                  <Compass className="w-3.5 h-3.5 text-[#3a86ff] flex-shrink-0" />
                   <span>±0.001 ms Atomic Accuracy // Real-time Telemetry</span>
                 </div>
               </div>
@@ -640,8 +640,8 @@ export default function InteractiveSpecsSection() {
               >
                 {/* Stage Tag */}
                 <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                  <span className="w-2 h-2 rounded-full bg-[#5C72FF] shadow-[0_0_8px_#5C72FF] animate-pulse" />
-                  <span className="font-mono text-xs tracking-widest text-[#5C72FF] font-semibold uppercase">
+                  <span className="w-2 h-2 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
+                  <span className="font-mono text-xs tracking-widest text-[#3a86ff] font-semibold uppercase">
                     02 // OPTICAL SHIELD & DISPLAY
                   </span>
                   <span className="text-white/20 text-xs">/</span>
@@ -654,7 +654,7 @@ export default function InteractiveSpecsSection() {
                 </h3>
 
                 {/* Subtitle */}
-                <p className="font-mono text-xs sm:text-sm text-[#5C72FF]/90 mb-3 font-medium tracking-wide">
+                <p className="font-mono text-xs sm:text-sm text-[#3a86ff]/90 mb-3 font-medium tracking-wide">
                   Dual-Curved Synthetic Sapphire // 120Hz Dynamic
                 </p>
 
@@ -667,7 +667,7 @@ export default function InteractiveSpecsSection() {
                 <div className="grid grid-cols-2 gap-6 pt-4 border-t border-white/15 max-w-md">
                   <div>
                     <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
-                      3,000 <span className="text-xs font-mono font-bold text-[#5C72FF]">NITS</span>
+                      3,000 <span className="text-xs font-mono font-bold text-[#3a86ff]">NITS</span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
                       Alpine Peak Lumens
@@ -676,7 +676,7 @@ export default function InteractiveSpecsSection() {
 
                   <div>
                     <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
-                      MOHS 9 <span className="text-xs font-mono font-bold text-[#5C72FF]">SCALE</span>
+                      MOHS 9 <span className="text-xs font-mono font-bold text-[#3a86ff]">SCALE</span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
                       Synthetic Sapphire Shield
@@ -685,8 +685,8 @@ export default function InteractiveSpecsSection() {
                 </div>
 
                 {/* Clean Feature Line */}
-                <div className="mt-4 pt-3 border-t border-[#2C3480]/20 flex items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
-                  <Cpu className="w-3.5 h-3.5 text-[#5C72FF] flex-shrink-0" />
+                <div className="mt-4 pt-3 border-t border-[#001d3d]/20 flex items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
+                  <Cpu className="w-3.5 h-3.5 text-[#3a86ff] flex-shrink-0" />
                   <span>480 × 480 Resolution // 454 PPI True Retina</span>
                 </div>
               </div>
@@ -699,8 +699,8 @@ export default function InteractiveSpecsSection() {
               >
                 {/* Stage Tag */}
                 <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                  <span className="w-2 h-2 rounded-full bg-[#5C72FF] shadow-[0_0_8px_#5C72FF] animate-pulse" />
-                  <span className="font-mono text-xs tracking-widest text-[#5C72FF] font-semibold uppercase">
+                  <span className="w-2 h-2 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
+                  <span className="font-mono text-xs tracking-widest text-[#3a86ff] font-semibold uppercase">
                     04 // HERMETIC SEAL & POWER
                   </span>
                   <span className="text-white/20 text-xs">/</span>
@@ -713,7 +713,7 @@ export default function InteractiveSpecsSection() {
                 </h3>
 
                 {/* Subtitle */}
-                <p className="font-mono text-xs sm:text-sm text-[#5C72FF]/90 mb-3 font-medium tracking-wide">
+                <p className="font-mono text-xs sm:text-sm text-[#3a86ff]/90 mb-3 font-medium tracking-wide">
                   Solid Polymer Battery // 100% Helium Chamber Tested
                 </p>
 
@@ -726,7 +726,7 @@ export default function InteractiveSpecsSection() {
                 <div className="grid grid-cols-2 gap-6 pt-4 border-t border-white/15 max-w-md">
                   <div>
                     <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
-                      100 <span className="text-xs font-mono font-bold text-[#5C72FF]">METERS</span>
+                      100 <span className="text-xs font-mono font-bold text-[#3a86ff]">METERS</span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
                       10 ATM Depth Rating
@@ -735,7 +735,7 @@ export default function InteractiveSpecsSection() {
 
                   <div>
                     <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
-                      72 <span className="text-xs font-mono font-bold text-[#5C72FF]">HOURS</span>
+                      72 <span className="text-xs font-mono font-bold text-[#3a86ff]">HOURS</span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
                       Solid Polymer Endurance
@@ -744,8 +744,8 @@ export default function InteractiveSpecsSection() {
                 </div>
 
                 {/* Clean Feature Line */}
-                <div className="mt-4 pt-3 border-t border-[#2C3480]/20 flex items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
-                  <Zap className="w-3.5 h-3.5 text-[#5C72FF] flex-shrink-0" />
+                <div className="mt-4 pt-3 border-t border-[#001d3d]/20 flex items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
+                  <Zap className="w-3.5 h-3.5 text-[#3a86ff] flex-shrink-0" />
                   <span>Rapid Magnetic Induction // 0–80% in 35 Minutes</span>
                 </div>
               </div>
@@ -766,8 +766,8 @@ export default function InteractiveSpecsSection() {
           style={{ opacity: 0 }}
         >
           <div className="w-full max-w-7xl mx-auto px-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#2C3480]/25 mb-2.5 text-[#5C72FF] font-mono text-[10px] sm:text-xs font-semibold tracking-widest uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#5C72FF] shadow-[0_0_8px_#5C72FF]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#001d3d]/25 mb-2.5 text-[#3a86ff] font-mono text-[10px] sm:text-xs font-semibold tracking-widest uppercase">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff]" />
               <span>TECHNICAL BLUEPRINT // COMPLETE MATRIX</span>
             </div>
 
@@ -783,25 +783,25 @@ export default function InteractiveSpecsSection() {
               <div>
                 <span className="font-mono text-[10px] text-slate-500 uppercase tracking-wider block mb-1">CHASSIS</span>
                 <strong className="text-white text-sm sm:text-base font-extrabold block">Grade 5 Ti-6Al-4V</strong>
-                <span className="text-xs text-[#5C72FF] font-mono mt-0.5 block">64g // 3,200 HV DLC</span>
+                <span className="text-xs text-[#3a86ff] font-mono mt-0.5 block">64g // 3,200 HV DLC</span>
               </div>
 
               <div>
                 <span className="font-mono text-[10px] text-slate-500 uppercase tracking-wider block mb-1">OPTICS</span>
                 <strong className="text-white text-sm sm:text-base font-extrabold block">Ultra AMOLED</strong>
-                <span className="text-xs text-[#5C72FF] font-mono mt-0.5 block">3,000 Nits // Mohs 9</span>
+                <span className="text-xs text-[#3a86ff] font-mono mt-0.5 block">3,000 Nits // Mohs 9</span>
               </div>
 
               <div>
                 <span className="font-mono text-[10px] text-slate-500 uppercase tracking-wider block mb-1">COMPUTE</span>
                 <strong className="text-white text-sm sm:text-base font-extrabold block">Neural S-01</strong>
-                <span className="text-xs text-[#5C72FF] font-mono mt-0.5 block">4nm // 1,000Hz Bio</span>
+                <span className="text-xs text-[#3a86ff] font-mono mt-0.5 block">4nm // 1,000Hz Bio</span>
               </div>
 
               <div>
                 <span className="font-mono text-[10px] text-slate-500 uppercase tracking-wider block mb-1">ENDURANCE</span>
                 <strong className="text-white text-sm sm:text-base font-extrabold block">10 ATM / 100M</strong>
-                <span className="text-xs text-[#5C72FF] font-mono mt-0.5 block">72h // Fast Charge</span>
+                <span className="text-xs text-[#3a86ff] font-mono mt-0.5 block">72h // Fast Charge</span>
               </div>
             </div>
           </div>
