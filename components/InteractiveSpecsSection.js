@@ -435,6 +435,27 @@ export default function InteractiveSpecsSection() {
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center">
 
         {/* ========================================================
+            ATMOSPHERIC ROYAL BLUE GLOW BLOOMS (Matching Reference Design)
+           ======================================================== */}
+        {/* Bottom-Left Rich Royal Blue Bloom (Exactly as circled in bottom-left) */}
+        <div
+          className="absolute -left-20 sm:-left-32 -bottom-20 sm:-bottom-28 w-[500px] sm:w-[700px] h-[500px] sm:h-[700px] rounded-full pointer-events-none z-0"
+          style={{
+            background: 'radial-gradient(circle at 35% 65%, rgba(31, 52, 145, 0.75) 0%, rgba(15, 23, 85, 0.40) 45%, transparent 72%)',
+            filter: 'blur(95px)',
+          }}
+        />
+
+        {/* Top-Right Soft Royal Blue Bloom (Exactly as circled in top-right) */}
+        <div
+          className="absolute -right-16 sm:-right-24 -top-16 sm:-top-24 w-[480px] sm:w-[620px] h-[450px] sm:h-[580px] rounded-full pointer-events-none z-0"
+          style={{
+            background: 'radial-gradient(circle at 70% 30%, rgba(35, 47, 159, 0.65) 0%, rgba(18, 25, 95, 0.35) 45%, transparent 72%)',
+            filter: 'blur(90px)',
+          }}
+        />
+
+        {/* ========================================================
             3. GIANT MONUMENTAL "VELTRIX" IN THEME COLOR BEHIND WATCH
                - Placed strictly in BACKGROUND (z-0) BEHIND the 3D watch canvas!
            ======================================================== */}
@@ -464,7 +485,7 @@ export default function InteractiveSpecsSection() {
         {/* Scrubbing HUD (Top Right Corner - Contained strictly within max-w-7xl) */}
         <div className="absolute inset-x-0 top-20 sm:top-24 z-30 pointer-events-none">
           <div className="max-w-7xl mx-auto px-6 flex justify-end">
-            <div className="hidden sm:flex items-center gap-3 sm:gap-4 bg-black/60 backdrop-blur-md px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/10 shadow-lg pointer-events-auto">
+            <div className="hidden sm:flex items-center gap-3 sm:gap-4 bg-[#000e1f]/85 backdrop-blur-md px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-[#001d3d]/50 shadow-[0_0_30px_rgba(31,52,145,0.30)] pointer-events-auto">
               <div className="flex flex-col text-right">
                 <span className="font-mono text-[9px] sm:text-[10px] text-slate-400 tracking-wider">
                   SPEC TIMELINE
@@ -534,7 +555,7 @@ export default function InteractiveSpecsSection() {
               {/* STATION 1: Grade 5 Titanium Monolith */}
               <div
                 ref={card1Ref}
-                className="col-start-1 row-start-1 w-full max-w-[430px] pointer-events-none select-none text-left bg-[#000e1f]/92 sm:bg-[#000e1f]/95 backdrop-blur-2xl border border-[#001d3d]/50 hover:border-[#3a86ff]/50 rounded-2xl p-3.5 sm:p-5 shadow-[0_16px_45px_rgba(0,0,0,0.85)] transition-all"
+                className="col-start-1 row-start-1 w-full max-w-[430px] pointer-events-none select-none text-left bg-[#000e1f]/92 sm:bg-[#000e1f]/95 backdrop-blur-2xl border border-[#001d3d]/50 hover:border-[#3a86ff]/50 rounded-2xl p-3.5 sm:p-5 shadow-[0_16px_45px_rgba(0,0,0,0.85),0_0_35px_rgba(31,52,145,0.20)] transition-all"
                 style={{ opacity: 0 }}
               >
                 {/* Stage Tag & Step Indicator */}
@@ -611,7 +632,7 @@ export default function InteractiveSpecsSection() {
               {/* STATION 3: Neural S-01 Co-Processor */}
               <div
                 ref={card3Ref}
-                className="col-start-1 row-start-1 w-full max-w-[430px] pointer-events-none select-none text-left bg-[#000e1f]/92 sm:bg-[#000e1f]/95 backdrop-blur-2xl border border-[#001d3d]/50 hover:border-[#3a86ff]/50 rounded-2xl p-3.5 sm:p-5 shadow-[0_16px_45px_rgba(0,0,0,0.85)] transition-all"
+                className="col-start-1 row-start-1 w-full max-w-[430px] pointer-events-none select-none text-left bg-[#000e1f]/92 sm:bg-[#000e1f]/95 backdrop-blur-2xl border border-[#001d3d]/50 hover:border-[#3a86ff]/50 rounded-2xl p-3.5 sm:p-5 shadow-[0_16px_45px_rgba(0,0,0,0.85),0_0_35px_rgba(31,52,145,0.20)] transition-all"
                 style={{ opacity: 0 }}
               >
                 {/* Stage Tag & Step Indicator */}
@@ -696,7 +717,7 @@ export default function InteractiveSpecsSection() {
               {/* STATION 2: Ultra Retina AMOLED & Sapphire */}
               <div
                 ref={card2Ref}
-                className="col-start-1 row-start-1 w-full max-w-[430px] pointer-events-none select-none text-left bg-[#000e1f]/92 sm:bg-[#000e1f]/95 backdrop-blur-2xl border border-[#001d3d]/50 hover:border-[#3a86ff]/50 rounded-2xl p-3.5 sm:p-5 shadow-[0_16px_45px_rgba(0,0,0,0.85)] transition-all"
+                className="col-start-1 row-start-1 w-full max-w-[430px] pointer-events-none select-none text-left bg-[#000e1f]/92 sm:bg-[#000e1f]/95 backdrop-blur-2xl border border-[#001d3d]/50 hover:border-[#3a86ff]/50 rounded-2xl p-3.5 sm:p-5 shadow-[0_16px_45px_rgba(0,0,0,0.85),0_0_35px_rgba(31,52,145,0.20)] transition-all"
                 style={{ opacity: 0 }}
               >
                 {/* Stage Tag & Step Indicator */}
@@ -773,7 +794,7 @@ export default function InteractiveSpecsSection() {
               {/* STATION 4: 10 ATM & 72h Matrix */}
               <div
                 ref={card4Ref}
-                className="col-start-1 row-start-1 w-full max-w-[430px] pointer-events-none select-none text-left bg-[#000e1f]/92 sm:bg-[#000e1f]/95 backdrop-blur-2xl border border-[#001d3d]/50 hover:border-[#3a86ff]/50 rounded-2xl p-3.5 sm:p-5 shadow-[0_16px_45px_rgba(0,0,0,0.85)] transition-all"
+                className="col-start-1 row-start-1 w-full max-w-[430px] pointer-events-none select-none text-left bg-[#000e1f]/92 sm:bg-[#000e1f]/95 backdrop-blur-2xl border border-[#001d3d]/50 hover:border-[#3a86ff]/50 rounded-2xl p-3.5 sm:p-5 shadow-[0_16px_45px_rgba(0,0,0,0.85),0_0_35px_rgba(31,52,145,0.20)] transition-all"
                 style={{ opacity: 0 }}
               >
                 {/* Stage Tag & Step Indicator */}
