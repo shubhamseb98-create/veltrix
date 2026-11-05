@@ -852,58 +852,105 @@ export default function InteractiveSpecsSection() {
           </div>
         </div>
 
-        {/* ========================================================
+                {/* ========================================================
             5. STATION 5: COMPLETE BLUEPRINT MATRIX (Bottom Center)
-               - Exact max-w-7xl mx-auto px-6 matching Footer container width!
-               - 4 Columns align pixel-perfect with Footer trust pillars!
+               - High-tech luxury frosted glass instrument card
+               - 4 Segmented Matrix cells in Oxford Blue & Royal Navy
            ======================================================== */}
         <div
           ref={card5Ref}
-          className="absolute inset-x-0 bottom-6 sm:bottom-10 z-20 pointer-events-none text-center"
+          className="absolute inset-x-0 bottom-3 sm:bottom-8 z-20 pointer-events-none text-center"
           style={{ opacity: 0 }}
         >
-          <div className="w-full max-w-7xl mx-auto px-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#001d3d]/25 mb-2.5 text-[#3a86ff] font-mono text-[10px] sm:text-xs font-semibold tracking-widest uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff]" />
-              <span>TECHNICAL BLUEPRINT // COMPLETE MATRIX</span>
-            </div>
-
-            <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-1.5 tracking-tight">
-              Chronos T-01 Engineering Summary
-            </h3>
-            <p className="text-slate-400 text-xs sm:text-sm font-light max-w-xl mx-auto mb-6">
-              Every curve, chamfer, and sub-nanosecond calculation synchronized into a single aerospace titanium instrument.
-            </p>
-
-            {/* 4 Clean Minimal Columns - Matching Footer Trust Pillars & max-w-7xl Container Width */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 text-left pt-3 sm:pt-5 border-t border-white/15">
-              <div>
-                <span className="font-mono text-[10px] text-slate-500 uppercase tracking-wider block mb-1">CHASSIS</span>
-                <strong className="text-white text-sm sm:text-base font-extrabold block">Grade 5 Ti-6Al-4V</strong>
-                <span className="text-xs text-[#3a86ff] font-mono mt-0.5 block">64g // 3,200 HV DLC</span>
+          <div className="w-full max-w-4xl mx-auto px-3 sm:px-6">
+            <div className="bg-[#000e1f]/92 sm:bg-[#000e1f]/95 backdrop-blur-2xl border border-[#001d3d]/50 hover:border-[#3a86ff]/50 rounded-2xl p-4 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.85)] transition-all">
+              
+              {/* Header Badge */}
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#3a86ff]/10 border border-[#3a86ff]/25 mb-2 sm:mb-2.5 text-[#3a86ff]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
+                <span className="font-mono text-[9px] sm:text-xs font-bold tracking-widest uppercase">
+                  TECHNICAL BLUEPRINT // COMPLETE MATRIX
+                </span>
               </div>
 
-              <div>
-                <span className="font-mono text-[10px] text-slate-500 uppercase tracking-wider block mb-1">OPTICS</span>
-                <strong className="text-white text-sm sm:text-base font-extrabold block">Ultra AMOLED</strong>
-                <span className="text-xs text-[#3a86ff] font-mono mt-0.5 block">3,000 Nits // Mohs 9</span>
+              {/* Title & Concise Subtitle */}
+              <h3 className="font-heading font-extrabold text-lg sm:text-2xl md:text-3xl text-white tracking-tight leading-tight mb-1">
+                VELTRIX T-01 Engineering Summary
+              </h3>
+              <p className="text-slate-400 text-xs sm:text-sm font-light max-w-xl mx-auto mb-3 sm:mb-4 line-clamp-1 sm:line-clamp-none">
+                Every curve, chamfer, and sub-nanosecond calculation synchronized into a single aerospace titanium instrument.
+              </p>
+
+              {/* 4 Segmented Matrix Cells */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 text-left pt-2.5 sm:pt-3.5 border-t border-white/10">
+                {/* CHASSIS */}
+                <div className="bg-white/5 border border-white/5 rounded-xl p-2.5 sm:p-3">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="font-mono text-[8px] sm:text-[9px] text-slate-400 uppercase tracking-wider block">
+                      CHASSIS
+                    </span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff]" />
+                  </div>
+                  <strong className="text-white text-xs sm:text-sm md:text-base font-extrabold block truncate">
+                    Grade 5 Ti-6Al-4V
+                  </strong>
+                  <span className="text-[10px] sm:text-xs text-[#3a86ff] font-mono mt-0.5 block truncate">
+                    64g // 3,200 HV DLC
+                  </span>
+                </div>
+
+                {/* OPTICS */}
+                <div className="bg-white/5 border border-white/5 rounded-xl p-2.5 sm:p-3">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="font-mono text-[8px] sm:text-[9px] text-slate-400 uppercase tracking-wider block">
+                      OPTICS
+                    </span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff]" />
+                  </div>
+                  <strong className="text-white text-xs sm:text-sm md:text-base font-extrabold block truncate">
+                    Ultra AMOLED
+                  </strong>
+                  <span className="text-[10px] sm:text-xs text-[#3a86ff] font-mono mt-0.5 block truncate">
+                    3,000 Nits // Mohs 9
+                  </span>
+                </div>
+
+                {/* COMPUTE */}
+                <div className="bg-white/5 border border-white/5 rounded-xl p-2.5 sm:p-3">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="font-mono text-[8px] sm:text-[9px] text-slate-400 uppercase tracking-wider block">
+                      COMPUTE
+                    </span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff]" />
+                  </div>
+                  <strong className="text-white text-xs sm:text-sm md:text-base font-extrabold block truncate">
+                    Neural S-01
+                  </strong>
+                  <span className="text-[10px] sm:text-xs text-[#3a86ff] font-mono mt-0.5 block truncate">
+                    4nm // 1,000Hz Bio
+                  </span>
+                </div>
+
+                {/* ENDURANCE */}
+                <div className="bg-white/5 border border-white/5 rounded-xl p-2.5 sm:p-3">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="font-mono text-[8px] sm:text-[9px] text-slate-400 uppercase tracking-wider block">
+                      ENDURANCE
+                    </span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff]" />
+                  </div>
+                  <strong className="text-white text-xs sm:text-sm md:text-base font-extrabold block truncate">
+                    10 ATM / 100M
+                  </strong>
+                  <span className="text-[10px] sm:text-xs text-[#3a86ff] font-mono mt-0.5 block truncate">
+                    72h // Fast Charge
+                  </span>
+                </div>
               </div>
 
-              <div>
-                <span className="font-mono text-[10px] text-slate-500 uppercase tracking-wider block mb-1">COMPUTE</span>
-                <strong className="text-white text-sm sm:text-base font-extrabold block">Neural S-01</strong>
-                <span className="text-xs text-[#3a86ff] font-mono mt-0.5 block">4nm // 1,000Hz Bio</span>
-              </div>
-
-              <div>
-                <span className="font-mono text-[10px] text-slate-500 uppercase tracking-wider block mb-1">ENDURANCE</span>
-                <strong className="text-white text-sm sm:text-base font-extrabold block">10 ATM / 100M</strong>
-                <span className="text-xs text-[#3a86ff] font-mono mt-0.5 block">72h // Fast Charge</span>
-              </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
