@@ -410,48 +410,6 @@ export default function InteractiveSpecsSection() {
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center">
 
         {/* ========================================================
-            1. AMBIENT BACKGROUND GLOW (Top-Left & Bottom-Right)
-               - Placed strictly in BACKGROUND (z-0) BEHIND the watch!
-           ======================================================== */}
-        <div className="absolute inset-0 pointer-events-none z-0 mix-blend-screen overflow-hidden">
-          {/* Top-Left Ambient Background Spotlight - Neon Mint & Sage Glow */}
-          <div
-            className="absolute -top-16 -left-16 sm:-top-20 sm:-left-10 w-[500px] h-[450px] sm:w-[650px] sm:h-[550px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.15) 0%, rgba(109, 143, 99, 0.06) 45%, transparent 70%)',
-              filter: 'blur(90px)',
-            }}
-          />
-
-          {/* Bottom-Right Ambient Background Spotlight - Neon Mint & Sage Glow */}
-          <div
-            className="absolute -bottom-16 -right-16 sm:-bottom-20 sm:-right-10 w-[550px] h-[480px] sm:w-[700px] sm:h-[600px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.13) 0%, rgba(109, 143, 99, 0.05) 45%, transparent 70%)',
-              filter: 'blur(100px)',
-            }}
-          />
-        </div>
-
-        {/* ========================================================
-            2. SUBTLE MINIMAL BACKGROUND TEXTURE (Grid Lines BEHIND WATCH)
-               - Placed strictly in BACKGROUND (z-0) BEHIND the 3D watch canvas!
-               - ZERO lines on top of the watch or strap
-           ======================================================== */}
-        <div
-          className="absolute inset-0 pointer-events-none z-0 opacity-25"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px)
-            `,
-            backgroundSize: '44px 44px',
-            maskImage: 'radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, transparent 95%)',
-            WebkitMaskImage: 'radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, transparent 95%)',
-          }}
-        />
-
-        {/* ========================================================
             3. GIANT MONUMENTAL "VELTRIX" IN THEME COLOR BEHIND WATCH
                - Placed strictly in BACKGROUND (z-0) BEHIND the 3D watch canvas!
            ======================================================== */}

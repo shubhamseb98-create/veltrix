@@ -354,63 +354,6 @@ export default function WatchScrollCanvas() {
     >
       <div className="sticky top-0 left-0 w-full h-screen bg-black overflow-hidden flex items-center justify-center">
 
-        {/* ========================================================
-            1. LUXURY SIDE & CORNER AMBIENT GLOWS (Watch Center Pure Black -> Pristine Silver Titanium)
-           ======================================================== */}
-        <div className="absolute inset-0 pointer-events-none z-0 mix-blend-screen overflow-hidden">
-          {/* Left Flank Ambient Aura (Soft mint illumination framing the left callout card) */}
-          <div
-            className="absolute top-1/2 -left-28 sm:-left-40 -translate-y-1/2 w-[500px] sm:w-[640px] h-[560px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.15) 0%, rgba(109, 143, 99, 0.07) 45%, transparent 72%)',
-              filter: 'blur(85px)',
-            }}
-          />
-
-          {/* Right Flank Ambient Aura (Soft mint illumination framing the right side) */}
-          <div
-            className="absolute top-1/2 -right-28 sm:-right-40 -translate-y-1/2 w-[500px] sm:w-[640px] h-[560px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.13) 0%, rgba(109, 143, 99, 0.05) 45%, transparent 72%)',
-              filter: 'blur(85px)',
-            }}
-          />
-
-          {/* Top-Left Corner Ambient Accent */}
-          <div
-            className="absolute -top-24 -left-20 sm:-top-28 sm:-left-24 w-[420px] sm:w-[520px] h-[400px] sm:h-[480px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.11) 0%, rgba(109, 143, 99, 0.04) 50%, transparent 70%)',
-              filter: 'blur(90px)',
-            }}
-          />
-
-          {/* Bottom-Right Corner Ambient Accent */}
-          <div
-            className="absolute -bottom-24 -right-20 sm:-bottom-28 sm:-right-24 w-[440px] sm:w-[540px] h-[420px] sm:h-[500px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.10) 0%, rgba(109, 143, 99, 0.04) 50%, transparent 70%)',
-              filter: 'blur(95px)',
-            }}
-          />
-        </div>
-
-        {/* ========================================================
-            2. FINE TECHNICAL BLUEPRINT GRID TEXTURE (Layer 0)
-           ======================================================== */}
-        <div
-          className="absolute inset-0 pointer-events-none z-0 opacity-20"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, rgba(57, 255, 136, 0.09) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(57, 255, 136, 0.09) 1px, transparent 1px)
-            `,
-            backgroundSize: '48px 48px',
-            maskImage: 'radial-gradient(ellipse 85% 75% at 50% 50%, #000 40%, transparent 95%)',
-            WebkitMaskImage: 'radial-gradient(ellipse 85% 75% at 50% 50%, #000 40%, transparent 95%)',
-          }}
-        />
-
         {/* Ambient Top & Bottom Vignettes for Seamless Section Blending */}
         <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black via-black/60 to-transparent pointer-events-none z-15" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none z-15" />
