@@ -43,10 +43,10 @@ export default function Footer() {
         {/* ========================================================
             2. TOP HEADER NAVIGATION (CONTACT | LINKS | STALK US)
            ======================================================== */}
-        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 lg:gap-6 text-center lg:text-left">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
 
           {/* Left Column: CONTACT */}
-          <div className="flex flex-col items-center lg:items-start gap-1 w-full lg:w-1/4">
+          <div className="flex flex-col items-center sm:items-start gap-1">
             <span className="text-xs sm:text-sm font-bold tracking-widest text-white uppercase font-heading">
               CONTACT
             </span>
@@ -58,40 +58,8 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Center Navigation Links (Row 1 + Row 2 with Capsule Badge) */}
-          <div className="flex flex-col items-center gap-3 sm:gap-4 w-full lg:w-2/4">
-            {/* Row 1 */}
-            <nav className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-10 text-xs sm:text-sm font-bold tracking-widest text-white uppercase font-heading">
-              <a href="#" className="hover:text-[#3a86ff] transition-colors">
-                HOME
-              </a>
-              <a href="#scrolly-section" className="hover:text-[#3a86ff] transition-colors">
-                3D ATELIER
-              </a>
-              <a href="#metallurgy" className="hover:text-[#3a86ff] transition-colors">
-                FINISHES
-              </a>
-              <a href="#collection" className="hover:text-[#3a86ff] transition-colors">
-                COLLECTION
-              </a>
-            </nav>
-
-            {/* Row 2: Secondary link + Capsule Pill */}
-            <div className="flex items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-bold tracking-widest text-white uppercase font-heading">
-              <a href="#watch-faces" className="hover:text-[#3a86ff] transition-colors">
-                WATCH FACES
-              </a>
-              <a
-                href="#specs"
-                className="px-5 py-1.5 rounded-full bg-[#585e68]/70 hover:bg-[#585e68] text-white transition-all text-xs tracking-wider"
-              >
-                SPECS
-              </a>
-            </div>
-          </div>
-
           {/* Right Column: STALK US + 5 Social Circle Icons */}
-          <div className="flex flex-col items-center lg:items-end gap-2.5 w-full lg:w-1/4">
+          <div className="flex flex-col items-center sm:items-end gap-2.5">
             <span className="text-xs sm:text-sm font-bold tracking-widest text-white uppercase font-heading">
               STALK US
             </span>
