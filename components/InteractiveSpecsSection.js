@@ -525,127 +525,163 @@ export default function InteractiveSpecsSection() {
         <div className="absolute inset-0 pointer-events-none z-20 flex items-center justify-center">
           <div className="w-full max-w-5xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 h-full items-center pointer-events-none">
 
-            {/* ----------------------------------------------------
+                        {/* ----------------------------------------------------
                 LEFT COLUMN (Station 1: Titanium & Station 3: Neural)
-                - Justified towards center for natural ~80-100px tight gap with watch
+                - High-tech frosted glass instrument cards
                ---------------------------------------------------- */}
-            <div className="pointer-events-none grid grid-cols-1 grid-rows-1 justify-items-end pr-0 lg:pr-10 bottom-4 sm:bottom-8 lg:bottom-auto absolute lg:relative inset-x-4 sm:inset-x-6 lg:inset-x-auto">
+            <div className="pointer-events-none grid grid-cols-1 grid-rows-1 justify-items-end pr-0 lg:pr-10 bottom-3 sm:bottom-8 lg:bottom-auto absolute lg:relative inset-x-3 sm:inset-x-6 lg:inset-x-auto">
               
               {/* STATION 1: Grade 5 Titanium Monolith */}
               <div
                 ref={card1Ref}
-                className="col-start-1 row-start-1 w-full max-w-[420px] pointer-events-none select-none text-left"
+                className="col-start-1 row-start-1 w-full max-w-[430px] pointer-events-none select-none text-left bg-[#000e1f]/92 sm:bg-[#000e1f]/95 backdrop-blur-2xl border border-[#001d3d]/50 hover:border-[#3a86ff]/50 rounded-2xl p-3.5 sm:p-5 shadow-[0_16px_45px_rgba(0,0,0,0.85)] transition-all"
                 style={{ opacity: 0 }}
               >
-                {/* Stage Tag */}
-                <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                  <span className="w-2 h-2 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
-                  <span className="font-mono text-xs tracking-widest text-[#3a86ff] font-semibold uppercase">
-                    01 // AEROSPACE CHASSIS
-                  </span>
-                  <span className="text-white/20 text-xs">/</span>
-                  <span className="font-mono text-[11px] text-slate-500">STAGE 01 OF 04</span>
+                {/* Stage Tag & Step Indicator */}
+                <div className="flex items-center justify-between gap-2 mb-2 sm:mb-2.5">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#3a86ff]/10 border border-[#3a86ff]/25 text-[#3a86ff]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
+                    <span className="font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase">
+                      01 // AEROSPACE CHASSIS
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-1.5 font-mono text-[10px] sm:text-xs text-slate-400">
+                    <span className="text-white font-bold">01</span>
+                    <span className="text-white/20">/</span>
+                    <span className="text-slate-500">04</span>
+                    <div className="flex items-center gap-1 ml-1.5">
+                      <span className="w-3.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_6px_#3a86ff]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Main Heading */}
-                <h3 className="font-heading font-extrabold text-xl sm:text-2xl lg:text-[34px] text-white mb-1.5 tracking-tight leading-tight">
+                <h3 className="font-heading font-extrabold text-lg sm:text-2xl text-white tracking-tight leading-tight mb-1">
                   Grade 5 Titanium Monolith
                 </h3>
 
                 {/* Subtitle */}
-                <p className="font-mono text-xs sm:text-sm text-[#3a86ff]/90 mb-3 font-medium tracking-wide">
+                <p className="font-mono text-[11px] sm:text-xs text-[#3a86ff] font-medium tracking-wide mb-2 sm:mb-2.5">
                   Ti-6Al-4V Aerospace Ingot // 5-Axis CNC Facets
                 </p>
 
                 {/* Description */}
-                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-5 max-w-md line-clamp-3 sm:line-clamp-none">
+                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-3.5 line-clamp-2 sm:line-clamp-none">
                   Milled from a single solid aerospace ingot with diamond-cut chamfers and hand-finished satin brushing. Engineered for extreme structural rigidity with a 64-gram featherlight footprint.
                 </p>
 
-                {/* Big Bold Clean Numbers (No heavy card boxes) */}
-                <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-3 sm:pt-4 border-t border-white/15 max-w-md">
-                  <div>
-                    <div className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
+                {/* Segmented Glass Metric Cells */}
+                <div className="grid grid-cols-2 gap-2 sm:gap-2.5 pt-2.5 sm:pt-3 border-t border-white/10">
+                  <div className="bg-white/5 border border-white/5 rounded-xl p-2 sm:p-2.5">
+                    <span className="block font-mono text-[8px] sm:text-[9px] text-slate-400 uppercase tracking-wider mb-0.5">
+                      DIAMOND DLC HARDNESS
+                    </span>
+                    <div className="font-heading font-black text-lg sm:text-xl text-white tracking-tight">
                       3,200 <span className="text-xs font-mono font-bold text-[#3a86ff]">HV</span>
                     </div>
-                    <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
-                      Diamond DLC Hardness
-                    </div>
+                    <span className="block text-[9px] sm:text-[10px] font-mono text-slate-400 mt-0.5 truncate">
+                      Vapor-Deposited Matrix
+                    </span>
                   </div>
 
-                  <div>
-                    <div className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
+                  <div className="bg-white/5 border border-white/5 rounded-xl p-2 sm:p-2.5">
+                    <span className="block font-mono text-[8px] sm:text-[9px] text-slate-400 uppercase tracking-wider mb-0.5">
+                      NET CHASSIS MASS
+                    </span>
+                    <div className="font-heading font-black text-lg sm:text-xl text-white tracking-tight">
                       64 <span className="text-xs font-mono font-bold text-[#3a86ff]">GRAMS</span>
                     </div>
-                    <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
+                    <span className="block text-[9px] sm:text-[10px] font-mono text-slate-400 mt-0.5 truncate">
                       Featherlight Net Mass
-                    </div>
+                    </span>
                   </div>
                 </div>
 
                 {/* Clean Feature Line */}
-                <div className="hidden sm:flex mt-4 pt-3 border-t border-[#001d3d]/20 items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
+                <div className="mt-2.5 pt-2 border-t border-white/5 flex items-center gap-2 text-[10px] sm:text-[11px] font-mono text-slate-300">
                   <Sparkles className="w-3.5 h-3.5 text-[#3a86ff] flex-shrink-0" />
-                  <span>Directional Satin Brushing + 45° Mirror Chamfers</span>
+                  <span className="truncate">Directional Satin Brushing + 45° Mirror Chamfers</span>
                 </div>
               </div>
 
               {/* STATION 3: Neural S-01 Co-Processor */}
               <div
                 ref={card3Ref}
-                className="col-start-1 row-start-1 w-full max-w-[420px] pointer-events-none select-none text-left"
+                className="col-start-1 row-start-1 w-full max-w-[430px] pointer-events-none select-none text-left bg-[#000e1f]/92 sm:bg-[#000e1f]/95 backdrop-blur-2xl border border-[#001d3d]/50 hover:border-[#3a86ff]/50 rounded-2xl p-3.5 sm:p-5 shadow-[0_16px_45px_rgba(0,0,0,0.85)] transition-all"
                 style={{ opacity: 0 }}
               >
-                {/* Stage Tag */}
-                <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                  <span className="w-2 h-2 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
-                  <span className="font-mono text-xs tracking-widest text-[#3a86ff] font-semibold uppercase">
-                    03 // BIONIC CORE & TELEMETRY
-                  </span>
-                  <span className="text-white/20 text-xs">/</span>
-                  <span className="font-mono text-[11px] text-slate-500">STAGE 03 OF 04</span>
+                {/* Stage Tag & Step Indicator */}
+                <div className="flex items-center justify-between gap-2 mb-2 sm:mb-2.5">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#3a86ff]/10 border border-[#3a86ff]/25 text-[#3a86ff]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
+                    <span className="font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase">
+                      03 // BIONIC CORE
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-1.5 font-mono text-[10px] sm:text-xs text-slate-400">
+                    <span className="text-white font-bold">03</span>
+                    <span className="text-white/20">/</span>
+                    <span className="text-slate-500">04</span>
+                    <div className="flex items-center gap-1 ml-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+                      <span className="w-3.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_6px_#3a86ff]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Main Heading */}
-                <h3 className="font-heading font-extrabold text-xl sm:text-2xl lg:text-[34px] text-white mb-1.5 tracking-tight leading-tight">
+                <h3 className="font-heading font-extrabold text-lg sm:text-2xl text-white tracking-tight leading-tight mb-1">
                   Neural S-01 Co-Processor
                 </h3>
 
                 {/* Subtitle */}
-                <p className="font-mono text-xs sm:text-sm text-[#3a86ff]/90 mb-3 font-medium tracking-wide">
+                <p className="font-mono text-[11px] sm:text-xs text-[#3a86ff] font-medium tracking-wide mb-2 sm:mb-2.5">
                   4nm Neural Silicon Substrate // 8-Ch Optical Array
                 </p>
 
                 {/* Description */}
-                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-5 max-w-md line-clamp-3 sm:line-clamp-none">
+                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-3.5 line-clamp-2 sm:line-clamp-none">
                   Multi-layer high-density substrate housing the 4nm neural co-processor paired with an 8-channel optical array delivering 1,000Hz continuous cardiac and oxygen telemetry.
                 </p>
 
-                {/* Big Bold Clean Numbers */}
-                <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-3 sm:pt-4 border-t border-white/15 max-w-md">
-                  <div>
-                    <div className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
+                {/* Segmented Glass Metric Cells */}
+                <div className="grid grid-cols-2 gap-2 sm:gap-2.5 pt-2.5 sm:pt-3 border-t border-white/10">
+                  <div className="bg-white/5 border border-white/5 rounded-xl p-2 sm:p-2.5">
+                    <span className="block font-mono text-[8px] sm:text-[9px] text-slate-400 uppercase tracking-wider mb-0.5">
+                      PROCESS NODE
+                    </span>
+                    <div className="font-heading font-black text-lg sm:text-xl text-white tracking-tight">
                       4 <span className="text-xs font-mono font-bold text-[#3a86ff]">NM</span>
                     </div>
-                    <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
+                    <span className="block text-[9px] sm:text-[10px] font-mono text-slate-400 mt-0.5 truncate">
                       Neural Silicon Substrate
-                    </div>
+                    </span>
                   </div>
 
-                  <div>
-                    <div className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
+                  <div className="bg-white/5 border border-white/5 rounded-xl p-2 sm:p-2.5">
+                    <span className="block font-mono text-[8px] sm:text-[9px] text-slate-400 uppercase tracking-wider mb-0.5">
+                      CONTINUOUS POLLING
+                    </span>
+                    <div className="font-heading font-black text-lg sm:text-xl text-white tracking-tight">
                       1,000 <span className="text-xs font-mono font-bold text-[#3a86ff]">HZ</span>
                     </div>
-                    <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
-                      Continuous Biometric Array
-                    </div>
+                    <span className="block text-[9px] sm:text-[10px] font-mono text-slate-400 mt-0.5 truncate">
+                      Biometric Sampling
+                    </span>
                   </div>
                 </div>
 
                 {/* Clean Feature Line */}
-                <div className="hidden sm:flex mt-4 pt-3 border-t border-[#001d3d]/20 items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
+                <div className="mt-2.5 pt-2 border-t border-white/5 flex items-center gap-2 text-[10px] sm:text-[11px] font-mono text-slate-300">
                   <Compass className="w-3.5 h-3.5 text-[#3a86ff] flex-shrink-0" />
-                  <span>±0.001 ms Atomic Accuracy // Real-time Telemetry</span>
+                  <span className="truncate">±0.001 ms Atomic Accuracy // Real-time Telemetry</span>
                 </div>
               </div>
 
@@ -653,125 +689,161 @@ export default function InteractiveSpecsSection() {
 
             {/* ----------------------------------------------------
                 RIGHT COLUMN (Station 2: Optics & Station 4: Seal)
-                - Justified towards center for natural ~80-100px tight gap with watch
+                - High-tech frosted glass instrument cards
                ---------------------------------------------------- */}
-            <div className="pointer-events-none grid grid-cols-1 grid-rows-1 justify-items-start pl-0 lg:pl-10 col-start-1 lg:col-start-2 bottom-4 sm:bottom-8 lg:bottom-auto absolute lg:relative inset-x-4 sm:inset-x-6 lg:inset-x-auto">
+            <div className="pointer-events-none grid grid-cols-1 grid-rows-1 justify-items-start pl-0 lg:pl-10 col-start-1 lg:col-start-2 bottom-3 sm:bottom-8 lg:bottom-auto absolute lg:relative inset-x-3 sm:inset-x-6 lg:inset-x-auto">
               
               {/* STATION 2: Ultra Retina AMOLED & Sapphire */}
               <div
                 ref={card2Ref}
-                className="col-start-1 row-start-1 w-full max-w-[420px] pointer-events-none select-none text-left"
+                className="col-start-1 row-start-1 w-full max-w-[430px] pointer-events-none select-none text-left bg-[#000e1f]/92 sm:bg-[#000e1f]/95 backdrop-blur-2xl border border-[#001d3d]/50 hover:border-[#3a86ff]/50 rounded-2xl p-3.5 sm:p-5 shadow-[0_16px_45px_rgba(0,0,0,0.85)] transition-all"
                 style={{ opacity: 0 }}
               >
-                {/* Stage Tag */}
-                <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                  <span className="w-2 h-2 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
-                  <span className="font-mono text-xs tracking-widest text-[#3a86ff] font-semibold uppercase">
-                    02 // OPTICAL SHIELD & DISPLAY
-                  </span>
-                  <span className="text-white/20 text-xs">/</span>
-                  <span className="font-mono text-[11px] text-slate-500">STAGE 02 OF 04</span>
+                {/* Stage Tag & Step Indicator */}
+                <div className="flex items-center justify-between gap-2 mb-2 sm:mb-2.5">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#3a86ff]/10 border border-[#3a86ff]/25 text-[#3a86ff]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
+                    <span className="font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase">
+                      02 // OPTICAL SHIELD
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-1.5 font-mono text-[10px] sm:text-xs text-slate-400">
+                    <span className="text-white font-bold">02</span>
+                    <span className="text-white/20">/</span>
+                    <span className="text-slate-500">04</span>
+                    <div className="flex items-center gap-1 ml-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+                      <span className="w-3.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_6px_#3a86ff]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Main Heading */}
-                <h3 className="font-heading font-extrabold text-xl sm:text-2xl lg:text-[34px] text-white mb-1.5 tracking-tight leading-tight">
+                <h3 className="font-heading font-extrabold text-lg sm:text-2xl text-white tracking-tight leading-tight mb-1">
                   Ultra Retina AMOLED & Sapphire
                 </h3>
 
                 {/* Subtitle */}
-                <p className="font-mono text-xs sm:text-sm text-[#3a86ff]/90 mb-3 font-medium tracking-wide">
+                <p className="font-mono text-[11px] sm:text-xs text-[#3a86ff] font-medium tracking-wide mb-2 sm:mb-2.5">
                   Dual-Curved Synthetic Sapphire // 120Hz Dynamic
                 </p>
 
                 {/* Description */}
-                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-5 max-w-md line-clamp-3 sm:line-clamp-none">
+                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-3.5 line-clamp-2 sm:line-clamp-none">
                   Custom curved synthetic sapphire crystal protects a 480 × 480 ultra-dense AMOLED display with sub-nanosecond response and razor-sharp legibility under direct alpine sunlight.
                 </p>
 
-                {/* Big Bold Clean Numbers */}
-                <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-3 sm:pt-4 border-t border-white/15 max-w-md">
-                  <div>
-                    <div className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
+                {/* Segmented Glass Metric Cells */}
+                <div className="grid grid-cols-2 gap-2 sm:gap-2.5 pt-2.5 sm:pt-3 border-t border-white/10">
+                  <div className="bg-white/5 border border-white/5 rounded-xl p-2 sm:p-2.5">
+                    <span className="block font-mono text-[8px] sm:text-[9px] text-slate-400 uppercase tracking-wider mb-0.5">
+                      PEAK LUMINANCE
+                    </span>
+                    <div className="font-heading font-black text-lg sm:text-xl text-white tracking-tight">
                       3,000 <span className="text-xs font-mono font-bold text-[#3a86ff]">NITS</span>
                     </div>
-                    <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
+                    <span className="block text-[9px] sm:text-[10px] font-mono text-slate-400 mt-0.5 truncate">
                       Alpine Peak Lumens
-                    </div>
+                    </span>
                   </div>
 
-                  <div>
-                    <div className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
+                  <div className="bg-white/5 border border-white/5 rounded-xl p-2 sm:p-2.5">
+                    <span className="block font-mono text-[8px] sm:text-[9px] text-slate-400 uppercase tracking-wider mb-0.5">
+                      SURFACE HARDNESS
+                    </span>
+                    <div className="font-heading font-black text-lg sm:text-xl text-white tracking-tight">
                       MOHS 9 <span className="text-xs font-mono font-bold text-[#3a86ff]">SCALE</span>
                     </div>
-                    <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
+                    <span className="block text-[9px] sm:text-[10px] font-mono text-slate-400 mt-0.5 truncate">
                       Synthetic Sapphire Shield
-                    </div>
+                    </span>
                   </div>
                 </div>
 
                 {/* Clean Feature Line */}
-                <div className="hidden sm:flex mt-4 pt-3 border-t border-[#001d3d]/20 items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
+                <div className="mt-2.5 pt-2 border-t border-white/5 flex items-center gap-2 text-[10px] sm:text-[11px] font-mono text-slate-300">
                   <Cpu className="w-3.5 h-3.5 text-[#3a86ff] flex-shrink-0" />
-                  <span>480 × 480 Resolution // 454 PPI True Retina</span>
+                  <span className="truncate">480 × 480 Resolution // 454 PPI True Retina</span>
                 </div>
               </div>
 
               {/* STATION 4: 10 ATM & 72h Matrix */}
               <div
                 ref={card4Ref}
-                className="col-start-1 row-start-1 w-full max-w-[420px] pointer-events-none select-none text-left"
+                className="col-start-1 row-start-1 w-full max-w-[430px] pointer-events-none select-none text-left bg-[#000e1f]/92 sm:bg-[#000e1f]/95 backdrop-blur-2xl border border-[#001d3d]/50 hover:border-[#3a86ff]/50 rounded-2xl p-3.5 sm:p-5 shadow-[0_16px_45px_rgba(0,0,0,0.85)] transition-all"
                 style={{ opacity: 0 }}
               >
-                {/* Stage Tag */}
-                <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                  <span className="w-2 h-2 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
-                  <span className="font-mono text-xs tracking-widest text-[#3a86ff] font-semibold uppercase">
-                    04 // HERMETIC SEAL & POWER
-                  </span>
-                  <span className="text-white/20 text-xs">/</span>
-                  <span className="font-mono text-[11px] text-slate-500">STAGE 04 OF 04</span>
+                {/* Stage Tag & Step Indicator */}
+                <div className="flex items-center justify-between gap-2 mb-2 sm:mb-2.5">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#3a86ff]/10 border border-[#3a86ff]/25 text-[#3a86ff]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
+                    <span className="font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase">
+                      04 // HERMETIC SEAL & POWER
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-1.5 font-mono text-[10px] sm:text-xs text-slate-400">
+                    <span className="text-white font-bold">04</span>
+                    <span className="text-white/20">/</span>
+                    <span className="text-slate-500">04</span>
+                    <div className="flex items-center gap-1 ml-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+                      <span className="w-3.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_6px_#3a86ff]" />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Main Heading */}
-                <h3 className="font-heading font-extrabold text-xl sm:text-2xl lg:text-[34px] text-white mb-1.5 tracking-tight leading-tight">
+                <h3 className="font-heading font-extrabold text-lg sm:text-2xl text-white tracking-tight leading-tight mb-1">
                   10 ATM (100M) & 72h Matrix
                 </h3>
 
                 {/* Subtitle */}
-                <p className="font-mono text-xs sm:text-sm text-[#3a86ff]/90 mb-3 font-medium tracking-wide">
+                <p className="font-mono text-[11px] sm:text-xs text-[#3a86ff] font-medium tracking-wide mb-2 sm:mb-2.5">
                   Solid Polymer Battery // 100% Helium Chamber Tested
                 </p>
 
                 {/* Description */}
-                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-5 max-w-md line-clamp-3 sm:line-clamp-none">
+                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-3.5 line-clamp-2 sm:line-clamp-none">
                   Chamber-tested with 100% helium sniffer verification to ensure absolute water resistance up to 10 ATM. Solid polymer battery matrix delivers up to 72 hours of uninterrupted biometrics.
                 </p>
 
-                {/* Big Bold Clean Numbers */}
-                <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-3 sm:pt-4 border-t border-white/15 max-w-md">
-                  <div>
-                    <div className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
+                {/* Segmented Glass Metric Cells */}
+                <div className="grid grid-cols-2 gap-2 sm:gap-2.5 pt-2.5 sm:pt-3 border-t border-white/10">
+                  <div className="bg-white/5 border border-white/5 rounded-xl p-2 sm:p-2.5">
+                    <span className="block font-mono text-[8px] sm:text-[9px] text-slate-400 uppercase tracking-wider mb-0.5">
+                      DEPTH RATING
+                    </span>
+                    <div className="font-heading font-black text-lg sm:text-xl text-white tracking-tight">
                       100 <span className="text-xs font-mono font-bold text-[#3a86ff]">METERS</span>
                     </div>
-                    <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
+                    <span className="block text-[9px] sm:text-[10px] font-mono text-slate-400 mt-0.5 truncate">
                       10 ATM Depth Rating
-                    </div>
+                    </span>
                   </div>
 
-                  <div>
-                    <div className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
+                  <div className="bg-white/5 border border-white/5 rounded-xl p-2 sm:p-2.5">
+                    <span className="block font-mono text-[8px] sm:text-[9px] text-slate-400 uppercase tracking-wider mb-0.5">
+                      EXPEDITION LIFE
+                    </span>
+                    <div className="font-heading font-black text-lg sm:text-xl text-white tracking-tight">
                       72 <span className="text-xs font-mono font-bold text-[#3a86ff]">HOURS</span>
                     </div>
-                    <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
+                    <span className="block text-[9px] sm:text-[10px] font-mono text-slate-400 mt-0.5 truncate">
                       Solid Polymer Endurance
-                    </div>
+                    </span>
                   </div>
                 </div>
 
                 {/* Clean Feature Line */}
-                <div className="hidden sm:flex mt-4 pt-3 border-t border-[#001d3d]/20 items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
+                <div className="mt-2.5 pt-2 border-t border-white/5 flex items-center gap-2 text-[10px] sm:text-[11px] font-mono text-slate-300">
                   <Zap className="w-3.5 h-3.5 text-[#3a86ff] flex-shrink-0" />
-                  <span>Rapid Magnetic Induction // 0–80% in 35 Minutes</span>
+                  <span className="truncate">Rapid Magnetic Induction // 0–80% in 35 Minutes</span>
                 </div>
               </div>
 
