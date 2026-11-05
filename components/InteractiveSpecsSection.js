@@ -456,6 +456,27 @@ export default function InteractiveSpecsSection() {
         />
 
         {/* ========================================================
+            SUBTLE TECHNICAL CAD / BLUEPRINT GRID TEXTURE
+            - Placed strictly in BACKGROUND (z-0) BEHIND the 3D watch canvas!
+            - Styled in Oxford Azure & Midnight Blue
+           ======================================================== */}
+        <div
+          className="absolute inset-0 pointer-events-none z-0"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle, rgba(58, 134, 255, 0.22) 1px, transparent 1px),
+              linear-gradient(to right, rgba(58, 134, 255, 0.08) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(58, 134, 255, 0.08) 1px, transparent 1px)
+            `,
+            backgroundSize: '48px 48px',
+            maskImage: 'radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, transparent 92%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, transparent 92%)',
+          }}
+        />
+
+
+
+        {/* ========================================================
             3. GIANT MONUMENTAL "VELTRIX" IN THEME COLOR BEHIND WATCH
                - Placed strictly in BACKGROUND (z-0) BEHIND the 3D watch canvas!
            ======================================================== */}
