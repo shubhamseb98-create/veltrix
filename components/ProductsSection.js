@@ -152,7 +152,7 @@ export default function ProductsSection() {
   return (
     <section
       id="collection"
-      className="relative w-full min-h-screen lg:h-screen pt-[80px] pb-[80px] bg-black border-t border-[#001d3d]/20 select-none overflow-hidden font-sans flex flex-col justify-center"
+      className="relative w-full min-h-screen lg:h-screen pt-16 sm:pt-20 md:pt-24 pb-16 sm:pb-20 md:pb-24 bg-black border-t border-[#001d3d]/20 select-none overflow-hidden font-sans flex flex-col justify-center"
     >
       {/* Ambient Radial Spotlight */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#001d3d]/10 rounded-full blur-[180px] pointer-events-none" />
@@ -183,14 +183,14 @@ export default function ProductsSection() {
               <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/95 via-black/45 to-transparent pointer-events-none" />
 
               {/* Bottom Content Bar: Title + Hover Arrow Pill */}
-              <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7 z-10 flex items-end justify-between">
+              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7 z-10 flex items-end justify-between">
                 <div>
                   <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                     {ed.name}
                   </h3>
                 </div>
 
-                <div className="w-9 h-9 rounded-full bg-gradient-to-r from-[#173296] to-[#2563EB] backdrop-blur-md border border-[#3b82f6]/50 flex items-center justify-center text-white font-bold shadow-[0_0_18px_rgba(37,99,235,0.65)] opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 shadow-lg">
+                <div className="w-9 h-9 rounded-full bg-gradient-to-r from-[#173296] to-[#2563EB] backdrop-blur-md border border-[#3b82f6]/50 flex items-center justify-center text-white font-bold shadow-[0_0_18px_rgba(37,99,235,0.65)] opacity-100 sm:opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 shadow-lg">
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
               </div>

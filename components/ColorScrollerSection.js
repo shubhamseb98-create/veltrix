@@ -166,14 +166,21 @@ export default function ColorScrollerSection() {
       const scaleH = canvasH / imgH;
 
       const isMobile = window.innerWidth < 1024;
-      // Proportional luxury framing: 0.70 scale ensures watch floats cleanly with breathing room
-      const scale = Math.min(scaleW, scaleH) * (isMobile ? 0.65 : 0.70);
+      let scale;
+      let drawY;
+      if (isMobile) {
+        // Responsive Mobile Framing: calculate scale based on watch body (602px) so it renders prominently (~260-290px)
+        const targetW = Math.min(canvasW * 0.70, canvasH * 0.38);
+        scale = targetW / 602;
+        drawY = Math.round((canvasH - Math.round(imgH * scale)) / 2) - Math.round(canvasH * 0.08);
+      } else {
+        scale = Math.min(scaleW, scaleH) * 0.70;
+        drawY = Math.round((canvasH - Math.round(imgH * scale)) / 2) - Math.round(canvasH * 0.04);
+      }
 
       const drawW = Math.round(imgW * scale);
       const drawH = Math.round(imgH * scale);
-      // Center watch horizontally and lift slightly by 4% to guarantee zero collision with bottom controls
       const drawX = Math.round((canvasW - drawW) / 2);
-      const drawY = Math.round((canvasH - drawH) / 2) - Math.round(canvasH * 0.04);
 
       // Draw primary base frame
       ctx.globalAlpha = 1.0;
@@ -340,13 +347,13 @@ export default function ColorScrollerSection() {
         />
 
         {/* Top Header & Frame Scrubber */}
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pt-20 sm:pt-24 md:pt-28 flex flex-col md:flex-row md:items-end justify-between gap-3 pointer-events-auto">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pt-16 sm:pt-20 md:pt-24 flex flex-col md:flex-row md:items-end justify-between gap-2.5 sm:gap-3 pointer-events-auto">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#3a86ff]/10 border border-[#001d3d]/25 text-[#3a86ff] font-mono text-[10px] sm:text-xs tracking-widest uppercase mb-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] animate-pulse" />
               <span>METALLURGY ATELIER</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
               Crafted in Every Light.
             </h2>
           </div>
@@ -370,10 +377,10 @@ export default function ColorScrollerSection() {
         </div>
 
         {/* Active Stage Callout Card */}
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 mb-6 sm:mb-10 md:mb-10 pointer-events-auto">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 mb-3 sm:mb-6 md:mb-10 pointer-events-auto">
           <div className="flex flex-col lg:flex-row items-stretch lg:items-end justify-between gap-4 sm:gap-6">
             {/* Left Detail Card */}
-            <div className="w-full max-w-[320px] sm:max-w-[350px] lg:max-w-[360px] bg-[#000e1f]/92 backdrop-blur-xl border border-[#001d3d]/30 hover:border-[#3a86ff]/60 shadow-[0_20px_50px_rgba(0,0,0,0.7)] rounded-2xl p-4 sm:p-5 transition-all duration-300">
+            <div className="w-full max-w-full sm:max-w-[340px] lg:max-w-[360px] bg-[#000e1f]/92 backdrop-blur-xl border border-[#001d3d]/30 hover:border-[#3a86ff]/60 shadow-[0_20px_50px_rgba(0,0,0,0.7)] rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 transition-all duration-300">
               <div className="flex items-center justify-between mb-2">
                 <span className={`font-mono text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md border ${currentStage.accentClass}`}>
                   {currentStage.tag}
@@ -454,7 +461,7 @@ export default function ColorScrollerSection() {
 
         {/* Scroll Instruction Hint at bottom center */}
         <div className="relative z-20 pb-4 text-center pointer-events-auto">
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-slate-400 animate-bounce">
+          <div className="hidden sm:inline-flex items-center gap-2 text-xs font-mono text-slate-400 animate-bounce">
             <span>SCROLL DOWN TO EXPLORE FINISHES</span>
             <span>↓</span>
           </div>

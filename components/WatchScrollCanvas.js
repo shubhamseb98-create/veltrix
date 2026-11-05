@@ -71,8 +71,17 @@ export default function WatchScrollCanvas() {
       const scaleW = canvasW / imgW;
       const scaleH = canvasH / imgH;
 
-      // Full width (100vw) and full 100vh height (cover scale)
-      const scale = Math.max(scaleW, scaleH);
+      // Responsive Luxury Framing:
+      // Desktop / Landscape: full-bleed cover (100vw x 100vh) without borders
+      // Mobile Portrait: frame watch body comfortably within viewport width
+      const isPortrait = canvasH > canvasW;
+      let scale;
+      if (isPortrait && canvasW < 1024) {
+        const maxScaleForMobile = (canvasW * 0.90) / 602;
+        scale = Math.min(scaleH, maxScaleForMobile);
+      } else {
+        scale = Math.max(scaleW, scaleH);
+      }
 
       const drawW = imgW * scale;
       const drawH = imgH * scale;

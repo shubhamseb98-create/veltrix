@@ -62,11 +62,11 @@ function getSmoothTrajectory(p, isMobile) {
   // Vertical trajectory (y: offset relative to viewport height)
   if (isMobile) {
     if (p < 0.12) {
-      y = 0.04; // Gives comfortable breathing room below header on mobile
+      y = 0.02; // Gives comfortable breathing room below header on mobile
     } else if (p < 0.85) {
-      y = -0.20; // Sits in upper half so text has lower half
+      y = -0.22; // Sits in upper half so text has lower half
     } else {
-      y = -0.24;
+      y = -0.25; // Sits above Station 5
     }
   } else {
     if (p < 0.10) {
@@ -164,8 +164,14 @@ export default function InteractiveSpecsSection() {
       const scaleH = canvasH / imgH;
 
       const isMobile = window.innerWidth < 1024;
-      // Proportional luxury framing: 0.66 ensures entire watch fits cleanly with breathing room
-      const scale = Math.min(scaleW, scaleH) * (isMobile ? 0.62 : 0.58);
+      let scale;
+      if (isMobile) {
+        // Responsive Mobile Framing: scale watch to fit upper half (~250-280px)
+        const targetH = Math.min(canvasH * 0.34, canvasW * 0.70);
+        scale = targetH / 741;
+      } else {
+        scale = Math.min(scaleW, scaleH) * 0.58;
+      }
 
       const drawW = Math.round(imgW * scale);
       const drawH = Math.round(imgH * scale);
@@ -504,7 +510,7 @@ export default function InteractiveSpecsSection() {
                 LEFT COLUMN (Station 1: Titanium & Station 3: Neural)
                 - Justified towards center for natural ~80-100px tight gap with watch
                ---------------------------------------------------- */}
-            <div className="pointer-events-none grid grid-cols-1 grid-rows-1 justify-items-end pr-0 lg:pr-10 bottom-6 sm:bottom-10 lg:bottom-auto absolute lg:relative inset-x-6 lg:inset-x-auto">
+            <div className="pointer-events-none grid grid-cols-1 grid-rows-1 justify-items-end pr-0 lg:pr-10 bottom-4 sm:bottom-8 lg:bottom-auto absolute lg:relative inset-x-4 sm:inset-x-6 lg:inset-x-auto">
               
               {/* STATION 1: Grade 5 Titanium Monolith */}
               <div
@@ -523,7 +529,7 @@ export default function InteractiveSpecsSection() {
                 </div>
 
                 {/* Main Heading */}
-                <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] text-white mb-1.5 tracking-tight leading-tight">
+                <h3 className="font-heading font-extrabold text-xl sm:text-2xl lg:text-[34px] text-white mb-1.5 tracking-tight leading-tight">
                   Grade 5 Titanium Monolith
                 </h3>
 
@@ -533,14 +539,14 @@ export default function InteractiveSpecsSection() {
                 </p>
 
                 {/* Description */}
-                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-5 max-w-md">
+                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-5 max-w-md line-clamp-3 sm:line-clamp-none">
                   Milled from a single solid aerospace ingot with diamond-cut chamfers and hand-finished satin brushing. Engineered for extreme structural rigidity with a 64-gram featherlight footprint.
                 </p>
 
                 {/* Big Bold Clean Numbers (No heavy card boxes) */}
-                <div className="grid grid-cols-2 gap-6 pt-4 border-t border-white/15 max-w-md">
+                <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-3 sm:pt-4 border-t border-white/15 max-w-md">
                   <div>
-                    <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+                    <div className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
                       3,200 <span className="text-xs font-mono font-bold text-[#3a86ff]">HV</span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
@@ -549,7 +555,7 @@ export default function InteractiveSpecsSection() {
                   </div>
 
                   <div>
-                    <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+                    <div className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
                       64 <span className="text-xs font-mono font-bold text-[#3a86ff]">GRAMS</span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
@@ -582,7 +588,7 @@ export default function InteractiveSpecsSection() {
                 </div>
 
                 {/* Main Heading */}
-                <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] text-white mb-1.5 tracking-tight leading-tight">
+                <h3 className="font-heading font-extrabold text-xl sm:text-2xl lg:text-[34px] text-white mb-1.5 tracking-tight leading-tight">
                   Neural S-01 Co-Processor
                 </h3>
 
@@ -592,14 +598,14 @@ export default function InteractiveSpecsSection() {
                 </p>
 
                 {/* Description */}
-                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-5 max-w-md">
+                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-5 max-w-md line-clamp-3 sm:line-clamp-none">
                   Multi-layer high-density substrate housing the 4nm neural co-processor paired with an 8-channel optical array delivering 1,000Hz continuous cardiac and oxygen telemetry.
                 </p>
 
                 {/* Big Bold Clean Numbers */}
-                <div className="grid grid-cols-2 gap-6 pt-4 border-t border-white/15 max-w-md">
+                <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-3 sm:pt-4 border-t border-white/15 max-w-md">
                   <div>
-                    <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+                    <div className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
                       4 <span className="text-xs font-mono font-bold text-[#3a86ff]">NM</span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
@@ -608,7 +614,7 @@ export default function InteractiveSpecsSection() {
                   </div>
 
                   <div>
-                    <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+                    <div className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
                       1,000 <span className="text-xs font-mono font-bold text-[#3a86ff]">HZ</span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
@@ -630,7 +636,7 @@ export default function InteractiveSpecsSection() {
                 RIGHT COLUMN (Station 2: Optics & Station 4: Seal)
                 - Justified towards center for natural ~80-100px tight gap with watch
                ---------------------------------------------------- */}
-            <div className="pointer-events-none grid grid-cols-1 grid-rows-1 justify-items-start pl-0 lg:pl-10 col-start-1 lg:col-start-2 bottom-6 sm:bottom-10 lg:bottom-auto absolute lg:relative inset-x-6 lg:inset-x-auto">
+            <div className="pointer-events-none grid grid-cols-1 grid-rows-1 justify-items-start pl-0 lg:pl-10 col-start-1 lg:col-start-2 bottom-4 sm:bottom-8 lg:bottom-auto absolute lg:relative inset-x-4 sm:inset-x-6 lg:inset-x-auto">
               
               {/* STATION 2: Ultra Retina AMOLED & Sapphire */}
               <div
@@ -649,7 +655,7 @@ export default function InteractiveSpecsSection() {
                 </div>
 
                 {/* Main Heading */}
-                <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] text-white mb-1.5 tracking-tight leading-tight">
+                <h3 className="font-heading font-extrabold text-xl sm:text-2xl lg:text-[34px] text-white mb-1.5 tracking-tight leading-tight">
                   Ultra Retina AMOLED & Sapphire
                 </h3>
 
@@ -659,14 +665,14 @@ export default function InteractiveSpecsSection() {
                 </p>
 
                 {/* Description */}
-                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-5 max-w-md">
+                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-5 max-w-md line-clamp-3 sm:line-clamp-none">
                   Custom curved synthetic sapphire crystal protects a 480 × 480 ultra-dense AMOLED display with sub-nanosecond response and razor-sharp legibility under direct alpine sunlight.
                 </p>
 
                 {/* Big Bold Clean Numbers */}
-                <div className="grid grid-cols-2 gap-6 pt-4 border-t border-white/15 max-w-md">
+                <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-3 sm:pt-4 border-t border-white/15 max-w-md">
                   <div>
-                    <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+                    <div className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
                       3,000 <span className="text-xs font-mono font-bold text-[#3a86ff]">NITS</span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
@@ -675,7 +681,7 @@ export default function InteractiveSpecsSection() {
                   </div>
 
                   <div>
-                    <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+                    <div className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
                       MOHS 9 <span className="text-xs font-mono font-bold text-[#3a86ff]">SCALE</span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
@@ -708,7 +714,7 @@ export default function InteractiveSpecsSection() {
                 </div>
 
                 {/* Main Heading */}
-                <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] text-white mb-1.5 tracking-tight leading-tight">
+                <h3 className="font-heading font-extrabold text-xl sm:text-2xl lg:text-[34px] text-white mb-1.5 tracking-tight leading-tight">
                   10 ATM (100M) & 72h Matrix
                 </h3>
 
@@ -718,14 +724,14 @@ export default function InteractiveSpecsSection() {
                 </p>
 
                 {/* Description */}
-                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-5 max-w-md">
+                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-5 max-w-md line-clamp-3 sm:line-clamp-none">
                   Chamber-tested with 100% helium sniffer verification to ensure absolute water resistance up to 10 ATM. Solid polymer battery matrix delivers up to 72 hours of uninterrupted biometrics.
                 </p>
 
                 {/* Big Bold Clean Numbers */}
-                <div className="grid grid-cols-2 gap-6 pt-4 border-t border-white/15 max-w-md">
+                <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-3 sm:pt-4 border-t border-white/15 max-w-md">
                   <div>
-                    <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+                    <div className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
                       100 <span className="text-xs font-mono font-bold text-[#3a86ff]">METERS</span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
@@ -734,7 +740,7 @@ export default function InteractiveSpecsSection() {
                   </div>
 
                   <div>
-                    <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+                    <div className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-white tracking-tight">
                       72 <span className="text-xs font-mono font-bold text-[#3a86ff]">HOURS</span>
                     </div>
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-0.5">
@@ -779,7 +785,7 @@ export default function InteractiveSpecsSection() {
             </p>
 
             {/* 4 Clean Minimal Columns - Matching Footer Trust Pillars & max-w-7xl Container Width */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-left pt-5 border-t border-white/15">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 text-left pt-3 sm:pt-5 border-t border-white/15">
               <div>
                 <span className="font-mono text-[10px] text-slate-500 uppercase tracking-wider block mb-1">CHASSIS</span>
                 <strong className="text-white text-sm sm:text-base font-extrabold block">Grade 5 Ti-6Al-4V</strong>

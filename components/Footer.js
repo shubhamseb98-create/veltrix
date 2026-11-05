@@ -38,7 +38,7 @@ export default function Footer() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
 
         {/* ========================================================
             2. TOP HEADER NAVIGATION (CONTACT | LINKS | STALK US)
@@ -59,9 +59,9 @@ export default function Footer() {
           </div>
 
           {/* Center Navigation Links (Row 1 + Row 2 with Capsule Badge) */}
-          <div className="flex flex-col items-center gap-3.5 sm:gap-4 w-full lg:w-2/4">
+          <div className="flex flex-col items-center gap-3 sm:gap-4 w-full lg:w-2/4">
             {/* Row 1 */}
-            <nav className="flex flex-wrap items-center justify-center gap-5 sm:gap-8 md:gap-10 text-xs sm:text-sm font-bold tracking-widest text-white uppercase font-heading">
+            <nav className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-10 text-xs sm:text-sm font-bold tracking-widest text-white uppercase font-heading">
               <a href="#" className="hover:text-[#3a86ff] transition-colors">
                 HOME
               </a>
@@ -77,7 +77,7 @@ export default function Footer() {
             </nav>
 
             {/* Row 2: Secondary link + Capsule Pill */}
-            <div className="flex items-center justify-center gap-5 sm:gap-6 text-xs sm:text-sm font-bold tracking-widest text-white uppercase font-heading">
+            <div className="flex items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-bold tracking-widest text-white uppercase font-heading">
               <a href="#watch-faces" className="hover:text-[#3a86ff] transition-colors">
                 WATCH FACES
               </a>
@@ -139,7 +139,7 @@ export default function Footer() {
         {/* ========================================================
             3. GIANT MONUMENTAL BRAND NAME "VELTRIX" (Matching KNYX in Image)
            ======================================================== */}
-        <div className="py-10 sm:py-14 md:py-16 lg:py-20 text-center select-none overflow-hidden">
+        <div className="py-8 sm:py-12 md:py-16 lg:py-20 text-center select-none overflow-hidden">
           <h1 className="font-heading font-black text-[18vw] sm:text-[19vw] md:text-[20vw] lg:text-[210px] xl:text-[240px] leading-none text-white tracking-tight drop-shadow-[0_12px_40px_rgba(0,0,0,0.9)]">
             VELTRIX
           </h1>
@@ -150,8 +150,8 @@ export default function Footer() {
       {/* ========================================================
           4. BOTTOM BAR: COPYRIGHT & BLUE BACK-TO-TOP BUTTON
          ======================================================== */}
-      <div className="relative z-10 w-full border-t border-white/10 py-5 sm:py-6 px-6 sm:px-8 flex items-center justify-center">
-        <p className="text-xs sm:text-sm text-slate-400 font-medium text-center">
+      <div className="relative z-10 w-full border-t border-white/10 py-5 sm:py-6 px-4 sm:px-6 md:px-8 flex items-center justify-center">
+        <p className="text-xs sm:text-sm text-slate-400 font-medium text-center pr-12 sm:pr-0">
           &copy; Copyright {new Date().getFullYear()} VELTRIX. All Rights Reserved.
         </p>
 
@@ -159,9 +159,9 @@ export default function Footer() {
         <button
           onClick={scrollToTop}
           aria-label="Scroll to apex"
-          className="absolute right-4 sm:right-6 md:right-8 bottom-3.5 sm:bottom-4 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#3350FF] hover:bg-[#2542e6] text-white flex items-center justify-center shadow-[0_0_25px_rgba(51,80,255,0.6)] transition-all hover:scale-110 active:scale-95 group"
+          className="absolute right-4 sm:right-6 md:right-8 bottom-3 sm:bottom-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#3350FF] hover:bg-[#2542e6] text-white flex items-center justify-center shadow-[0_0_25px_rgba(51,80,255,0.6)] transition-all hover:scale-110 active:scale-95 group"
         >
-          <ArrowUp className="w-5 h-5 transition-transform group-hover:-translate-y-0.5" />
+          <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:-translate-y-0.5" />
         </button>
       </div>
 

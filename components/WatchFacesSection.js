@@ -73,7 +73,7 @@ export default function WatchFacesSection() {
   return (
     <section
       id="watch-faces"
-      className="relative w-full min-h-screen lg:h-screen pt-[80px] pb-[80px] bg-[#000814] text-white font-sans select-none overflow-hidden flex flex-col justify-center items-center border-t border-[#001d3d]/25 border-b border-[#001d3d]/25"
+      className="relative w-full min-h-screen lg:h-screen pt-16 sm:pt-20 md:pt-24 pb-16 sm:pb-20 md:pb-24 bg-[#000814] text-white font-sans select-none overflow-hidden flex flex-col justify-center items-center border-t border-[#001d3d]/25 border-b border-[#001d3d]/25"
       style={{
         background: 'radial-gradient(ellipse 95% 85% at 50% 50%, #001d3d 0%, #000c1a 55%, #00050d 100%)',
       }}
@@ -81,7 +81,7 @@ export default function WatchFacesSection() {
       {/* Subtle Ambient Radial Backlight */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] bg-[#001d3d]/15 rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 w-full relative z-10 flex flex-col justify-center my-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10 flex flex-col justify-center my-auto">
 
         {/* CLEAN MINIMAL HEADER */}
         <div className="text-center max-w-2xl mx-auto mb-3 sm:mb-4 lg:mb-6">
@@ -135,7 +135,7 @@ export default function WatchFacesSection() {
           {WATCH_FACES.map((face) => (
             <div
               key={face.id}
-              className="flex-shrink-0 w-[200px] sm:w-[220px] md:w-[240px] xl:w-auto snap-start"
+              className="flex-shrink-0 w-[180px] sm:w-[210px] md:w-[240px] xl:w-auto snap-start"
             >
               <div className="bg-gradient-to-b from-[#001d3d]/90 via-[#001428]/95 to-[#000814] hover:from-[#002855] rounded-[22px] sm:rounded-[24px] p-2.5 sm:p-3 border border-[#001d3d]/25 hover:border-[#3a86ff]/50 hover:shadow-[0_15px_35px_rgba(0,29,61,0.35)] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group h-full shadow-[0_12px_30px_rgba(0,0,0,0.7)]">
                 
