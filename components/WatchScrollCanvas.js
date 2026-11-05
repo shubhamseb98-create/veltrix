@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const TOTAL_FRAMES = 239;
 const FRAME_PREFIX = '/frames/frame_';
-const FRAME_EXT = '.webp';
+const FRAME_EXT = '.webp?v=f1_v1';
 
 function getFramePath(index) {
   return `${FRAME_PREFIX}${String(index).padStart(4, '0')}${FRAME_EXT}`;
