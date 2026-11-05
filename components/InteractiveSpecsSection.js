@@ -435,23 +435,19 @@ export default function InteractiveSpecsSection() {
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center">
 
         {/* ========================================================
-            ATMOSPHERIC ROYAL BLUE GLOW BLOOMS (Matching Reference Design)
+            ATMOSPHERIC ROYAL BLUE AMBIENT LIGHTING
+            - Diffused multi-stop radial gradient layer covering background
+            - Smooth feathered lighting without harsh circular blob edges
+            - Bottom-left studio wash + top-right specular atmosphere + subtle center backlight
            ======================================================== */}
-        {/* Bottom-Left Rich Royal Blue Bloom (Exactly as circled in bottom-left) */}
         <div
-          className="absolute -left-20 sm:-left-32 -bottom-20 sm:-bottom-28 w-[500px] sm:w-[700px] h-[500px] sm:h-[700px] rounded-full pointer-events-none z-0"
+          className="absolute inset-0 pointer-events-none z-0"
           style={{
-            background: 'radial-gradient(circle at 35% 65%, rgba(31, 52, 145, 0.75) 0%, rgba(15, 23, 85, 0.40) 45%, transparent 72%)',
-            filter: 'blur(95px)',
-          }}
-        />
-
-        {/* Top-Right Soft Royal Blue Bloom (Exactly as circled in top-right) */}
-        <div
-          className="absolute -right-16 sm:-right-24 -top-16 sm:-top-24 w-[480px] sm:w-[620px] h-[450px] sm:h-[580px] rounded-full pointer-events-none z-0"
-          style={{
-            background: 'radial-gradient(circle at 70% 30%, rgba(35, 47, 159, 0.65) 0%, rgba(18, 25, 95, 0.35) 45%, transparent 72%)',
-            filter: 'blur(90px)',
+            background: `
+              radial-gradient(ellipse 75% 65% at 5% 95%, rgba(31, 52, 145, 0.35) 0%, rgba(15, 23, 85, 0.18) 35%, rgba(5, 10, 45, 0.05) 60%, transparent 80%),
+              radial-gradient(ellipse 70% 60% at 95% 10%, rgba(35, 47, 159, 0.30) 0%, rgba(18, 25, 95, 0.15) 35%, rgba(6, 12, 50, 0.04) 60%, transparent 78%),
+              radial-gradient(circle 600px at 50% 50%, rgba(58, 134, 255, 0.07) 0%, rgba(31, 52, 145, 0.02) 50%, transparent 75%)
+            `,
           }}
         />
 
@@ -464,9 +460,9 @@ export default function InteractiveSpecsSection() {
           className="absolute inset-0 pointer-events-none z-0"
           style={{
             backgroundImage: `
-              radial-gradient(circle, rgba(58, 134, 255, 0.22) 1px, transparent 1px),
-              linear-gradient(to right, rgba(58, 134, 255, 0.08) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(58, 134, 255, 0.08) 1px, transparent 1px)
+              radial-gradient(circle, rgba(58, 134, 255, 0.18) 1px, transparent 1px),
+              linear-gradient(to right, rgba(58, 134, 255, 0.06) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(58, 134, 255, 0.06) 1px, transparent 1px)
             `,
             backgroundSize: '48px 48px',
             maskImage: 'radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, transparent 92%)',

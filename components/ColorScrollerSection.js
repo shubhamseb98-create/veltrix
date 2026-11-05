@@ -340,23 +340,17 @@ export default function ColorScrollerSection() {
       {/* Sticky Viewport Container: Pure Solid Black Stage for 100% Crisp 3D Watch Contrast */}
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex flex-col justify-between pointer-events-none bg-black">
         {/* ========================================================
-            ATMOSPHERIC ROYAL BLUE GLOW BLOOMS & BLUEPRINT GRID TEXTURE
+            ATMOSPHERIC ROYAL BLUE AMBIENT LIGHTING & BLUEPRINT GRID TEXTURE
            ======================================================== */}
-        {/* Left Soft Royal Blue Bloom */}
+        {/* Atmospheric Royal Blue Ambient Lighting */}
         <div
-          className="absolute -left-20 sm:-left-32 top-1/3 w-[450px] sm:w-[620px] h-[450px] sm:h-[620px] rounded-full pointer-events-none z-0"
+          className="absolute inset-0 pointer-events-none z-0"
           style={{
-            background: 'radial-gradient(circle at 35% 50%, rgba(31, 52, 145, 0.65) 0%, rgba(15, 23, 85, 0.35) 45%, transparent 72%)',
-            filter: 'blur(90px)',
-          }}
-        />
-
-        {/* Right Soft Royal Blue Bloom */}
-        <div
-          className="absolute -right-20 sm:-right-28 top-1/4 w-[420px] sm:w-[580px] h-[420px] sm:h-[580px] rounded-full pointer-events-none z-0"
-          style={{
-            background: 'radial-gradient(circle at 65% 40%, rgba(35, 47, 159, 0.55) 0%, rgba(18, 25, 95, 0.25) 45%, transparent 72%)',
-            filter: 'blur(85px)',
+            background: `
+              radial-gradient(ellipse 75% 65% at 10% 40%, rgba(31, 52, 145, 0.32) 0%, rgba(15, 23, 85, 0.16) 35%, rgba(5, 10, 45, 0.04) 60%, transparent 80%),
+              radial-gradient(ellipse 70% 60% at 90% 30%, rgba(35, 47, 159, 0.28) 0%, rgba(18, 25, 95, 0.14) 35%, rgba(6, 12, 50, 0.03) 60%, transparent 78%),
+              radial-gradient(circle 600px at 50% 50%, rgba(58, 134, 255, 0.06) 0%, rgba(31, 52, 145, 0.02) 50%, transparent 75%)
+            `,
           }}
         />
 
@@ -365,9 +359,9 @@ export default function ColorScrollerSection() {
           className="absolute inset-0 pointer-events-none z-0"
           style={{
             backgroundImage: `
-              radial-gradient(circle, rgba(58, 134, 255, 0.22) 1px, transparent 1px),
-              linear-gradient(to right, rgba(58, 134, 255, 0.08) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(58, 134, 255, 0.08) 1px, transparent 1px)
+              radial-gradient(circle, rgba(58, 134, 255, 0.18) 1px, transparent 1px),
+              linear-gradient(to right, rgba(58, 134, 255, 0.06) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(58, 134, 255, 0.06) 1px, transparent 1px)
             `,
             backgroundSize: '48px 48px',
             maskImage: 'radial-gradient(ellipse 85% 75% at 50% 50%, #000 35%, transparent 92%)',
