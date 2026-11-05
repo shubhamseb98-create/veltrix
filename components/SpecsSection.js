@@ -40,7 +40,7 @@ export default function SpecsSection() {
               key={idx}
               className="py-6 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-4 items-baseline hover:bg-white/[0.03] px-4 -mx-4 rounded-lg transition-colors"
             >
-              <div className="font-mono text-xs text-[#39FF88] font-semibold tracking-wider">
+              <div className="font-mono text-xs text-[#5C72FF] font-semibold tracking-wider">
                 {item.category}
               </div>
               <div className="flex flex-col gap-1">

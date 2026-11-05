@@ -13,15 +13,15 @@ export default function HealthFeaturesSection() {
       id="health"
       className={`relative w-full min-h-screen lg:h-screen lg:max-h-screen pt-[80px] pb-[80px] select-none overflow-hidden flex flex-col justify-center transition-colors duration-500 border-t ${
         isDark
-          ? 'bg-[#000000] text-white border-[#6D8F63]/20'
+          ? 'bg-[#000000] text-white border-[#2C3480]/20'
           : 'bg-[#fafafa] text-zinc-900 border-zinc-200'
       }`}
     >
-      {/* Dynamic Background Ambience with #000000, #6D8F63 & #39FF88 */}
+      {/* Dynamic Background Ambience with #000000, #2C3480 & #5C72FF */}
       {isDark ? (
         <>
-          <div className="absolute top-1/3 left-1/4 -translate-x-1/2 w-[750px] h-[450px] bg-[#39FF88]/10 rounded-full blur-[170px] pointer-events-none" />
-          <div className="absolute bottom-1/4 right-1/4 w-[650px] h-[400px] bg-[#39FF88]/8 rounded-full blur-[160px] pointer-events-none" />
+          <div className="absolute top-1/3 left-1/4 -translate-x-1/2 w-[750px] h-[450px] bg-[#5C72FF]/10 rounded-full blur-[170px] pointer-events-none" />
+          <div className="absolute bottom-1/4 right-1/4 w-[650px] h-[400px] bg-[#5C72FF]/8 rounded-full blur-[160px] pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
         </>
       ) : (
@@ -36,8 +36,8 @@ export default function HealthFeaturesSection() {
         {/* SECTION HEADER: "Crafted for Style and Performance" */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mb-4 sm:mb-5 lg:mb-6 text-center sm:text-left">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6D8F63]/15 border border-[#6D8F63]/35 text-[#39FF88] text-[10px] sm:text-[11px] font-mono font-semibold tracking-wider uppercase mb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#39FF88] shadow-[0_0_8px_#39FF88] animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2C3480]/15 border border-[#2C3480]/35 text-[#5C72FF] text-[10px] sm:text-[11px] font-mono font-semibold tracking-wider uppercase mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#5C72FF] shadow-[0_0_8px_#5C72FF] animate-pulse" />
               <span>TACTICAL &amp; BIO-METRIC TELEMETRY</span>
             </div>
             <h2
@@ -55,16 +55,16 @@ export default function HealthFeaturesSection() {
               onClick={() => setActiveTheme(isDark ? 'light' : 'dark')}
               className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all duration-300 ${
                 isDark
-                  ? 'bg-[#6D8F63]/10 text-slate-200 hover:text-white border-[#6D8F63]/30 hover:border-[#39FF88]/40 backdrop-blur-md'
+                  ? 'bg-[#2C3480]/10 text-slate-200 hover:text-white border-[#2C3480]/30 hover:border-[#5C72FF]/40 backdrop-blur-md'
                   : 'bg-black/[0.04] text-zinc-700 hover:text-zinc-900 border-zinc-200 hover:border-zinc-300'
               }`}
               title="Toggle Tactical Bio Dark / Studio Light"
             >
               {isDark ? (
                 <>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#39FF88] shadow-[0_0_6px_#39FF88]" />
-                  <span className="text-[11px] font-mono font-semibold tracking-wider uppercase text-[#39FF88]">TACTICAL BIO</span>
-                  <Sun className="w-3.5 h-3.5 text-[#39FF88]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#5C72FF] shadow-[0_0_6px_#5C72FF]" />
+                  <span className="text-[11px] font-mono font-semibold tracking-wider uppercase text-[#5C72FF]">TACTICAL BIO</span>
+                  <Sun className="w-3.5 h-3.5 text-[#5C72FF]" />
                 </>
               ) : (
                 <>
@@ -86,19 +86,19 @@ export default function HealthFeaturesSection() {
           <div
             className={`group relative rounded-[20px] sm:rounded-[24px] p-5 sm:p-6 flex flex-col justify-between overflow-hidden border transition-all duration-500 hover:-translate-y-1 min-h-[195px] sm:min-h-[215px] lg:min-h-[205px] xl:min-h-[225px] ${
               isDark
-                ? 'bg-gradient-to-b from-[#0c140f]/90 via-[#060a08]/95 to-black border-white/10 hover:border-[#39FF88]/60 hover:shadow-[0_20px_45px_rgba(57,255,136,0.14)]'
+                ? 'bg-gradient-to-b from-[#0c140f]/90 via-[#060a08]/95 to-black border-white/10 hover:border-[#5C72FF]/60 hover:shadow-[0_20px_45px_rgba(92,114,255,0.14)]'
                 : 'bg-white border-zinc-200/90 hover:border-zinc-300 shadow-sm hover:shadow-md'
             }`}
           >
             {/* Ambient Corner Glow */}
             {isDark && (
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#6D8F63]/15 group-hover:bg-[#39FF88]/20 rounded-full blur-[50px] pointer-events-none transition-colors duration-500" />
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#2C3480]/15 group-hover:bg-[#5C72FF]/20 rounded-full blur-[50px] pointer-events-none transition-colors duration-500" />
             )}
 
             {/* Left Text Content */}
             <div className="relative z-10 max-w-[180px] sm:max-w-[200px]">
               <span className={`block font-mono text-[9px] sm:text-[10px] font-bold tracking-wider uppercase mb-1 ${
-                isDark ? 'text-[#39FF88]' : 'text-slate-500'
+                isDark ? 'text-[#5C72FF]' : 'text-slate-500'
               }`}>
                 GRADE 5 TITANIUM
               </span>
@@ -123,7 +123,7 @@ export default function HealthFeaturesSection() {
                   href="#collection"
                   className={`inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold transition-all duration-300 shadow-md hover:scale-105 active:scale-95 ${
                     isDark
-                      ? 'bg-[#39FF88] hover:bg-[#32e57a] text-black font-extrabold shadow-[0_0_18px_rgba(57,255,136,0.35)]'
+                      ? 'bg-[#5C72FF] hover:bg-[#32e57a] text-black font-extrabold shadow-[0_0_18px_rgba(92,114,255,0.35)]'
                       : 'bg-black hover:bg-zinc-800 text-white'
                   }`}
                 >
@@ -149,19 +149,19 @@ export default function HealthFeaturesSection() {
           <div
             className={`group relative rounded-[20px] sm:rounded-[24px] p-5 sm:p-6 flex flex-col justify-between overflow-hidden border transition-all duration-500 hover:-translate-y-1 min-h-[195px] sm:min-h-[215px] lg:min-h-[205px] xl:min-h-[225px] ${
               isDark
-                ? 'bg-gradient-to-b from-[#0c140f]/90 via-[#060a08]/95 to-black border-white/10 hover:border-[#39FF88]/60 hover:shadow-[0_20px_45px_rgba(57,255,136,0.14)]'
+                ? 'bg-gradient-to-b from-[#0c140f]/90 via-[#060a08]/95 to-black border-white/10 hover:border-[#5C72FF]/60 hover:shadow-[0_20px_45px_rgba(92,114,255,0.14)]'
                 : 'bg-white border-zinc-200/90 hover:border-zinc-300 shadow-sm hover:shadow-md'
             }`}
           >
             {/* Ambient Corner Glow */}
             {isDark && (
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#6D8F63]/15 group-hover:bg-[#39FF88]/20 rounded-full blur-[50px] pointer-events-none transition-colors duration-500" />
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#2C3480]/15 group-hover:bg-[#5C72FF]/20 rounded-full blur-[50px] pointer-events-none transition-colors duration-500" />
             )}
 
             {/* Left Text Content */}
             <div className="relative z-10 max-w-[180px] sm:max-w-[200px]">
               <span className={`block font-mono text-[9px] sm:text-[10px] font-bold tracking-wider uppercase mb-1 ${
-                isDark ? 'text-[#6D8F63]' : 'text-slate-500'
+                isDark ? 'text-[#2C3480]' : 'text-slate-500'
               }`}>
                 MOHS-9 HARDNESS
               </span>
@@ -181,8 +181,8 @@ export default function HealthFeaturesSection() {
               </p>
 
               {isDark && (
-                <div className="inline-flex items-center gap-1.5 text-[10px] font-mono text-[#39FF88] mt-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#39FF88]" />
+                <div className="inline-flex items-center gap-1.5 text-[10px] font-mono text-[#5C72FF] mt-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#5C72FF]" />
                   <span>3,200 HV DIAMOND DLC</span>
                 </div>
               )}
@@ -204,19 +204,19 @@ export default function HealthFeaturesSection() {
           <div
             className={`group relative rounded-[20px] sm:rounded-[24px] p-5 sm:p-6 flex flex-col justify-between overflow-hidden border transition-all duration-500 hover:-translate-y-1 min-h-[195px] sm:min-h-[215px] lg:min-h-[205px] xl:min-h-[225px] ${
               isDark
-                ? 'bg-gradient-to-b from-[#0c140f]/90 via-[#060a08]/95 to-black border-white/10 hover:border-[#39FF88]/60 hover:shadow-[0_20px_45px_rgba(57,255,136,0.14)]'
+                ? 'bg-gradient-to-b from-[#0c140f]/90 via-[#060a08]/95 to-black border-white/10 hover:border-[#5C72FF]/60 hover:shadow-[0_20px_45px_rgba(92,114,255,0.14)]'
                 : 'bg-white border-zinc-200/90 hover:border-zinc-300 shadow-sm hover:shadow-md'
             }`}
           >
             {/* Ambient Corner Glow */}
             {isDark && (
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#6D8F63]/15 group-hover:bg-[#39FF88]/20 rounded-full blur-[50px] pointer-events-none transition-colors duration-500" />
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#2C3480]/15 group-hover:bg-[#5C72FF]/20 rounded-full blur-[50px] pointer-events-none transition-colors duration-500" />
             )}
 
             {/* Left Text Content */}
             <div className="relative z-10 max-w-[170px] sm:max-w-[190px]">
               <span className={`block font-mono text-[9px] sm:text-[10px] font-bold tracking-wider uppercase mb-1 ${
-                isDark ? 'text-[#39FF88]' : 'text-slate-500'
+                isDark ? 'text-[#5C72FF]' : 'text-slate-500'
               }`}>
                 HOROLOGY CORE
               </span>
@@ -237,7 +237,7 @@ export default function HealthFeaturesSection() {
 
               {isDark && (
                 <div className="inline-flex items-center gap-1.5 text-[10px] font-mono text-slate-300 mt-3">
-                  <span className="text-[#39FF88] font-bold">±0.001ms</span>
+                  <span className="text-[#5C72FF] font-bold">±0.001ms</span>
                   <span>Atomic Sync</span>
                 </div>
               )}
@@ -259,19 +259,19 @@ export default function HealthFeaturesSection() {
           <div
             className={`group relative rounded-[20px] sm:rounded-[24px] p-5 sm:p-6 flex flex-col justify-between overflow-hidden border transition-all duration-500 hover:-translate-y-1 min-h-[195px] sm:min-h-[215px] lg:min-h-[205px] xl:min-h-[225px] ${
               isDark
-                ? 'bg-gradient-to-b from-[#0c140f]/90 via-[#060a08]/95 to-black border-white/10 hover:border-[#39FF88]/60 hover:shadow-[0_20px_45px_rgba(57,255,136,0.14)]'
+                ? 'bg-gradient-to-b from-[#0c140f]/90 via-[#060a08]/95 to-black border-white/10 hover:border-[#5C72FF]/60 hover:shadow-[0_20px_45px_rgba(92,114,255,0.14)]'
                 : 'bg-white border-zinc-200/90 hover:border-zinc-300 shadow-sm hover:shadow-md'
             }`}
           >
             {/* Ambient Corner Glow */}
             {isDark && (
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#6D8F63]/15 group-hover:bg-[#39FF88]/20 rounded-full blur-[50px] pointer-events-none transition-colors duration-500" />
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#2C3480]/15 group-hover:bg-[#5C72FF]/20 rounded-full blur-[50px] pointer-events-none transition-colors duration-500" />
             )}
 
             {/* Top Text Content */}
             <div className="relative z-10 max-w-[200px]">
               <span className={`block font-mono text-[9px] sm:text-[10px] font-bold tracking-wider uppercase mb-1 ${
-                isDark ? 'text-[#6D8F63]' : 'text-slate-500'
+                isDark ? 'text-[#2C3480]' : 'text-slate-500'
               }`}>
                 HYDROSTATIC 10 ATM
               </span>
@@ -291,8 +291,8 @@ export default function HealthFeaturesSection() {
               </p>
 
               {isDark && (
-                <div className="inline-flex items-center gap-1.5 text-[10px] font-mono text-[#39FF88] mt-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#39FF88] animate-pulse" />
+                <div className="inline-flex items-center gap-1.5 text-[10px] font-mono text-[#5C72FF] mt-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#5C72FF] animate-pulse" />
                   <span>ISO 22810 DIVER CERTIFIED</span>
                 </div>
               )}
@@ -314,7 +314,7 @@ export default function HealthFeaturesSection() {
           <div
             className={`group relative rounded-[20px] sm:rounded-[24px] p-5 sm:p-6 flex flex-col justify-between overflow-hidden border transition-all duration-500 hover:-translate-y-1 min-h-[195px] sm:min-h-[215px] lg:min-h-[205px] xl:min-h-[225px] ${
               isDark
-                ? 'bg-[#000000] border-white/10 hover:border-[#39FF88]/60 hover:shadow-[0_20px_45px_rgba(57,255,136,0.14)]'
+                ? 'bg-[#000000] border-white/10 hover:border-[#5C72FF]/60 hover:shadow-[0_20px_45px_rgba(92,114,255,0.14)]'
                 : 'bg-white border-zinc-200/90 hover:border-zinc-300 shadow-sm hover:shadow-md'
             }`}
           >
@@ -336,7 +336,7 @@ export default function HealthFeaturesSection() {
             {/* Text Content */}
             <div className="relative z-10 max-w-[210px]">
               <span className={`block font-mono text-[9px] sm:text-[10px] font-bold tracking-wider uppercase mb-1 ${
-                isDark ? 'text-[#39FF88]' : 'text-slate-500'
+                isDark ? 'text-[#5C72FF]' : 'text-slate-500'
               }`}>
                 BESPOKE FINISHES
               </span>
@@ -363,7 +363,7 @@ export default function HealthFeaturesSection() {
           <div
             className={`group relative rounded-[20px] sm:rounded-[24px] p-5 sm:p-6 flex flex-col justify-between overflow-hidden border transition-all duration-500 hover:-translate-y-1 min-h-[195px] sm:min-h-[215px] lg:min-h-[205px] xl:min-h-[225px] ${
               isDark
-                ? 'bg-[#000000] border-white/10 hover:border-[#39FF88]/60 hover:shadow-[0_20px_45px_rgba(57,255,136,0.14)]'
+                ? 'bg-[#000000] border-white/10 hover:border-[#5C72FF]/60 hover:shadow-[0_20px_45px_rgba(92,114,255,0.14)]'
                 : 'bg-white border-zinc-200/90 hover:border-zinc-300 shadow-sm hover:shadow-md'
             }`}
           >
@@ -385,7 +385,7 @@ export default function HealthFeaturesSection() {
             {/* Text Content & 5-Star Social Proof */}
             <div className="relative z-10 max-w-[210px]">
               <span className={`block font-mono text-[9px] sm:text-[10px] font-bold tracking-wider uppercase mb-1 ${
-                isDark ? 'text-[#6D8F63]' : 'text-slate-500'
+                isDark ? 'text-[#2C3480]' : 'text-slate-500'
               }`}>
                 COLLECTOR GUILD
               </span>
@@ -406,12 +406,12 @@ export default function HealthFeaturesSection() {
 
               {/* 5-Star Rating Badge */}
               <div className="flex items-center gap-1.5 mt-2.5">
-                <div className="flex text-[#39FF88]">
+                <div className="flex text-[#5C72FF]">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-[#39FF88] text-[#39FF88]" />
+                    <Star key={i} className="w-3.5 h-3.5 fill-[#5C72FF] text-[#5C72FF]" />
                   ))}
                 </div>
-                <span className={`text-[11px] font-mono font-bold ${isDark ? 'text-[#39FF88]' : 'text-zinc-900'}`}>
+                <span className={`text-[11px] font-mono font-bold ${isDark ? 'text-[#5C72FF]' : 'text-zinc-900'}`}>
                   4.98 / 5.0
                 </span>
                 <span className={`text-[10px] font-mono ${isDark ? 'text-slate-400' : 'text-zinc-500'}`}>

@@ -42,8 +42,8 @@ const FINISH_STAGES = [
       'Sculpted from a single solid aerospace ingot. Hand-finished with micro-abrasive directional satin brushing to exhibit the raw silvery luster of Grade 5 titanium.',
     swatchBg: '#e2e8f0',
     swatchBorder: '#38bdf8',
-    accentColor: '#39FF88',
-    accentClass: 'text-[#39FF88] border-[#39FF88]/40 bg-[#39FF88]/10',
+    accentColor: '#5C72FF',
+    accentClass: 'text-[#5C72FF] border-[#5C72FF]/40 bg-[#5C72FF]/10',
     shortName: 'Natural',
     specs: [
       { label: 'ALLOY', val: 'Ti-6Al-4V Grade 5' },
@@ -82,7 +82,7 @@ const FINISH_STAGES = [
       'Precision electropolished to mirror brilliance with hand-beveled chamfers. High-density cold-forged luster creates an unyielding luxury timepiece presence.',
     swatchBg: '#38bdf8',
     swatchBorder: '#7dd3fc',
-    accentColor: '#39FF88',
+    accentColor: '#5C72FF',
     accentClass: 'text-sky-400 border-sky-500/40 bg-sky-950/40',
     shortName: 'Frosted',
     specs: [
@@ -328,7 +328,7 @@ export default function ColorScrollerSection() {
     <section
       id="metallurgy"
       ref={containerRef}
-      className="relative w-full h-[280vh] sm:h-[300vh] bg-black font-sans selection:bg-[#39FF88]/20 border-t border-[#6D8F63]/25"
+      className="relative w-full h-[280vh] sm:h-[300vh] bg-black font-sans selection:bg-[#5C72FF]/20 border-t border-[#2C3480]/25"
     >
       {/* Sticky Viewport Container: Pure Solid Black Stage for 100% Crisp 3D Watch Contrast */}
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex flex-col justify-between pointer-events-none bg-black">
@@ -342,8 +342,8 @@ export default function ColorScrollerSection() {
         {/* Top Header & Frame Scrubber */}
         <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pt-20 sm:pt-24 md:pt-28 flex flex-col md:flex-row md:items-end justify-between gap-3 pointer-events-auto">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#39FF88]/10 border border-[#6D8F63]/25 text-[#39FF88] font-mono text-[10px] sm:text-xs tracking-widest uppercase mb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#39FF88] animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5C72FF]/10 border border-[#2C3480]/25 text-[#5C72FF] font-mono text-[10px] sm:text-xs tracking-widest uppercase mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#5C72FF] animate-pulse" />
               <span>METALLURGY ATELIER</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
@@ -352,17 +352,17 @@ export default function ColorScrollerSection() {
           </div>
 
           {/* Real-time Scrubbing Meter */}
-          <div className="self-start md:self-auto flex items-center gap-3 sm:gap-4 bg-[#101712]/92 backdrop-blur-md px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-[#6D8F63]/25 shadow-lg">
+          <div className="self-start md:self-auto flex items-center gap-3 sm:gap-4 bg-[#0A0E24]/92 backdrop-blur-md px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-[#2C3480]/25 shadow-lg">
             <div className="flex flex-col text-left md:text-right">
               <span className="font-mono text-[9px] sm:text-[10px] text-slate-400 tracking-wider">SCRUB PROGRESS</span>
-              <span ref={frameTextRef} className="font-mono text-[11px] sm:text-xs font-bold text-[#39FF88]">
+              <span ref={frameTextRef} className="font-mono text-[11px] sm:text-xs font-bold text-[#5C72FF]">
                 FRAME 001 / {TOTAL_FRAMES}
               </span>
             </div>
             <div className="w-16 sm:w-24 h-1.5 bg-white/10 rounded-full overflow-hidden">
               <div
                 ref={progressBarRef}
-                className="h-full bg-[#39FF88] rounded-full transition-all duration-75"
+                className="h-full bg-[#5C72FF] rounded-full transition-all duration-75"
                 style={{ width: '0%' }}
               />
             </div>
@@ -373,7 +373,7 @@ export default function ColorScrollerSection() {
         <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 mb-6 sm:mb-10 md:mb-10 pointer-events-auto">
           <div className="flex flex-col lg:flex-row items-stretch lg:items-end justify-between gap-4 sm:gap-6">
             {/* Left Detail Card */}
-            <div className="w-full max-w-[320px] sm:max-w-[350px] lg:max-w-[360px] bg-[#101712]/92 backdrop-blur-xl border border-[#6D8F63]/30 hover:border-[#39FF88]/60 shadow-[0_20px_50px_rgba(0,0,0,0.7)] rounded-2xl p-4 sm:p-5 transition-all duration-300">
+            <div className="w-full max-w-[320px] sm:max-w-[350px] lg:max-w-[360px] bg-[#0A0E24]/92 backdrop-blur-xl border border-[#2C3480]/30 hover:border-[#5C72FF]/60 shadow-[0_20px_50px_rgba(0,0,0,0.7)] rounded-2xl p-4 sm:p-5 transition-all duration-300">
               <div className="flex items-center justify-between mb-2">
                 <span className={`font-mono text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md border ${currentStage.accentClass}`}>
                   {currentStage.tag}
@@ -386,7 +386,7 @@ export default function ColorScrollerSection() {
               <h3 className="text-lg sm:text-2xl font-bold text-white mb-0.5 tracking-tight">
                 {currentStage.name}
               </h3>
-              <p className="font-mono text-[11px] sm:text-xs text-[#39FF88] mb-2 font-medium">
+              <p className="font-mono text-[11px] sm:text-xs text-[#5C72FF] mb-2 font-medium">
                 {currentStage.subtitle}
               </p>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4 line-clamp-2 sm:line-clamp-none">
@@ -412,10 +412,10 @@ export default function ColorScrollerSection() {
             <div className="flex flex-col items-start lg:items-end gap-2 w-full lg:w-auto">
               <div className="font-mono text-[9px] sm:text-[10px] text-slate-400 tracking-widest uppercase flex items-center gap-1.5">
                 <span>CLICK COLOR TO JUMP</span>
-                <span className="text-[#39FF88]">↓</span>
+                <span className="text-[#5C72FF]">↓</span>
               </div>
 
-              <div className="flex items-center gap-1.5 sm:gap-2.5 bg-[#101712]/92 backdrop-blur-xl border border-[#6D8F63]/25 p-1.5 sm:p-2 rounded-2xl shadow-xl overflow-x-auto max-w-full">
+              <div className="flex items-center gap-1.5 sm:gap-2.5 bg-[#0A0E24]/92 backdrop-blur-xl border border-[#2C3480]/25 p-1.5 sm:p-2 rounded-2xl shadow-xl overflow-x-auto max-w-full">
                 {FINISH_STAGES.map((stage, idx) => {
                   const isActive = activeStageIndex === idx;
                   return (
@@ -462,8 +462,8 @@ export default function ColorScrollerSection() {
 
         {/* Preload status banner (only if initial loading) */}
         {!isReady && (
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 bg-[#101712]/92 backdrop-blur-md border border-[#6D8F63]/30 px-6 py-4 rounded-xl flex items-center gap-3">
-            <div className="w-5 h-5 border-2 border-[#39FF88] border-t-transparent rounded-full animate-spin" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 bg-[#0A0E24]/92 backdrop-blur-md border border-[#2C3480]/30 px-6 py-4 rounded-xl flex items-center gap-3">
+            <div className="w-5 h-5 border-2 border-[#5C72FF] border-t-transparent rounded-full animate-spin" />
             <div className="font-mono text-xs text-slate-300">
               OPTIMIZING 4K SEQUENCES ({loadedCount}/{TOTAL_FRAMES})...
             </div>

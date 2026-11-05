@@ -106,7 +106,7 @@ const EDITIONS = [
     image: '/products/mood_dark_green.webp',
     accentColor: '#10b981',
     glowColor: 'rgba(16, 185, 129, 0.2)',
-    badgeColor: 'text-[#39FF88] border-emerald-500/30 bg-emerald-950/40',
+    badgeColor: 'text-[#5C72FF] border-[#2C3480]/50 bg-[#2C3480]/20',
     desc: 'Deep forest matte unibody paired with an ergonomic dark green sports band. Sculpted with sweat-wicking channels and engineered for continuous athletic and cardiac telemetry.',
     quickSpecs: [
       { label: 'BAND', val: 'Forest Silicone' },
@@ -152,10 +152,10 @@ export default function ProductsSection() {
   return (
     <section
       id="collection"
-      className="relative w-full min-h-screen lg:h-screen pt-[80px] pb-[80px] bg-black border-t border-[#6D8F63]/20 select-none overflow-hidden font-sans flex flex-col justify-center"
+      className="relative w-full min-h-screen lg:h-screen pt-[80px] pb-[80px] bg-black border-t border-[#2C3480]/20 select-none overflow-hidden font-sans flex flex-col justify-center"
     >
       {/* Ambient Radial Spotlight */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#6D8F63]/10 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#2C3480]/10 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 w-full relative z-10 flex flex-col justify-center my-auto">
 
@@ -170,7 +170,7 @@ export default function ProductsSection() {
             <div
               key={ed.id}
               onClick={() => handleOpenOrder(ed)}
-              className="group relative h-[360px] sm:h-[400px] lg:h-[410px] xl:h-[430px] rounded-[24px] sm:rounded-[28px] overflow-hidden cursor-pointer border border-[#6D8F63]/25 hover:border-sky-400/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.9)] bg-zinc-950"
+              className="group relative h-[360px] sm:h-[400px] lg:h-[410px] xl:h-[430px] rounded-[24px] sm:rounded-[28px] overflow-hidden cursor-pointer border border-[#2C3480]/25 hover:border-[#5C72FF]/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.9)] bg-zinc-950"
             >
               {/* Full-Bleed High-Res Lifestyle Render */}
               <img
@@ -190,7 +190,7 @@ export default function ProductsSection() {
                   </h3>
                 </div>
 
-                <div className="w-9 h-9 rounded-full bg-[#39FF88] backdrop-blur-md border border-[#39FF88]/40 flex items-center justify-center text-black font-bold shadow-[0_0_15px_rgba(57,255,136,0.4)] opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 shadow-lg">
+                <div className="w-9 h-9 rounded-full bg-[#2C3480] backdrop-blur-md border border-[#5C72FF]/40 flex items-center justify-center text-white font-bold shadow-[0_0_15px_rgba(44,52,128,0.5)] opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 shadow-lg">
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
               </div>
@@ -210,7 +210,7 @@ export default function ProductsSection() {
                 setInspectEdition(null);
                 setIsOrderModalOpen(false);
               }}
-              className="absolute top-5 right-5 p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors border border-[#6D8F63]/25"
+              className="absolute top-5 right-5 p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors border border-[#2C3480]/25"
             >
               <X className="w-5 h-5" />
             </button>
@@ -224,7 +224,7 @@ export default function ProductsSection() {
                   alt={inspectEdition.name}
                   className="max-h-[280px] w-full object-cover rounded-xl shadow-2xl"
                 />
-                <div className="mt-4 font-mono text-xs text-[#39FF88] font-bold">
+                <div className="mt-4 font-mono text-xs text-[#5C72FF] font-bold">
                   {inspectEdition.price} USD <span className="text-slate-400 font-normal">({inspectEdition.inr})</span>
                 </div>
               </div>
@@ -236,8 +236,8 @@ export default function ProductsSection() {
                     <span className={`font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-md border ${inspectEdition.badgeColor}`}>
                       {inspectEdition.category}
                     </span>
-                    <span className="font-mono text-[10px] text-[#39FF88] flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#39FF88] animate-pulse" />
+                    <span className="font-mono text-[10px] text-[#5C72FF] flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5C72FF] animate-pulse" />
                       BATCH 01 ALLOCATION OPEN
                     </span>
                   </div>
@@ -259,7 +259,7 @@ export default function ProductsSection() {
                         <span className="block font-mono text-xs font-bold text-white truncate">
                           {s.val}
                         </span>
-                        <span className="block text-[10px] text-[#39FF88] font-mono mt-0.5 truncate">
+                        <span className="block text-[10px] text-[#5C72FF] font-mono mt-0.5 truncate">
                           {s.sub}
                         </span>
                       </div>
@@ -270,7 +270,7 @@ export default function ProductsSection() {
                   <div className="space-y-2 mb-6">
                     {inspectEdition.features.slice(0, 3).map((f, idx) => (
                       <div key={idx} className="flex items-center gap-2.5 text-xs text-slate-300">
-                        <Check className="w-3.5 h-3.5 text-[#39FF88] flex-shrink-0" />
+                        <Check className="w-3.5 h-3.5 text-[#5C72FF] flex-shrink-0" />
                         <span>{f}</span>
                       </div>
                     ))}
@@ -279,10 +279,10 @@ export default function ProductsSection() {
 
                 {/* Pre-Order Action or Form */}
                 {isOrderModalOpen ? (
-                  <form onSubmit={handleOrderSubmit} className="space-y-3 pt-4 border-t border-[#6D8F63]/20">
+                  <form onSubmit={handleOrderSubmit} className="space-y-3 pt-4 border-t border-[#2C3480]/20">
                     {orderComplete ? (
-                      <div className="p-4 bg-[#6D8F63]/20 border border-[#39FF88]/50 rounded-xl text-center">
-                        <span className="font-mono text-sm font-bold text-[#39FF88] block mb-1">
+                      <div className="p-4 bg-[#2C3480]/20 border border-[#5C72FF]/50 rounded-xl text-center">
+                        <span className="font-mono text-sm font-bold text-[#5C72FF] block mb-1">
                           ✓ ALLOCATION RESERVED SUCCESSFULLY
                         </span>
                         <span className="font-mono text-xs text-slate-400">
@@ -296,18 +296,18 @@ export default function ProductsSection() {
                             type="text"
                             required
                             placeholder="Full Name"
-                            className="bg-black/60 border border-[#6D8F63]/25 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#39FF88] font-mono"
+                            className="bg-black/60 border border-[#2C3480]/25 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#5C72FF] font-mono"
                           />
                           <input
                             type="email"
                             required
                             placeholder="Collector Email"
-                            className="bg-black/60 border border-[#6D8F63]/25 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#39FF88] font-mono"
+                            className="bg-black/60 border border-[#2C3480]/25 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#5C72FF] font-mono"
                           />
                         </div>
                         <button
                           type="submit"
-                          className="w-full bg-[#39FF88] hover:bg-[#32e57a] text-black font-mono font-bold text-xs tracking-wider py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(57,255,136,0.3)]"
+                          className="w-full bg-[#2C3480] hover:bg-[#38439E] text-white font-mono font-bold text-xs tracking-wider py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(44,52,128,0.5)]"
                         >
                           CONFIRM PRE-ORDER RESERVATION ({inspectEdition.price} USD)
                         </button>
@@ -317,7 +317,7 @@ export default function ProductsSection() {
                 ) : (
                   <button
                     onClick={() => setIsOrderModalOpen(true)}
-                    className="w-full bg-[#39FF88] hover:bg-[#32e57a] text-black font-mono font-bold text-xs tracking-wider py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(57,255,136,0.3)] flex items-center justify-center gap-2"
+                    className="w-full bg-[#2C3480] hover:bg-[#38439E] text-white font-mono font-bold text-xs tracking-wider py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(44,52,128,0.5)] flex items-center justify-center gap-2"
                   >
                     <span>PRE-ORDER THIS TIMEPIECE</span>
                     <ArrowUpRight className="w-4 h-4" />

@@ -9,13 +9,12 @@ module.exports = {
       colors: {
         brand: {
           black: '#000000',
-          sage: '#6D8F63',
-          neon: '#39FF88',
+          blue: '#2C3480',
+          royal: '#2C3480',
+          accent: '#5C72FF',
           dark: '#000000',
-          surface: '#050806',
-          card: '#0a100c',
-          cyan: '#39FF88',
-          blue: '#6D8F63',
+          surface: '#04060F',
+          card: '#080B1C',
           silver: '#e2e8f0',
           muted: '#94a3b8',
           dim: '#64748b',
@@ -30,4 +29,3 @@ module.exports = {
   },
   plugins: [],
 };
-
