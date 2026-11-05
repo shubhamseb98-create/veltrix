@@ -73,15 +73,22 @@ export default function WatchFacesSection() {
   return (
     <section
       id="watch-faces"
-      className="relative w-full min-h-screen lg:h-screen pt-[80px] pb-[80px] bg-black text-white font-sans select-none overflow-hidden flex flex-col justify-center items-center border-t border-[#6D8F63]/20"
+      className="relative w-full min-h-screen lg:h-screen pt-[80px] pb-[80px] bg-[#07131e] text-white font-sans select-none overflow-hidden flex flex-col justify-center items-center border-t border-sky-500/25 border-b border-sky-500/25"
+      style={{
+        background: 'radial-gradient(ellipse 95% 85% at 50% 50%, #0e263c 0%, #081726 55%, #050e18 100%)',
+      }}
     >
       {/* Subtle Ambient Radial Backlight */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#6D8F63]/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] bg-sky-500/12 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 w-full relative z-10 flex flex-col justify-center my-auto">
 
         {/* CLEAN MINIMAL HEADER */}
         <div className="text-center max-w-2xl mx-auto mb-3 sm:mb-4 lg:mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-400/25 text-sky-400 font-mono text-[10px] sm:text-xs tracking-widest uppercase mb-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
+            <span>KINETIC CHRONOGRAPHY</span>
+          </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-1.5 sm:mb-2">
             Not Just Regular Watch Faces
           </h2>
@@ -130,11 +137,11 @@ export default function WatchFacesSection() {
               key={face.id}
               className="flex-shrink-0 w-[200px] sm:w-[220px] md:w-[240px] xl:w-auto snap-start"
             >
-              <div className="bg-gradient-to-b from-[#0c140f]/90 via-[#070b08]/95 to-black hover:from-[#111c15] rounded-[22px] sm:rounded-[24px] p-2.5 sm:p-3 border border-[#6D8F63]/25 hover:border-[#39FF88]/50 hover:shadow-[0_15px_35px_rgba(57,255,136,0.12)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(0,0,0,0.8)] flex flex-col justify-between group h-full">
+              <div className="bg-gradient-to-b from-[#0e2538]/92 via-[#091826]/95 to-[#040d16] hover:from-[#13324c] rounded-[22px] sm:rounded-[24px] p-2.5 sm:p-3 border border-sky-500/25 hover:border-sky-400/60 hover:shadow-[0_15px_35px_rgba(56,189,248,0.22)] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group h-full shadow-[0_12px_30px_rgba(0,0,0,0.7)]">
                 
                 {/* Clean Left-Aligned Title */}
                 <div className="px-1 pt-0.5 pb-2">
-                  <span className="text-[11px] sm:text-xs font-semibold text-slate-300 group-hover:text-[#39FF88] tracking-tight block truncate transition-colors">
+                  <span className="text-[11px] sm:text-xs font-semibold text-slate-300 group-hover:text-sky-300 tracking-tight block truncate transition-colors">
                     {face.type}
                   </span>
                 </div>
