@@ -61,12 +61,20 @@ function getSmoothTrajectory(p, isMobile) {
 
   // Vertical trajectory (y: offset relative to viewport height)
   if (isMobile) {
-    if (p < 0.12) {
-      y = 0.06; // Gives comfortable breathing room below header on mobile
-    } else if (p < 0.85) {
-      y = -0.22; // Sits in upper half so text has lower half
+    if (p < 0.08) {
+      y = 0.04; // Hero position comfortably below header
+    } else if (p < 0.18) {
+      // Silky-smooth continuous glide from hero to station view (zero sudden jumps)
+      const t = smoothStep(0.08, 0.18, p);
+      y = 0.04 + (-0.16 - 0.04) * t;
+    } else if (p < 0.82) {
+      y = -0.16; // Stable upper position for Stations 1 to 4
+    } else if (p < 0.90) {
+      // Smooth glide to Blueprint Matrix position
+      const t = smoothStep(0.82, 0.90, p);
+      y = -0.16 + (-0.20 - (-0.16)) * t;
     } else {
-      y = -0.25; // Sits above Station 5
+      y = -0.20; // Final matrix view
     }
   } else {
     if (p < 0.10) {
@@ -115,6 +123,7 @@ export default function InteractiveSpecsSection() {
     let targetProgressVal = 0;
     let currentProgressVal = 0;
     let lastRenderedFrameVal = -1;
+    let lastRenderedProgressVal = -1;
     let animationId;
 
     function resizeCanvas() {
@@ -141,7 +150,13 @@ export default function InteractiveSpecsSection() {
     }
 
     function drawFrames(frameVal, progressVal, force = false) {
-      if (!force && Math.abs(frameVal - lastRenderedFrameVal) < 0.01) return;
+      if (
+        !force &&
+        Math.abs(frameVal - lastRenderedFrameVal) < 0.01 &&
+        Math.abs(progressVal - lastRenderedProgressVal) < 0.0005
+      ) {
+        return;
+      }
 
       const canvasW = canvas.width;
       const canvasH = canvas.height;
@@ -166,9 +181,9 @@ export default function InteractiveSpecsSection() {
       const isMobile = window.innerWidth < 1024;
       let scale;
       if (isMobile) {
-        // Responsive Mobile Framing: scale watch to fit upper half (~250-280px)
-        const targetH = Math.min(canvasH * 0.34, canvasW * 0.70);
-        scale = targetH / 741;
+        // Compact luxury mobile scale (~165-180px): gives generous space for station specs
+        const targetH = Math.min(canvasH * 0.26, canvasW * 0.50);
+        scale = targetH / 739;
       } else {
         scale = Math.min(scaleW, scaleH) * 0.58;
       }
@@ -202,6 +217,7 @@ export default function InteractiveSpecsSection() {
       // Clean source frames from newpp.mp4 (no watermark block required)
 
       lastRenderedFrameVal = frameVal;
+      lastRenderedProgressVal = progressVal;
     }
 
     // Direct DOM style updates for butter-smooth 60fps text transitions
@@ -360,17 +376,20 @@ export default function InteractiveSpecsSection() {
     }
 
     function renderLoop() {
-      // Calmer, silky-smooth cinematic deceleration with luxurious inertia
+      // Responsive, butter-smooth cinematic deceleration
+      const isMobile = window.innerWidth < 1024;
+      const lerpSpeed = isMobile ? 0.22 : 0.16;
+
       const diffFrame = targetFrame - currentFrame;
       if (Math.abs(diffFrame) > 0.005) {
-        currentFrame += diffFrame * 0.09;
+        currentFrame += diffFrame * lerpSpeed;
       } else {
         currentFrame = targetFrame;
       }
 
       const diffProg = targetProgressVal - currentProgressVal;
       if (Math.abs(diffProg) > 0.0005) {
-        currentProgressVal += diffProg * 0.09;
+        currentProgressVal += diffProg * lerpSpeed;
       } else {
         currentProgressVal = targetProgressVal;
       }
@@ -565,7 +584,7 @@ export default function InteractiveSpecsSection() {
                 </div>
 
                 {/* Clean Feature Line */}
-                <div className="mt-4 pt-3 border-t border-[#001d3d]/20 flex items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
+                <div className="hidden sm:flex mt-4 pt-3 border-t border-[#001d3d]/20 items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
                   <Sparkles className="w-3.5 h-3.5 text-[#3a86ff] flex-shrink-0" />
                   <span>Directional Satin Brushing + 45° Mirror Chamfers</span>
                 </div>
@@ -624,7 +643,7 @@ export default function InteractiveSpecsSection() {
                 </div>
 
                 {/* Clean Feature Line */}
-                <div className="mt-4 pt-3 border-t border-[#001d3d]/20 flex items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
+                <div className="hidden sm:flex mt-4 pt-3 border-t border-[#001d3d]/20 items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
                   <Compass className="w-3.5 h-3.5 text-[#3a86ff] flex-shrink-0" />
                   <span>±0.001 ms Atomic Accuracy // Real-time Telemetry</span>
                 </div>
@@ -691,7 +710,7 @@ export default function InteractiveSpecsSection() {
                 </div>
 
                 {/* Clean Feature Line */}
-                <div className="mt-4 pt-3 border-t border-[#001d3d]/20 flex items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
+                <div className="hidden sm:flex mt-4 pt-3 border-t border-[#001d3d]/20 items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
                   <Cpu className="w-3.5 h-3.5 text-[#3a86ff] flex-shrink-0" />
                   <span>480 × 480 Resolution // 454 PPI True Retina</span>
                 </div>
@@ -750,7 +769,7 @@ export default function InteractiveSpecsSection() {
                 </div>
 
                 {/* Clean Feature Line */}
-                <div className="mt-4 pt-3 border-t border-[#001d3d]/20 flex items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
+                <div className="hidden sm:flex mt-4 pt-3 border-t border-[#001d3d]/20 items-center gap-2 text-xs font-mono text-slate-400 max-w-md">
                   <Zap className="w-3.5 h-3.5 text-[#3a86ff] flex-shrink-0" />
                   <span>Rapid Magnetic Induction // 0–80% in 35 Minutes</span>
                 </div>
