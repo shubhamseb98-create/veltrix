@@ -334,7 +334,12 @@ export default function ColorScrollerSection() {
       }}
     >
       {/* Sticky Viewport Container */}
-      <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex flex-col justify-between pointer-events-none">
+      <div
+        className="sticky top-0 left-0 w-full h-screen overflow-hidden flex flex-col justify-between pointer-events-none bg-[#0b120d]"
+        style={{
+          background: 'radial-gradient(ellipse 95% 85% at 50% 50%, #131c15 0%, #0b120d 55%, #050806 100%)',
+        }}
+      >
         {/* Subtle Minimal Background Texture (Zero Circles - Placed in BACKGROUND z-0 BEHIND watch) */}
         <div
           className="absolute inset-0 pointer-events-none z-0 opacity-25"
@@ -349,23 +354,8 @@ export default function ColorScrollerSection() {
           }}
         />
 
-        {/* Ambient Background Glow (Top-Left & Bottom-Right, placed in BACKGROUND z-0) */}
-        <div className="absolute inset-0 pointer-events-none z-0 mix-blend-screen overflow-hidden">
-          <div
-            className="absolute -top-16 -left-16 sm:-top-20 sm:-left-10 w-[500px] h-[450px] sm:w-[650px] sm:h-[550px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.15) 0%, rgba(109, 143, 99, 0.06) 45%, transparent 70%)',
-              filter: 'blur(90px)',
-            }}
-          />
-          <div
-            className="absolute -bottom-16 -right-16 sm:-bottom-20 sm:-right-10 w-[550px] h-[480px] sm:w-[700px] sm:h-[600px] rounded-full pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(57, 255, 136, 0.13) 0%, rgba(109, 143, 99, 0.05) 45%, transparent 70%)',
-              filter: 'blur(100px)',
-            }}
-          />
-        </div>
+        {/* Exact Same Central Ambient Radial Backlight as WatchFacesSection */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] bg-[#6D8F63]/18 rounded-full blur-[180px] pointer-events-none z-0" />
 
         {/* Fullscreen Canvas Rendering Watch Video Frames (Layer 10 - IN FRONT of Grid & Glow) */}
         <canvas
@@ -373,9 +363,9 @@ export default function ColorScrollerSection() {
           className="absolute inset-0 w-full h-full block z-10 mix-blend-screen"
         />
 
-        {/* Ambient Top & Bottom Vignettes for Seamless Blending */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black via-black/50 to-transparent pointer-events-none z-10" />
-        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none z-10" />
+        {/* Subtle Edge Vignettes */}
+        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/40 to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none z-10" />
 
         {/* Top Header & Frame Scrubber */}
         <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pt-20 sm:pt-24 md:pt-28 flex flex-col md:flex-row md:items-end justify-between gap-3 pointer-events-auto">
