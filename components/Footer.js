@@ -34,9 +34,9 @@ export default function Footer() {
 
   return (
     <footer
-      className="relative w-full bg-[#06140d] text-white font-sans select-none border-t border-[#39FF88]/25 overflow-hidden"
+      className="relative w-full bg-[#09100a] text-white font-sans select-none border-t border-[#6D8F63]/25 overflow-hidden"
       style={{
-        background: 'radial-gradient(ellipse 95% 75% at 50% 30%, #0d281a 0%, #081810 55%, #040e09 100%)',
+        background: 'radial-gradient(ellipse 95% 75% at 50% 30%, #121a13 0%, #09100a 55%, #040805 100%)',
       }}
     >
       {/* Subtle Ambient Radial Backlight */}
@@ -46,7 +46,7 @@ export default function Footer() {
       {/* ========================================================
           1. PRE-FOOTER: COLLECTORS CIRCLE & PRIVATE ALLOCATIONS
          ======================================================== */}
-      <div className="relative border-b border-[#39FF88]/20 bg-gradient-to-b from-[#091f13]/80 to-[#06140d] py-14 sm:py-16 px-6">
+      <div className="relative border-b border-[#6D8F63]/20 bg-gradient-to-b from-[#0f1712]/80 to-[#09100a] py-14 sm:py-16 px-6">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           
           {/* Left Callout */}
@@ -80,7 +80,7 @@ export default function Footer() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter collector email..."
                     required
-                    className="w-full pl-10 pr-4 py-3 bg-[#08180f]/90 border border-[#39FF88]/25 rounded-xl text-white placeholder-slate-400 text-xs font-mono focus:outline-none focus:border-[#39FF88] focus:ring-1 focus:ring-[#39FF88]/50 transition-all"
+                    className="w-full pl-10 pr-4 py-3 bg-[#0b120c]/90 border border-[#6D8F63]/30 rounded-xl text-white placeholder-slate-400 text-xs font-mono focus:outline-none focus:border-[#39FF88] focus:ring-1 focus:ring-[#39FF88]/50 transition-all"
                   />
                 </div>
                 <button
@@ -109,7 +109,7 @@ export default function Footer() {
       {/* ========================================================
           2. LUXURY TRUST PILLARS (WARRANTY & ASSURANCE BADGES)
          ======================================================== */}
-      <div className="border-b border-[#39FF88]/15 bg-[#05100a]/70 py-8 px-6">
+      <div className="border-b border-[#6D8F63]/20 bg-[#060c07]/70 py-8 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
           
           <div className="flex items-center gap-3.5">
@@ -331,7 +331,7 @@ export default function Footer() {
       {/* ========================================================
           4. LEGAL, COPYRIGHT & HOROLOGY COMPLIANCE
          ======================================================== */}
-      <div className="border-t border-[#39FF88]/15 bg-[#030905]/80 py-8 px-6 max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-slate-400">
+      <div className="border-t border-[#6D8F63]/20 bg-[#030604]/80 py-8 px-6 max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-slate-400">
         <div>
           &copy; {new Date().getFullYear()} VELTRIX HOROLOGY LABS INC. SWISS PRECISION &amp; NEURAL SILICON. ALL RIGHTS RESERVED.
         </div>
