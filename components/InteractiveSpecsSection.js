@@ -62,7 +62,7 @@ function getSmoothTrajectory(p, isMobile) {
   // Vertical trajectory (y: offset relative to viewport height)
   if (isMobile) {
     if (p < 0.12) {
-      y = 0.02; // Gives comfortable breathing room below header on mobile
+      y = 0.06; // Gives comfortable breathing room below header on mobile
     } else if (p < 0.85) {
       y = -0.22; // Sits in upper half so text has lower half
     } else {
@@ -481,7 +481,7 @@ export default function InteractiveSpecsSection() {
            ======================================================== */}
         <div
           ref={card0Ref}
-          className="absolute inset-x-4 top-4 sm:top-6 lg:top-7 max-w-2xl mx-auto text-center z-20 pointer-events-none"
+          className="absolute inset-x-4 top-16 sm:top-20 lg:top-24 max-w-2xl mx-auto text-center z-20 pointer-events-none"
         >
           <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-white/5 border border-[#001d3d]/25 mb-2 text-[#3a86ff] font-mono text-[10px] sm:text-xs font-semibold tracking-widest uppercase">
             <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff]" />
