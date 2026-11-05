@@ -137,10 +137,10 @@ export default function Footer() {
         </div>
 
         {/* ========================================================
-            3. GIANT MONUMENTAL BRAND NAME "VELTRIX" (Matching KNYX in Image)
+            3. BRAND NAME "VELTRIX" (Refined Luxury Proportion)
            ======================================================== */}
-        <div className="py-8 sm:py-12 md:py-16 lg:py-20 text-center select-none overflow-hidden">
-          <h1 className="font-heading font-black text-[18vw] sm:text-[19vw] md:text-[20vw] lg:text-[210px] xl:text-[240px] leading-none text-white tracking-tight drop-shadow-[0_12px_40px_rgba(0,0,0,0.9)]">
+        <div className="py-6 sm:py-8 md:py-10 lg:py-12 text-center select-none overflow-hidden">
+          <h1 className="font-heading font-black text-[11vw] sm:text-[10vw] md:text-[9vw] lg:text-[105px] xl:text-[120px] leading-none text-white tracking-tight drop-shadow-[0_8px_30px_rgba(0,0,0,0.8)]">
             VELTRIX
           </h1>
         </div>
