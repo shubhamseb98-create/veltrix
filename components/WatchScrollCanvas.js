@@ -122,11 +122,12 @@ export default function WatchScrollCanvas() {
 
     function updatePinPosition() {
       const isMobile = window.innerWidth < 1024;
-      const scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080) * (isMobile ? 0.64 : 0.80);
+      // Full width and 100vh height (Cover scale matching canvas draw)
+      const scale = Math.max(window.innerWidth / 1920, window.innerHeight / 1080);
       const drawW = 1920 * scale;
       const drawH = 1080 * scale;
       const drawX = (window.innerWidth - drawW) / 2;
-      const drawY = (window.innerHeight - drawH) / 2 + (isMobile ? -window.innerHeight * 0.06 : 0);
+      const drawY = (window.innerHeight - drawH) / 2;
 
       const current = PART_STAGES[activeStageRef.current];
       if (current) {
@@ -177,13 +178,13 @@ export default function WatchScrollCanvas() {
       const scaleW = canvasW / imgW;
       const scaleH = canvasH / imgH;
 
-      const isMobile = window.innerWidth < 1024;
-      const scale = Math.min(scaleW, scaleH) * (isMobile ? 0.64 : 0.80);
+      // Full width (100vw) and full 100vh height (object-fit: cover)
+      const scale = Math.max(scaleW, scaleH);
 
       const drawW = imgW * scale;
       const drawH = imgH * scale;
       const drawX = (canvasW - drawW) / 2;
-      const drawY = (canvasH - drawH) / 2 + (isMobile ? -canvasH * 0.06 : 0);
+      const drawY = (canvasH - drawH) / 2;
 
       ctx.drawImage(img, 0, 0, imgW, imgH, drawX, drawY, drawW, drawH);
       lastDrawnFrame = idx;
@@ -431,7 +432,7 @@ export default function WatchScrollCanvas() {
         {/* Full Viewport Canvas (Transparent mix-blend-screen so glows & grid shine through!) */}
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 w-full h-full block z-10 mix-blend-screen pointer-events-none"
+          className="absolute inset-0 w-full h-full block z-10 pointer-events-none"
         />
 
         {/* Ultra-Delicate SVG Leader Line (1px hairline) */}
