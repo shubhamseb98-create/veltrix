@@ -7,7 +7,7 @@ const EDITIONS = [
   {
     id: 'chrome-silver',
     name: 'Chrome Silver 2.0',
-    category: 'METALLIC // CHROME SILVER',
+    category: 'METALLIC — CHROME SILVER',
     price: '$499',
     inr: '₹42,500',
     image: '/products/mood_chrome_silver.webp',
@@ -38,7 +38,7 @@ const EDITIONS = [
   {
     id: 'gunmetal-black',
     name: 'Gunmetal Black 2.0',
-    category: 'TACTICAL // GUNMETAL DLC',
+    category: 'TACTICAL — GUNMETAL DLC',
     price: '$479',
     inr: '₹40,800',
     image: '/products/mood_gunmetal_black.webp',
@@ -69,7 +69,7 @@ const EDITIONS = [
   {
     id: 'ice-blue',
     name: 'Ice Blue',
-    category: 'EXPLORATION // ALPINE WEAVE',
+    category: 'EXPLORATION — ALPINE WEAVE',
     price: '$449',
     inr: '₹38,200',
     image: '/products/mood_ice_blue.webp',
@@ -100,7 +100,7 @@ const EDITIONS = [
   {
     id: 'dark-green',
     name: 'Dark Green',
-    category: 'SPORT // DEEP FOREST',
+    category: 'SPORT — DEEP FOREST',
     price: '$429',
     inr: '₹36,500',
     image: '/products/mood_dark_green.webp',

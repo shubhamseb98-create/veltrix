@@ -1,7 +1,7 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'VELTRIX // Titanium Smartwatch',
+  title: 'VELTRIX — Titanium Smartwatch',
   description: 'Pure 3D interactive scroll-driven horology showcase built with Next.js, Tailwind CSS and JavaScript.',
   icons: {
     icon: [

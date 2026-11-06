@@ -15,7 +15,7 @@ export default function WatchFacesSection() {
           <div className="inline-flex items-center gap-2 mb-2 sm:mb-2.5">
             <span className="w-4 sm:w-5 h-[1.5px] bg-[#3a86ff] rounded-full" />
             <span className="font-mono text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-[#3a86ff] uppercase">
-              VELTRIX OS // DYNAMIC INTERFACES
+              VELTRIX DYNAMIC INTERFACES
             </span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
@@ -29,7 +29,7 @@ export default function WatchFacesSection() {
         {/* Showcase 1 Image */}
         <div className="w-full max-w-5xl lg:max-w-6xl mx-auto relative z-10 flex items-center justify-center px-4 sm:px-6">
           <img
-            src="/images/smart-interfaces-fullscreen.png?v=v2new"
+            src="/images/smart-interfaces-fullscreen.png?v=v3clean"
             alt="VELTRIX Smart Watch Interfaces and Features"
             className="w-full h-auto block"
             loading="eager"
@@ -46,7 +46,7 @@ export default function WatchFacesSection() {
           <div className="inline-flex items-center gap-2 mb-2 sm:mb-2.5">
             <span className="w-4 sm:w-5 h-[1.5px] bg-[#3a86ff] rounded-full" />
             <span className="font-mono text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-[#3a86ff] uppercase">
-              ATHLETIC TELEMETRY // REAL-TIME METRICS
+              ATHLETIC PERFORMANCE TELEMETRY
             </span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">

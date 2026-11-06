@@ -84,7 +84,7 @@ export default function PurchaseSection() {
               <div className="relative z-10 flex items-center justify-between w-full">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-emerald-500/40 text-emerald-400 font-mono text-[10px] font-semibold tracking-wider backdrop-blur-md">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                  <span>IN-STOCK // BATCH 01</span>
+                  <span>IN-STOCK — BATCH 01</span>
                 </div>
                 <div className="font-mono text-[10px] text-slate-400 tracking-widest px-2.5 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
                   45MM • TI-6AL-4V
@@ -148,7 +148,7 @@ export default function PurchaseSection() {
               {/* Product Title & Serial Numbering */}
               <div className="flex items-center justify-between mb-3">
                 <span className="font-mono text-xs text-[#3a86ff] font-semibold tracking-widest uppercase">
-                  DIRECT ATELIER ALLOCATION // EDITION 01
+                  DIRECT ATELIER ALLOCATION — EDITION 01
                 </span>
                 <span className="font-mono text-[11px] text-slate-500 bg-white/5 border border-white/10 px-2.5 py-0.5 rounded">
                   SERIAL #0147 / 0500
@@ -331,7 +331,7 @@ export default function PurchaseSection() {
               <form onSubmit={handleOrder} className="flex flex-col">
                 <div className="flex items-center gap-2 font-mono text-xs text-[#3a86ff] font-semibold mb-2">
                   <span className="w-2 h-2 rounded-full bg-[#3a86ff] animate-pulse" />
-                  <span>BATCH 01 // DIRECT FACTORY RESERVATION</span>
+                  <span>BATCH 01 — DIRECT FACTORY RESERVATION</span>
                 </div>
 
                 <h3 className="font-heading font-bold text-2xl sm:text-3xl text-white mb-4">

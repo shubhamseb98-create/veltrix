@@ -16,8 +16,8 @@ const FINISH_STAGES = [
     range: [1, 58],
     scrollTarget: 0.10,
     name: 'DLC Stealth Obsidian',
-    subtitle: 'Diamond-Like Carbon // Deep Space Black',
-    tag: 'FINISH 01 // VAPOR DEPOSITION',
+    subtitle: 'Diamond-Like Carbon — Deep Space Black',
+    tag: 'FINISH 01 — VAPOR DEPOSITION',
     description:
       'Vapor-deposited diamond crystalline matrix bonded at 400°C. Absorbs 99.2% of incident light with zero reflection, engineered for extreme covert durability.',
     swatchBg: '#18181b',
@@ -36,8 +36,8 @@ const FINISH_STAGES = [
     range: [59, 115],
     scrollTarget: 0.36,
     name: 'Natural Titanium Satin',
-    subtitle: 'Grade 5 Ti-6Al-4V // Directional Satin Brush',
-    tag: 'FINISH 02 // RAW METALLURGY',
+    subtitle: 'Grade 5 Ti-6Al-4V — Directional Satin Brush',
+    tag: 'FINISH 02 — RAW METALLURGY',
     description:
       'Sculpted from a single solid aerospace ingot. Hand-finished with micro-abrasive directional satin brushing to exhibit the raw silvery luster of Grade 5 titanium.',
     swatchBg: '#e2e8f0',
@@ -56,8 +56,8 @@ const FINISH_STAGES = [
     range: [116, 172],
     scrollTarget: 0.62,
     name: 'Crimson Burgundy Atelier',
-    subtitle: 'Micro-Arc Ceramic Anodization // Wine Red',
-    tag: 'FINISH 03 // ANODIZED COUTURE',
+    subtitle: 'Micro-Arc Ceramic Anodization — Wine Red',
+    tag: 'FINISH 03 — ANODIZED COUTURE',
     description:
       'Deep crimson wine-red anodized bezel paired with midnight burgundy link accents. Built for unmistakable presence, balancing technical prowess with haute horology.',
     swatchBg: '#881337',
@@ -76,8 +76,8 @@ const FINISH_STAGES = [
     range: [173, 239],
     scrollTarget: 0.88,
     name: 'Frosted Azure Platinum',
-    subtitle: 'High-Luster Cold Steel // Mirror Chamfers',
-    tag: 'FINISH 04 // LIQUID METAL',
+    subtitle: 'High-Luster Cold Steel — Mirror Chamfers',
+    tag: 'FINISH 04 — LIQUID METAL',
     description:
       'Precision electropolished to mirror brilliance with hand-beveled chamfers. High-density cold-forged luster creates an unyielding luxury timepiece presence.',
     swatchBg: '#38bdf8',
@@ -509,7 +509,7 @@ export default function ColorScrollerSection() {
                 </span>
               </div>
               <div className="flex items-center justify-between text-[10px] font-mono text-slate-300 pt-1 border-t border-white/10">
-                <span className="text-[#3a86ff] truncate">{currentStage.subtitle.split('//')[0].trim()}</span>
+                <span className="text-[#3a86ff] truncate">{currentStage.subtitle.split(/[//—\-]/)[0].trim()}</span>
                 <span className="text-slate-400 flex-shrink-0 ml-2">
                   {currentStage.specs[0].val} • {currentStage.specs[2].val.replace(' Ultra-Dense', '')}
                 </span>

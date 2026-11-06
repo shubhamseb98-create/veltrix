@@ -582,7 +582,7 @@ export default function InteractiveSpecsSection() {
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#3a86ff]/10 border border-[#3a86ff]/25 text-[#3a86ff]">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
                     <span className="font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase">
-                      01 // AEROSPACE CHASSIS
+                      01 — AEROSPACE CHASSIS
                     </span>
                   </div>
 
@@ -606,7 +606,7 @@ export default function InteractiveSpecsSection() {
 
                 {/* Subtitle */}
                 <p className="font-mono text-[11px] sm:text-xs text-[#3a86ff] font-medium tracking-wide mb-2 sm:mb-2.5">
-                  Ti-6Al-4V Aerospace Ingot // 5-Axis CNC Facets
+                  Ti-6Al-4V Aerospace Ingot • 5-Axis CNC Facets
                 </p>
 
                 {/* Description */}
@@ -659,7 +659,7 @@ export default function InteractiveSpecsSection() {
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#3a86ff]/10 border border-[#3a86ff]/25 text-[#3a86ff]">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
                     <span className="font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase">
-                      03 // BIONIC CORE
+                      03 — BIONIC CORE
                     </span>
                   </div>
 
@@ -683,7 +683,7 @@ export default function InteractiveSpecsSection() {
 
                 {/* Subtitle */}
                 <p className="font-mono text-[11px] sm:text-xs text-[#3a86ff] font-medium tracking-wide mb-2 sm:mb-2.5">
-                  4nm Neural Silicon Substrate // 8-Ch Optical Array
+                  4nm Neural Silicon Substrate • 8-Ch Optical Array
                 </p>
 
                 {/* Description */}
@@ -721,7 +721,7 @@ export default function InteractiveSpecsSection() {
                 {/* Clean Feature Line */}
                 <div className="mt-2.5 pt-2 border-t border-white/5 flex items-center gap-2 text-[10px] sm:text-[11px] font-mono text-slate-300">
                   <Compass className="w-3.5 h-3.5 text-[#3a86ff] flex-shrink-0" />
-                  <span className="truncate">±0.001 ms Atomic Accuracy // Real-time Telemetry</span>
+                  <span className="truncate">±0.001 ms Atomic Accuracy • Real-time Telemetry</span>
                 </div>
               </div>
 
@@ -744,7 +744,7 @@ export default function InteractiveSpecsSection() {
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#3a86ff]/10 border border-[#3a86ff]/25 text-[#3a86ff]">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
                     <span className="font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase">
-                      02 // OPTICAL SHIELD
+                      02 — OPTICAL SHIELD
                     </span>
                   </div>
 
@@ -768,7 +768,7 @@ export default function InteractiveSpecsSection() {
 
                 {/* Subtitle */}
                 <p className="font-mono text-[11px] sm:text-xs text-[#3a86ff] font-medium tracking-wide mb-2 sm:mb-2.5">
-                  Dual-Curved Synthetic Sapphire // 120Hz Dynamic
+                  Dual-Curved Synthetic Sapphire • 120Hz Dynamic
                 </p>
 
                 {/* Description */}
@@ -806,7 +806,7 @@ export default function InteractiveSpecsSection() {
                 {/* Clean Feature Line */}
                 <div className="mt-2.5 pt-2 border-t border-white/5 flex items-center gap-2 text-[10px] sm:text-[11px] font-mono text-slate-300">
                   <Cpu className="w-3.5 h-3.5 text-[#3a86ff] flex-shrink-0" />
-                  <span className="truncate">480 × 480 Resolution // 454 PPI True Retina</span>
+                  <span className="truncate">480 × 480 Resolution • 454 PPI True Retina</span>
                 </div>
               </div>
 
@@ -821,7 +821,7 @@ export default function InteractiveSpecsSection() {
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#3a86ff]/10 border border-[#3a86ff]/25 text-[#3a86ff]">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
                     <span className="font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase">
-                      04 // HERMETIC SEAL & POWER
+                      04 — HERMETIC SEAL & POWER
                     </span>
                   </div>
 
@@ -845,9 +845,9 @@ export default function InteractiveSpecsSection() {
 
                 {/* Subtitle */}
                 <p className="font-mono text-[11px] sm:text-xs text-[#3a86ff] font-medium tracking-wide mb-2 sm:mb-2.5">
-                  Solid Polymer Battery // 100% Helium Chamber Tested
+                  Solid Polymer Battery • 100% Helium Chamber Tested
                 </p>
-
+                
                 {/* Description */}
                 <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-3.5 line-clamp-2 sm:line-clamp-none">
                   Chamber-tested with 100% helium sniffer verification to ensure absolute water resistance up to 10 ATM. Solid polymer battery matrix delivers up to 72 hours of uninterrupted biometrics.
@@ -883,7 +883,7 @@ export default function InteractiveSpecsSection() {
                 {/* Clean Feature Line */}
                 <div className="mt-2.5 pt-2 border-t border-white/5 flex items-center gap-2 text-[10px] sm:text-[11px] font-mono text-slate-300">
                   <Zap className="w-3.5 h-3.5 text-[#3a86ff] flex-shrink-0" />
-                  <span className="truncate">Rapid Magnetic Induction // 0–80% in 35 Minutes</span>
+                  <span className="truncate">Rapid Magnetic Induction • 0–80% in 35 Minutes</span>
                 </div>
               </div>
 
@@ -909,7 +909,7 @@ export default function InteractiveSpecsSection() {
               <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#3a86ff]/10 border border-[#3a86ff]/25 mb-2 sm:mb-2.5 text-[#3a86ff]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] shadow-[0_0_8px_#3a86ff] animate-pulse" />
                 <span className="font-mono text-[9px] sm:text-xs font-bold tracking-widest uppercase">
-                  TECHNICAL BLUEPRINT // COMPLETE MATRIX
+                  TECHNICAL BLUEPRINT & SPECIFICATIONS
                 </span>
               </div>
 
@@ -935,7 +935,7 @@ export default function InteractiveSpecsSection() {
                     Grade 5 Ti-6Al-4V
                   </strong>
                   <span className="text-[10px] sm:text-xs text-[#3a86ff] font-mono mt-0.5 block truncate">
-                    64g // 3,200 HV DLC
+                    64g • 3,200 HV DLC
                   </span>
                 </div>
 
@@ -951,7 +951,7 @@ export default function InteractiveSpecsSection() {
                     Ultra AMOLED
                   </strong>
                   <span className="text-[10px] sm:text-xs text-[#3a86ff] font-mono mt-0.5 block truncate">
-                    3,000 Nits // Mohs 9
+                    3,000 Nits • Mohs 9
                   </span>
                 </div>
 
@@ -967,7 +967,7 @@ export default function InteractiveSpecsSection() {
                     Neural S-01
                   </strong>
                   <span className="text-[10px] sm:text-xs text-[#3a86ff] font-mono mt-0.5 block truncate">
-                    4nm // 1,000Hz Bio
+                    4nm • 1,000Hz Bio
                   </span>
                 </div>
 
@@ -983,7 +983,7 @@ export default function InteractiveSpecsSection() {
                     10 ATM / 100M
                   </strong>
                   <span className="text-[10px] sm:text-xs text-[#3a86ff] font-mono mt-0.5 block truncate">
-                    72h // Fast Charge
+                    72h • Fast Charge
                   </span>
                 </div>
               </div>
