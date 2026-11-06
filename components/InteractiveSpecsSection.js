@@ -72,9 +72,9 @@ function getSmoothTrajectory(p, isMobile) {
     } else if (p < 0.90) {
       // Smooth glide to Blueprint Matrix position
       const t = smoothStep(0.82, 0.90, p);
-      y = -0.16 + (-0.20 - (-0.16)) * t;
+      y = -0.16 + (-0.28 - (-0.16)) * t;
     } else {
-      y = -0.20; // Final matrix view
+      y = -0.28; // Final matrix view
     }
   } else {
     if (p < 0.10) {
@@ -84,9 +84,9 @@ function getSmoothTrajectory(p, isMobile) {
     } else if (p < 0.83) {
       y = 0.0; // Perfect vertical center for all 4 side stations
     } else if (p < 0.90) {
-      y = -0.18 * smoothStep(0.83, 0.90, p); // Floats upward into upper-center
+      y = -0.27 * smoothStep(0.83, 0.90, p); // Floats comfortably upward into upper-center
     } else {
-      y = -0.18; // Locked in upper-center above Blueprint Matrix
+      y = -0.27; // Locked in upper-center above Blueprint Matrix with ample clearance
     }
   }
 
@@ -183,9 +183,23 @@ export default function InteractiveSpecsSection() {
       if (isMobile) {
         // Compact luxury mobile scale (~165-180px): gives generous space for station specs
         const targetH = Math.min(canvasH * 0.26, canvasW * 0.50);
-        scale = targetH / 739;
+        const baseScale = targetH / 739;
+        if (progressVal >= 0.82) {
+          const t = smoothStep(0.82, 0.90, progressVal);
+          scale = baseScale * (1.0 - 0.12 * t);
+        } else {
+          scale = baseScale;
+        }
       } else {
-        scale = Math.min(scaleW, scaleH) * 0.58;
+        const baseScale = Math.min(scaleW, scaleH) * 0.58;
+        // In final Blueprint Matrix view, smoothly glide to a refined 0.50 scale
+        // so the card below has generous breathing room and zero overlapping
+        if (progressVal >= 0.83) {
+          const t = smoothStep(0.83, 0.90, progressVal);
+          scale = baseScale * (1.0 - 0.14 * t);
+        } else {
+          scale = baseScale;
+        }
       }
 
       const drawW = Math.round(imgW * scale);
@@ -899,11 +913,11 @@ export default function InteractiveSpecsSection() {
            ======================================================== */}
         <div
           ref={card5Ref}
-          className="absolute inset-x-0 bottom-[60px] z-20 pointer-events-none text-center"
+          className="absolute inset-x-0 bottom-4 sm:bottom-6 md:bottom-8 z-20 pointer-events-none text-center"
           style={{ opacity: 0 }}
         >
           <div className="w-full max-w-4xl mx-auto px-3 sm:px-6">
-            <div className="bg-[#000e1f]/92 sm:bg-[#000e1f]/95 backdrop-blur-2xl border border-[#001d3d]/50 hover:border-[#3a86ff]/50 rounded-2xl p-4 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.85)] transition-all">
+            <div className="bg-[#000e1f]/92 sm:bg-[#000e1f]/95 backdrop-blur-2xl border border-[#001d3d]/50 hover:border-[#3a86ff]/50 rounded-2xl p-3.5 sm:p-5 shadow-[0_20px_50px_rgba(0,0,0,0.85)] transition-all">
               
               {/* Header Badge */}
               <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#3a86ff]/10 border border-[#3a86ff]/25 mb-2 sm:mb-2.5 text-[#3a86ff]">
