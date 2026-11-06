@@ -22,15 +22,15 @@ function getFramePath(index) {
   return `${FRAME_PREFIX}${String(index).padStart(4, '0')}${FRAME_EXT}`;
 }
 
+function smoothStep(edge0, edge1, val) {
+  const t = Math.min(1.0, Math.max(0.0, (val - edge0) / (edge1 - edge0)));
+  return t * t * (3 - 2 * t);
+}
+
 // Ultra-smooth continuous trajectory calculation
 function getSmoothTrajectory(p, isMobile) {
   let x = 0.0;
   let y = 0.0;
-
-  function smoothStep(edge0, edge1, val) {
-    const t = Math.min(1.0, Math.max(0.0, (val - edge0) / (edge1 - edge0)));
-    return t * t * (3 - 2 * t);
-  }
 
   // Horizontal trajectory (x: -1.0 to +1.0)
   if (isMobile) {
