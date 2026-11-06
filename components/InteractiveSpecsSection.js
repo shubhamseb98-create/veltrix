@@ -540,6 +540,12 @@ export default function InteractiveSpecsSection() {
           ref={card0Ref}
           className="absolute inset-x-4 top-16 sm:top-20 lg:top-24 max-w-2xl mx-auto text-center z-20 pointer-events-none"
         >
+          <div className="inline-flex items-center gap-2 mb-2 sm:mb-2.5">
+            <span className="w-3.5 sm:w-4 h-[1.5px] bg-[#3a86ff] rounded-full" />
+            <span className="font-mono text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-[#3a86ff] uppercase">
+              SUB-NANOSECOND HOROLOGY ARCHITECTURE
+            </span>
+          </div>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight leading-tight mb-2 sm:mb-2.5">
             Technical Specifications
           </h2>

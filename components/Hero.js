@@ -12,6 +12,16 @@ export default function Hero() {
       {/* Subtle Grid Accent Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
+      {/* Top Tagline */}
+      <div className="relative z-10 pt-4">
+        <div className="inline-flex items-center gap-2 mb-2">
+          <span className="w-4 sm:w-5 h-[1.5px] bg-[#3a86ff] rounded-full" />
+          <span className="font-mono text-[11px] sm:text-xs font-semibold tracking-[0.2em] text-[#3a86ff] uppercase">
+            AEROSPACE GRADE 5 TITANIUM
+          </span>
+        </div>
+      </div>
+
       {/* Center Main Headline (Massive Cinematic Banner Scale) */}
       <div className="relative z-10 max-w-5xl mx-auto my-auto py-6">
         <h1 className="font-heading font-extrabold text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] tracking-tight uppercase leading-[0.9] text-white">

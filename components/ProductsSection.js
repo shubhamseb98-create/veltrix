@@ -161,6 +161,12 @@ export default function ProductsSection() {
 
         {/* SECTION HEADER: "One Watch. Every Mood." */}
         <div className="text-center mb-8 sm:mb-10">
+          <div className="inline-flex items-center gap-2 mb-2 sm:mb-2.5">
+            <span className="w-3.5 sm:w-4 h-[1.5px] bg-[#3a86ff] rounded-full" />
+            <span className="font-mono text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-[#3a86ff] uppercase">
+              TIMEPIECE EDITIONS
+            </span>
+          </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white">One Watch. Every Mood.</h2>
         </div>
 

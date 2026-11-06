@@ -12,6 +12,12 @@ export default function WatchFacesSection() {
       <div className="w-full flex flex-col items-center">
         {/* Showcase 1 Header */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 px-4">
+          <div className="inline-flex items-center gap-2 mb-2 sm:mb-2.5">
+            <span className="w-4 sm:w-5 h-[1.5px] bg-[#3a86ff] rounded-full" />
+            <span className="font-mono text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-[#3a86ff] uppercase">
+              VELTRIX OS // DYNAMIC INTERFACES
+            </span>
+          </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
             Intelligence at Every Glance
           </h2>
@@ -37,6 +43,12 @@ export default function WatchFacesSection() {
       <div className="w-full flex flex-col items-center">
         {/* Showcase 2 Header */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 px-4">
+          <div className="inline-flex items-center gap-2 mb-2 sm:mb-2.5">
+            <span className="w-4 sm:w-5 h-[1.5px] bg-[#3a86ff] rounded-full" />
+            <span className="font-mono text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-[#3a86ff] uppercase">
+              ATHLETIC TELEMETRY // REAL-TIME METRICS
+            </span>
+          </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
             Precision Performance Tracking
           </h2>
