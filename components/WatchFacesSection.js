@@ -9,9 +9,13 @@ export default function WatchFacesSection() {
       {/* ========================================================
           1. TOP SHOWCASE: SMART WATCH INTERFACES & APPS
          ======================================================== */}
-      <div className="w-full flex flex-col items-center">
+      <div className="w-full flex flex-col items-center relative">
+        {/* Subtle Ambient Radial Glow Behind Header & Watches */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] lg:w-[1100px] h-[380px] bg-gradient-to-r from-[#1F3491]/25 via-[#3a86ff]/18 to-[#1F3491]/25 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[420px] h-[180px] bg-[#3a86ff]/10 blur-[90px] rounded-full pointer-events-none" />
+
         {/* Showcase 1 Header */}
-        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 px-4">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 px-4 relative z-10">
           <div className="inline-flex items-center gap-2 mb-2 sm:mb-2.5">
             <span className="w-4 sm:w-5 h-[1.5px] bg-[#3a86ff] rounded-full" />
             <span className="font-mono text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-[#3a86ff] uppercase">
@@ -31,7 +35,7 @@ export default function WatchFacesSection() {
           <img
             src="/images/smart-interfaces-fullscreen.png?v=v3clean"
             alt="VELTRIX Smart Watch Interfaces and Features"
-            className="w-full h-auto block"
+            className="w-full h-auto block mix-blend-screen relative z-10"
             loading="eager"
           />
         </div>
@@ -40,9 +44,14 @@ export default function WatchFacesSection() {
       {/* ========================================================
           2. BOTTOM SHOWCASE: FITNESS & WORKOUT TELEMETRY
          ======================================================== */}
-      <div className="w-full flex flex-col items-center">
+      <div className="w-full flex flex-col items-center relative">
+        {/* Subtle Atmospheric Radial Glow Behind Header & Watch Stage */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] lg:w-[920px] h-[440px] bg-gradient-to-r from-[#1F3491]/30 via-[#3a86ff]/20 to-[#1F3491]/30 blur-[130px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[340px] bg-[#3a86ff]/16 blur-[80px] rounded-full pointer-events-none" />
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[420px] h-[180px] bg-[#3a86ff]/10 blur-[90px] rounded-full pointer-events-none" />
+
         {/* Showcase 2 Header */}
-        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 px-4">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 px-4 relative z-10">
           <div className="inline-flex items-center gap-2 mb-2 sm:mb-2.5">
             <span className="w-4 sm:w-5 h-[1.5px] bg-[#3a86ff] rounded-full" />
             <span className="font-mono text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-[#3a86ff] uppercase">
@@ -62,7 +71,7 @@ export default function WatchFacesSection() {
           <img
             src="/images/fitness-telemetry.png?v=crispHQ"
             alt="VELTRIX Precision Workout Telemetry & Metrics"
-            className="w-full h-auto block"
+            className="w-full h-auto block mix-blend-screen relative z-10"
             loading="lazy"
           />
         </div>

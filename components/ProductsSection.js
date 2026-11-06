@@ -155,7 +155,7 @@ export default function ProductsSection() {
       className="relative w-full pt-[60px] pb-[60px] bg-black border-t border-[#001d3d]/20 select-none overflow-hidden font-sans flex flex-col justify-center"
     >
       {/* Ambient Radial Spotlight */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#001d3d]/10 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] lg:w-[1100px] h-[500px] bg-gradient-to-r from-[#1F3491]/22 via-[#3a86ff]/15 to-[#1F3491]/22 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 w-full relative z-10 flex flex-col justify-center">
 
