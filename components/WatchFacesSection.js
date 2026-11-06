@@ -4,35 +4,64 @@ export default function WatchFacesSection() {
   return (
     <section
       id="watch-faces"
-      className="relative w-full bg-black text-white font-sans select-none overflow-hidden flex flex-col justify-center items-center py-12 sm:py-20 md:py-24 space-y-16 sm:space-y-24 md:space-y-32"
+      className="relative w-full bg-black text-white font-sans select-none overflow-hidden flex flex-col justify-center items-center py-16 sm:py-24 md:py-32 space-y-20 sm:space-y-28 md:space-y-36"
     >
       {/* ========================================================
           1. TOP SHOWCASE: SMART WATCH INTERFACES & APPS
-          - Reduced balanced width
-          - Pure Solid Black (#000000) backdrop
          ======================================================== */}
-      <div className="w-full max-w-5xl mx-auto relative z-10 flex items-center justify-center px-4 sm:px-6">
-        <img
-          src="/images/smart-interfaces-fullscreen.jpg?v=pureblack"
-          alt="VELTRIX Smart Watch Interfaces and Features"
-          className="w-full h-auto block"
-          loading="eager"
-        />
+      <div className="w-full flex flex-col items-center">
+        {/* Showcase 1 Header */}
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 px-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#3a86ff]/10 border border-[#3a86ff]/25 text-[#3a86ff] font-mono text-[10px] sm:text-xs tracking-widest uppercase mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] animate-pulse" />
+            <span>VELTRIX OS // DYNAMIC INTERFACES</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Intelligence at Every Glance
+          </h2>
+          <p className="text-slate-400 text-xs sm:text-sm md:text-base font-normal leading-relaxed max-w-xl mx-auto mt-2 sm:mt-3">
+            From intuitive media controls and real-time biometric rings to instant messaging. Engineered for frictionless daily control.
+          </p>
+        </div>
+
+        {/* Showcase 1 Image */}
+        <div className="w-full max-w-5xl mx-auto relative z-10 flex items-center justify-center px-4 sm:px-6">
+          <img
+            src="/images/smart-interfaces-fullscreen.jpg?v=pureblack"
+            alt="VELTRIX Smart Watch Interfaces and Features"
+            className="w-full h-auto block"
+            loading="eager"
+          />
+        </div>
       </div>
 
       {/* ========================================================
           2. BOTTOM SHOWCASE: FITNESS & WORKOUT TELEMETRY
-          - Center Chronos timepiece with 4 floating performance telemetry widgets
-          - Reduced balanced width matching top showcase
-          - 100% Pure Solid Black (#000000) background without any blue glow
          ======================================================== */}
-      <div className="w-full max-w-5xl mx-auto relative z-10 flex items-center justify-center px-4 sm:px-6">
-        <img
-          src="/images/fitness-telemetry.jpg?v=pureblack"
-          alt="VELTRIX Precision Workout Telemetry & Metrics"
-          className="w-full h-auto block"
-          loading="lazy"
-        />
+      <div className="w-full flex flex-col items-center">
+        {/* Showcase 2 Header */}
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 px-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#3a86ff]/10 border border-[#3a86ff]/25 text-[#3a86ff] font-mono text-[10px] sm:text-xs tracking-widest uppercase mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] animate-pulse" />
+            <span>ATHLETIC TELEMETRY // REAL-TIME METRICS</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Precision Performance Tracking
+          </h2>
+          <p className="text-slate-400 text-xs sm:text-sm md:text-base font-normal leading-relaxed max-w-xl mx-auto mt-2 sm:mt-3">
+            Multi-frequency GPS routing, 1,000Hz cardiac sampling, and advanced workout load telemetry built directly into aerospace-grade titanium.
+          </p>
+        </div>
+
+        {/* Showcase 2 Image */}
+        <div className="w-full max-w-5xl mx-auto relative z-10 flex items-center justify-center px-4 sm:px-6">
+          <img
+            src="/images/fitness-telemetry.jpg?v=pureblack"
+            alt="VELTRIX Precision Workout Telemetry & Metrics"
+            className="w-full h-auto block"
+            loading="lazy"
+          />
+        </div>
       </div>
     </section>
   );
