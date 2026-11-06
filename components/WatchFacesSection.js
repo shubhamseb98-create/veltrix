@@ -12,10 +12,6 @@ export default function WatchFacesSection() {
       <div className="w-full flex flex-col items-center">
         {/* Showcase 1 Header */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 px-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#3a86ff]/10 border border-[#3a86ff]/25 text-[#3a86ff] font-mono text-[10px] sm:text-xs tracking-widest uppercase mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] animate-pulse" />
-            <span>VELTRIX OS // DYNAMIC INTERFACES</span>
-          </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
             Intelligence at Every Glance
           </h2>
@@ -25,9 +21,9 @@ export default function WatchFacesSection() {
         </div>
 
         {/* Showcase 1 Image */}
-        <div className="w-full max-w-5xl mx-auto relative z-10 flex items-center justify-center px-4 sm:px-6">
+        <div className="w-full max-w-7xl mx-auto relative z-10 flex items-center justify-center px-4 sm:px-6">
           <img
-            src="/images/smart-interfaces-fullscreen.jpg?v=pureblack"
+            src="/images/smart-interfaces-fullscreen.jpg?v=cropped7xl"
             alt="VELTRIX Smart Watch Interfaces and Features"
             className="w-full h-auto block"
             loading="eager"
@@ -41,10 +37,6 @@ export default function WatchFacesSection() {
       <div className="w-full flex flex-col items-center">
         {/* Showcase 2 Header */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 px-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#3a86ff]/10 border border-[#3a86ff]/25 text-[#3a86ff] font-mono text-[10px] sm:text-xs tracking-widest uppercase mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] animate-pulse" />
-            <span>ATHLETIC TELEMETRY // REAL-TIME METRICS</span>
-          </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
             Precision Performance Tracking
           </h2>
@@ -54,9 +46,9 @@ export default function WatchFacesSection() {
         </div>
 
         {/* Showcase 2 Image */}
-        <div className="w-full max-w-5xl mx-auto relative z-10 flex items-center justify-center px-4 sm:px-6">
+        <div className="w-full max-w-7xl mx-auto relative z-10 flex items-center justify-center px-4 sm:px-6">
           <img
-            src="/images/fitness-telemetry.jpg?v=pureblack"
+            src="/images/fitness-telemetry.jpg?v=cropped7xl"
             alt="VELTRIX Precision Workout Telemetry & Metrics"
             className="w-full h-auto block"
             loading="lazy"
