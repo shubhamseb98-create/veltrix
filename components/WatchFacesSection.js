@@ -21,11 +21,11 @@ export default function WatchFacesSection() {
         </div>
 
         {/* Showcase 1 Image */}
-        <div className="w-full max-w-7xl mx-auto relative z-10 flex items-center justify-center px-4 sm:px-6">
+        <div className="w-full max-w-6xl mx-auto relative z-10 flex items-center justify-center px-4 sm:px-6">
           <img
-            src="/images/smart-interfaces-fullscreen.jpg?v=cropped7xl"
+            src="/images/smart-interfaces-fullscreen.jpg?v=compactheight"
             alt="VELTRIX Smart Watch Interfaces and Features"
-            className="w-full h-auto block"
+            className="w-full h-auto max-h-[48vh] object-contain block"
             loading="eager"
           />
         </div>
@@ -46,11 +46,11 @@ export default function WatchFacesSection() {
         </div>
 
         {/* Showcase 2 Image */}
-        <div className="w-full max-w-7xl mx-auto relative z-10 flex items-center justify-center px-4 sm:px-6">
+        <div className="w-full max-w-6xl mx-auto relative z-10 flex items-center justify-center px-4 sm:px-6">
           <img
-            src="/images/fitness-telemetry.jpg?v=cropped7xl"
+            src="/images/fitness-telemetry.jpg?v=compactheight"
             alt="VELTRIX Precision Workout Telemetry & Metrics"
-            className="w-full h-auto block"
+            className="w-full h-auto max-h-[50vh] object-contain block"
             loading="lazy"
           />
         </div>
