@@ -538,7 +538,7 @@ export default function InteractiveSpecsSection() {
            ======================================================== */}
         <div
           ref={card0Ref}
-          className="absolute inset-x-4 top-16 sm:top-20 lg:top-24 max-w-2xl mx-auto text-center z-20 pointer-events-none"
+          className="absolute inset-x-4 top-[60px] max-w-2xl mx-auto text-center z-20 pointer-events-none"
         >
           <div className="inline-flex items-center gap-2 mb-2 sm:mb-2.5">
             <span className="w-3.5 sm:w-4 h-[1.5px] bg-[#3a86ff] rounded-full" />
@@ -899,7 +899,7 @@ export default function InteractiveSpecsSection() {
            ======================================================== */}
         <div
           ref={card5Ref}
-          className="absolute inset-x-0 bottom-3 sm:bottom-8 z-20 pointer-events-none text-center"
+          className="absolute inset-x-0 bottom-[60px] z-20 pointer-events-none text-center"
           style={{ opacity: 0 }}
         >
           <div className="w-full max-w-4xl mx-auto px-3 sm:px-6">

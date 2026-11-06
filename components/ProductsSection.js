@@ -152,12 +152,12 @@ export default function ProductsSection() {
   return (
     <section
       id="collection"
-      className="relative w-full min-h-screen lg:h-screen pt-16 sm:pt-20 md:pt-24 pb-16 sm:pb-20 md:pb-24 bg-black border-t border-[#001d3d]/20 select-none overflow-hidden font-sans flex flex-col justify-center"
+      className="relative w-full pt-[60px] pb-[60px] bg-black border-t border-[#001d3d]/20 select-none overflow-hidden font-sans flex flex-col justify-center"
     >
       {/* Ambient Radial Spotlight */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#001d3d]/10 rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 w-full relative z-10 flex flex-col justify-center my-auto">
+      <div className="max-w-7xl mx-auto px-6 w-full relative z-10 flex flex-col justify-center">
 
         {/* SECTION HEADER: "One Watch. Every Mood." */}
         <div className="text-center mb-8 sm:mb-10">

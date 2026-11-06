@@ -15,7 +15,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative w-full bg-black text-white font-sans select-none overflow-hidden pt-12 sm:pt-16 md:pt-20">
+    <footer className="relative w-full bg-black text-white font-sans select-none overflow-hidden pt-[60px]">
 
       {/* ========================================================
           1. EXACT ATMOSPHERIC ROYAL BLUE GLOWS (Matching Reference Image)

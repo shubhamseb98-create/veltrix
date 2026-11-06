@@ -377,7 +377,7 @@ export default function ColorScrollerSection() {
         />
 
         {/* Top Header & Frame Scrubber */}
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-14 sm:pt-20 md:pt-24 flex items-center justify-between gap-3 pointer-events-auto">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-[60px] flex items-center justify-between gap-3 pointer-events-auto">
           <div className="min-w-0">
             <div className="inline-flex items-center gap-2 mb-1 sm:mb-1.5">
               <span className="w-3.5 sm:w-4 h-[1.5px] bg-[#3a86ff] rounded-full" />
@@ -409,7 +409,7 @@ export default function ColorScrollerSection() {
         </div>
 
         {/* Active Stage Callout Card & Swatch Controls */}
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 mt-auto mb-3 sm:mb-6 md:mb-10 pointer-events-auto">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 mt-auto mb-[60px] pointer-events-auto">
           {/* DESKTOP LAYOUT (lg:flex) - Preserves original multi-column atelier card */}
           <div className="hidden lg:flex items-end justify-between gap-6">
             {/* Left Detail Card */}

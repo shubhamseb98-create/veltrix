@@ -4,7 +4,7 @@ export default function WatchFacesSection() {
   return (
     <section
       id="watch-faces"
-      className="relative w-full bg-black text-white font-sans select-none overflow-hidden flex flex-col justify-center items-center py-16 sm:py-24 md:py-32 space-y-20 sm:space-y-28 md:space-y-36"
+      className="relative w-full bg-black text-white font-sans select-none overflow-hidden flex flex-col justify-center items-center pt-[60px] pb-[60px] space-y-[60px]"
     >
       {/* ========================================================
           1. TOP SHOWCASE: SMART WATCH INTERFACES & APPS
