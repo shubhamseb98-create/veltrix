@@ -21,9 +21,9 @@ export default function WatchFacesSection() {
         </div>
 
         {/* Showcase 1 Image */}
-        <div className="w-full max-w-4xl lg:max-w-5xl mx-auto relative z-10 flex items-center justify-center px-4 sm:px-6">
+        <div className="w-full max-w-5xl lg:max-w-6xl mx-auto relative z-10 flex items-center justify-center px-4 sm:px-6">
           <img
-            src="/images/smart-interfaces-fullscreen.jpg?v=crispHQ"
+            src="/images/smart-interfaces-fullscreen.png?v=v2new"
             alt="VELTRIX Smart Watch Interfaces and Features"
             className="w-full h-auto block"
             loading="eager"
