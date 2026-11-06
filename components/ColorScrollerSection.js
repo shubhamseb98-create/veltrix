@@ -379,10 +379,6 @@ export default function ColorScrollerSection() {
         {/* Top Header & Frame Scrubber */}
         <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-14 sm:pt-20 md:pt-24 flex items-center justify-between gap-3 pointer-events-auto">
           <div className="min-w-0">
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#3a86ff]/10 border border-[#001d3d]/25 text-[#3a86ff] font-mono text-[9px] sm:text-xs tracking-widest uppercase mb-1 sm:mb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#3a86ff] animate-pulse" />
-              <span>METALLURGY ATELIER</span>
-            </div>
             <h2 className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight truncate">
               Crafted in Every Light.
             </h2>
