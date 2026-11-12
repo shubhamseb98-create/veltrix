@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 
 const TOTAL_FRAMES = 239;
 const FRAME_PREFIX = '/p1_frames/frame_';
@@ -377,7 +378,13 @@ export default function ColorScrollerSection() {
         />
 
         {/* Top Header & Frame Scrubber */}
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-[60px] flex items-center justify-between gap-3 pointer-events-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-[60px] flex items-center justify-between gap-3 pointer-events-auto"
+        >
           <div className="min-w-0">
             <div className="inline-flex items-center gap-2 mb-1 sm:mb-1.5">
               <span className="w-3.5 sm:w-4 h-[1.5px] bg-[#3a86ff] rounded-full" />
@@ -406,46 +413,56 @@ export default function ColorScrollerSection() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Active Stage Callout Card & Swatch Controls */}
         <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 mt-auto mb-[60px] pointer-events-auto">
           {/* DESKTOP LAYOUT (lg:flex) - Preserves original multi-column atelier card */}
           <div className="hidden lg:flex items-end justify-between gap-6">
             {/* Left Detail Card */}
-            <div className="w-full max-w-[360px] bg-[#000e1f]/92 backdrop-blur-xl border border-[#001d3d]/30 hover:border-[#3a86ff]/60 shadow-[0_20px_50px_rgba(0,0,0,0.7)] rounded-2xl p-5 transition-all duration-300">
-              <div className="flex items-center justify-between mb-2">
-                <span className={`font-mono text-xs font-bold px-2.5 py-1 rounded-md border ${currentStage.accentClass}`}>
-                  {currentStage.tag}
-                </span>
-                <span className="font-mono text-xs text-slate-400">
-                  {activeStageIndex + 1} OF 4
-                </span>
-              </div>
-
-              <h3 className="text-2xl font-bold text-white mb-0.5 tracking-tight">
-                {currentStage.name}
-              </h3>
-              <p className="font-mono text-xs text-[#3a86ff] mb-2 font-medium">
-                {currentStage.subtitle}
-              </p>
-              <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                {currentStage.description}
-              </p>
-
-              {/* Technical Specifications Pill Grid */}
-              <div className="grid grid-cols-3 gap-2 pt-3 border-t border-white/10">
-                {currentStage.specs.map((s, idx) => (
-                  <div key={idx} className="bg-white/5 rounded-lg p-2 border border-white/5">
-                    <span className="block font-mono text-[9px] text-slate-400 tracking-wider uppercase mb-0.5">
-                      {s.label}
+            <div className="w-full max-w-[360px] bg-[#000e1f]/92 backdrop-blur-xl border border-[#001d3d]/30 hover:border-[#3a86ff]/60 shadow-[0_20px_50px_rgba(0,0,0,0.7)] rounded-2xl p-5 transition-colors duration-300 overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentStage.id}
+                  initial={{ opacity: 0, y: 10, filter: 'blur(4px)' }}
+                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  exit={{ opacity: 0, y: -8, filter: 'blur(4px)' }}
+                  transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className={`font-mono text-xs font-bold px-2.5 py-1 rounded-md border ${currentStage.accentClass}`}>
+                      {currentStage.tag}
                     </span>
-                    <span className="block font-mono text-[11px] font-bold text-white truncate">
-                      {s.val}
+                    <span className="font-mono text-xs text-slate-400">
+                      {activeStageIndex + 1} OF 4
                     </span>
                   </div>
-                ))}
-              </div>
+
+                  <h3 className="text-2xl font-bold text-white mb-0.5 tracking-tight">
+                    {currentStage.name}
+                  </h3>
+                  <p className="font-mono text-xs text-[#3a86ff] mb-2 font-medium">
+                    {currentStage.subtitle}
+                  </p>
+                  <p className="text-sm text-slate-300 leading-relaxed mb-4">
+                    {currentStage.description}
+                  </p>
+
+                  {/* Technical Specifications Pill Grid */}
+                  <div className="grid grid-cols-3 gap-2 pt-3 border-t border-white/10">
+                    {currentStage.specs.map((s, idx) => (
+                      <div key={idx} className="bg-white/5 rounded-lg p-2 border border-white/5">
+                        <span className="block font-mono text-[9px] text-slate-400 tracking-wider uppercase mb-0.5">
+                          {s.label}
+                        </span>
+                        <span className="block font-mono text-[11px] font-bold text-white truncate">
+                          {s.val}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
 
             {/* Desktop Swatches Bar */}
@@ -459,17 +476,24 @@ export default function ColorScrollerSection() {
                 {FINISH_STAGES.map((stage, idx) => {
                   const isActive = activeStageIndex === idx;
                   return (
-                    <button
+                    <motion.button
                       key={stage.id}
                       onClick={() => scrollToFinish(stage.scrollTarget)}
-                      className={`group flex items-center gap-2 px-3 py-2 rounded-xl transition-all whitespace-nowrap ${
-                        isActive
-                          ? 'bg-white/10 border border-white/20 shadow-md'
-                          : 'hover:bg-white/5 border border-transparent'
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.96 }}
+                      className={`group relative flex items-center gap-2 px-3 py-2 rounded-xl transition-colors whitespace-nowrap ${
+                        isActive ? '' : 'hover:bg-white/5'
                       }`}
                     >
+                      {isActive && (
+                        <motion.span
+                          layoutId="desktop-finish-pill"
+                          transition={{ type: 'spring', stiffness: 420, damping: 34 }}
+                          className="absolute inset-0 rounded-xl bg-white/10 border border-white/20 shadow-md pointer-events-none"
+                        />
+                      )}
                       <span
-                        className={`w-4 h-4 rounded-full transition-transform ${
+                        className={`relative z-10 w-4 h-4 rounded-full transition-transform ${
                           isActive ? 'scale-125 ring-2 ring-white/50' : 'group-hover:scale-110'
                         }`}
                         style={{
@@ -478,13 +502,13 @@ export default function ColorScrollerSection() {
                         }}
                       />
                       <span
-                        className={`text-xs font-medium tracking-wide transition-colors ${
+                        className={`relative z-10 text-xs font-medium tracking-wide transition-colors ${
                           isActive ? 'text-white font-semibold' : 'text-slate-400 group-hover:text-slate-200'
                         }`}
                       >
                         {stage.shortName}
                       </span>
-                    </button>
+                    </motion.button>
                   );
                 })}
               </div>
@@ -494,26 +518,36 @@ export default function ColorScrollerSection() {
           {/* MOBILE LAYOUT (lg:hidden) - Streamlined, 100% zero overlap over the watch */}
           <div className="lg:hidden flex flex-col gap-2 w-full">
             {/* Sleek Mobile Finish Information Pill */}
-            <div className="w-full bg-[#000e1f]/94 backdrop-blur-xl border border-[#001d3d]/35 rounded-xl p-2.5 shadow-xl">
-              <div className="flex items-center justify-between gap-2 mb-1">
-                <div className="flex items-center gap-2 min-w-0">
-                  <span className={`font-mono text-[9px] font-bold px-1.5 py-0.5 rounded border ${currentStage.accentClass} flex-shrink-0`}>
-                    0{activeStageIndex + 1}
-                  </span>
-                  <span className="font-bold text-white text-xs sm:text-sm tracking-tight truncate">
-                    {currentStage.name}
-                  </span>
-                </div>
-                <span className="font-mono text-[10px] text-slate-400 flex-shrink-0">
-                  {activeStageIndex + 1} OF 4
-                </span>
-              </div>
-              <div className="flex items-center justify-between text-[10px] font-mono text-slate-300 pt-1 border-t border-white/10">
-                <span className="text-[#3a86ff] truncate">{currentStage.subtitle.split(/[//—\-]/)[0].trim()}</span>
-                <span className="text-slate-400 flex-shrink-0 ml-2">
-                  {currentStage.specs[0].val} • {currentStage.specs[2].val.replace(' Ultra-Dense', '')}
-                </span>
-              </div>
+            <div className="w-full bg-[#000e1f]/94 backdrop-blur-xl border border-[#001d3d]/35 rounded-xl p-2.5 shadow-xl overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentStage.id}
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <div className="flex items-center justify-between gap-2 mb-1">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span className={`font-mono text-[9px] font-bold px-1.5 py-0.5 rounded border ${currentStage.accentClass} flex-shrink-0`}>
+                        0{activeStageIndex + 1}
+                      </span>
+                      <span className="font-bold text-white text-xs sm:text-sm tracking-tight truncate">
+                        {currentStage.name}
+                      </span>
+                    </div>
+                    <span className="font-mono text-[10px] text-slate-400 flex-shrink-0">
+                      {activeStageIndex + 1} OF 4
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between text-[10px] font-mono text-slate-300 pt-1 border-t border-white/10">
+                    <span className="text-[#3a86ff] truncate">{currentStage.subtitle.split(/[//—\-]/)[0].trim()}</span>
+                    <span className="text-slate-400 flex-shrink-0 ml-2">
+                      {currentStage.specs[0].val} • {currentStage.specs[2].val.replace(' Ultra-Dense', '')}
+                    </span>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
 
             {/* Mobile Swatches: 4-Column Grid (Zero Cutoff, Zero Overflow) */}
@@ -522,17 +556,23 @@ export default function ColorScrollerSection() {
                 {FINISH_STAGES.map((stage, idx) => {
                   const isActive = activeStageIndex === idx;
                   return (
-                    <button
+                    <motion.button
                       key={stage.id}
                       onClick={() => scrollToFinish(stage.scrollTarget)}
-                      className={`flex items-center justify-center gap-1.5 py-1.5 px-1 rounded-lg transition-all ${
-                        isActive
-                          ? 'bg-white/15 border border-white/30 shadow'
-                          : 'hover:bg-white/5 border border-transparent'
+                      whileTap={{ scale: 0.95 }}
+                      className={`relative flex items-center justify-center gap-1.5 py-1.5 px-1 rounded-lg transition-colors ${
+                        isActive ? '' : 'hover:bg-white/5'
                       }`}
                     >
+                      {isActive && (
+                        <motion.span
+                          layoutId="mobile-finish-pill"
+                          transition={{ type: 'spring', stiffness: 420, damping: 34 }}
+                          className="absolute inset-0 rounded-lg bg-white/15 border border-white/30 shadow pointer-events-none"
+                        />
+                      )}
                       <span
-                        className={`w-3 h-3 rounded-full flex-shrink-0 ${
+                        className={`relative z-10 w-3 h-3 rounded-full flex-shrink-0 ${
                           isActive ? 'scale-110 ring-2 ring-white/60' : ''
                         }`}
                         style={{
@@ -541,13 +581,13 @@ export default function ColorScrollerSection() {
                         }}
                       />
                       <span
-                        className={`text-[10px] font-mono tracking-tight truncate ${
+                        className={`relative z-10 text-[10px] font-mono tracking-tight truncate ${
                           isActive ? 'text-white font-bold' : 'text-slate-400'
                         }`}
                       >
                         {stage.shortName}
                       </span>
-                    </button>
+                    </motion.button>
                   );
                 })}
               </div>
@@ -557,21 +597,36 @@ export default function ColorScrollerSection() {
 
         {/* Scroll Instruction Hint at bottom center */}
         <div className="relative z-20 pb-4 text-center pointer-events-auto hidden sm:block">
-          <div className="hidden sm:inline-flex items-center gap-2 text-xs font-mono text-slate-400 animate-bounce">
+          <motion.div
+            animate={{ y: [0, 5, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+            className="hidden sm:inline-flex items-center gap-2 text-xs font-mono text-slate-400"
+          >
             <span>SCROLL DOWN TO EXPLORE FINISHES</span>
             <span>↓</span>
-          </div>
+          </motion.div>
         </div>
 
         {/* Preload status banner (only if initial loading) */}
-        {!isReady && (
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 bg-[#000e1f]/92 backdrop-blur-md border border-[#001d3d]/30 px-6 py-4 rounded-xl flex items-center gap-3">
-            <div className="w-5 h-5 border-2 border-[#3a86ff] border-t-transparent rounded-full animate-spin" />
-            <div className="font-mono text-xs text-slate-300">
-              OPTIMIZING 4K SEQUENCES ({loadedCount}/{TOTAL_FRAMES})...
-            </div>
-          </div>
-        )}
+        <div className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none px-4">
+          <AnimatePresence>
+            {!isReady && (
+              <motion.div
+                key="metallurgy-preloader"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.94 }}
+                transition={{ duration: 0.3 }}
+                className="bg-[#000e1f]/92 backdrop-blur-md border border-[#001d3d]/30 px-6 py-4 rounded-xl flex items-center gap-3 shadow-2xl"
+              >
+                <div className="w-5 h-5 border-2 border-[#3a86ff] border-t-transparent rounded-full animate-spin flex-shrink-0" />
+                <div className="font-mono text-xs text-slate-300">
+                  OPTIMIZING 4K SEQUENCES ({loadedCount}/{TOTAL_FRAMES})...
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );

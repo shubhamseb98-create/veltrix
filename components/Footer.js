@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'motion/react';
 import {
   Instagram,
   Facebook,
@@ -8,6 +9,17 @@ import {
   Youtube,
   ArrowUp,
 } from 'lucide-react';
+import ParticleWordmark from './ParticleWordmark';
+
+const SOCIAL_LINKS = [
+  { label: 'Instagram', href: '#', Icon: Instagram },
+  { label: 'Facebook', href: '#', Icon: Facebook },
+  { label: 'Twitter', href: '#', Icon: Twitter },
+  { label: 'LinkedIn', href: '#', Icon: Linkedin },
+  { label: 'YouTube', href: '#', Icon: Youtube },
+];
+
+const LUXURY_EASE = [0.22, 1, 0.36, 1];
 
 export default function Footer() {
   function scrollToTop() {
@@ -21,16 +33,22 @@ export default function Footer() {
           1. EXACT ATMOSPHERIC ROYAL BLUE GLOWS (Matching Reference Image)
          ======================================================== */}
       {/* Left Intense Royal Blue Bloom (#1F3491 / rgb(31, 52, 145)) */}
-      <div
-        className="absolute -left-28 sm:-left-36 top-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] h-[520px] sm:h-[680px] rounded-full pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle at 35% 50%, rgba(31, 52, 145, 0.90) 0%, rgba(15, 23, 85, 0.55) 45%, transparent 72%)',
-          filter: 'blur(80px)',
-        }}
-      />
+      <div className="absolute -left-28 sm:-left-36 top-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] h-[520px] sm:h-[680px] rounded-full pointer-events-none">
+        <motion.div
+          animate={{ scale: [1, 1.07, 1], opacity: [0.82, 1, 0.82] }}
+          transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+          className="w-full h-full rounded-full"
+          style={{
+            background: 'radial-gradient(circle at 35% 50%, rgba(31, 52, 145, 0.90) 0%, rgba(15, 23, 85, 0.55) 45%, transparent 72%)',
+            filter: 'blur(80px)',
+          }}
+        />
+      </div>
 
       {/* Right Top Soft Royal Blue Bloom (#232F9F / rgb(35, 47, 159)) */}
-      <div
+      <motion.div
+        animate={{ scale: [1, 1.09, 1], opacity: [0.75, 0.98, 0.75] }}
+        transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
         className="absolute -right-20 sm:-right-28 top-0 w-[450px] sm:w-[600px] h-[400px] sm:h-[500px] rounded-full pointer-events-none"
         style={{
           background: 'radial-gradient(circle at 70% 30%, rgba(35, 47, 159, 0.70) 0%, rgba(18, 25, 95, 0.35) 45%, transparent 72%)',
@@ -43,19 +61,26 @@ export default function Footer() {
         {/* ========================================================
             2. TOP HEADER NAVIGATION (CONTACT | LINKS | STALK US)
            ======================================================== */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.65, ease: LUXURY_EASE }}
+          className="flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left"
+        >
 
           {/* Left Column: CONTACT */}
           <div className="flex flex-col items-center sm:items-start gap-1">
             <span className="text-xs sm:text-sm font-bold tracking-widest text-white uppercase font-heading">
               CONTACT
             </span>
-            <a
+            <motion.a
               href="mailto:contact@veltrix.com"
+              whileHover={{ x: 2 }}
               className="text-xs sm:text-sm text-slate-300 hover:text-white transition-colors"
             >
               contact@veltrix.com
-            </a>
+            </motion.a>
           </div>
 
           {/* Right Column: STALK US + 5 Social Circle Icons */}
@@ -64,53 +89,32 @@ export default function Footer() {
               STALK US
             </span>
             <div className="flex items-center gap-2 sm:gap-2.5">
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="w-8 h-8 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-slate-300 hover:text-white hover:border-white/50 hover:bg-white/15 transition-all"
-              >
-                <Instagram className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="w-8 h-8 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-slate-300 hover:text-white hover:border-white/50 hover:bg-white/15 transition-all"
-              >
-                <Facebook className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="w-8 h-8 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-slate-300 hover:text-white hover:border-white/50 hover:bg-white/15 transition-all"
-              >
-                <Twitter className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="w-8 h-8 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-slate-300 hover:text-white hover:border-white/50 hover:bg-white/15 transition-all"
-              >
-                <Linkedin className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href="#"
-                aria-label="YouTube"
-                className="w-8 h-8 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-slate-300 hover:text-white hover:border-white/50 hover:bg-white/15 transition-all"
-              >
-                <Youtube className="w-3.5 h-3.5" />
-              </a>
+              {SOCIAL_LINKS.map(({ label, href, Icon }, idx) => (
+                <motion.a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  initial={{ opacity: 0, scale: 0.85 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.4, delay: 0.08 + idx * 0.05, ease: LUXURY_EASE }}
+                  whileHover={{ y: -3, scale: 1.12 }}
+                  whileTap={{ scale: 0.92 }}
+                  className="w-8 h-8 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-slate-300 hover:text-white hover:border-white/50 hover:bg-white/15 transition-colors"
+                >
+                  <Icon className="w-3.5 h-3.5" />
+                </motion.a>
+              ))}
             </div>
           </div>
 
-        </div>
+        </motion.div>
 
         {/* ========================================================
-            3. BRAND NAME "VELTRIX" (Refined Luxury Proportion)
+            3. BRAND NAME "VELTRIX" (Interactive Dot-Matrix Particle Stage)
            ======================================================== */}
-        <div className="py-6 sm:py-8 md:py-10 lg:py-12 text-center select-none overflow-hidden">
-          <h1 className="font-heading font-black text-[11vw] sm:text-[10vw] md:text-[9vw] lg:text-[105px] xl:text-[120px] leading-none text-white tracking-tight drop-shadow-[0_8px_30px_rgba(0,0,0,0.8)]">
-            VELTRIX
-          </h1>
+        <div className="py-2 sm:py-4 md:py-6 text-center select-none">
+          <ParticleWordmark />
         </div>
 
       </div>
@@ -124,13 +128,16 @@ export default function Footer() {
         </p>
 
         {/* Back to Top Floating Circular Button (Blue #3350FF with upward arrow) */}
-        <button
+        <motion.button
           onClick={scrollToTop}
           aria-label="Scroll to apex"
-          className="absolute right-4 sm:right-6 md:right-8 bottom-3 sm:bottom-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#3350FF] hover:bg-[#2542e6] text-white flex items-center justify-center shadow-[0_0_25px_rgba(51,80,255,0.6)] transition-all hover:scale-110 active:scale-95 group"
+          whileHover={{ scale: 1.12, y: -2 }}
+          whileTap={{ scale: 0.92 }}
+          transition={{ type: 'spring', stiffness: 420, damping: 22 }}
+          className="absolute right-4 sm:right-6 md:right-8 bottom-3 sm:bottom-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#3350FF] hover:bg-[#2542e6] text-white flex items-center justify-center shadow-[0_0_25px_rgba(51,80,255,0.6)] transition-colors group"
         >
           <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:-translate-y-0.5" />
-        </button>
+        </motion.button>
       </div>
 
     </footer>

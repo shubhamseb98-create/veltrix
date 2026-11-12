@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import {
   ShieldCheck,
   Cpu,
@@ -537,14 +538,28 @@ export default function InteractiveSpecsSection() {
         </div>
 
         {/* Loading Overlay */}
-        {!isReady && (
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 bg-black/90 backdrop-blur-md border border-white/10 px-6 py-4 rounded-xl flex items-center gap-3">
-            <div className="w-5 h-5 border-2 border-[#3a86ff] border-t-transparent rounded-full animate-spin" />
-            <div className="font-mono text-xs text-slate-300">
-              SYNCHRONIZING SPECIFICATION FRAMES ({loadedCount}/{TOTAL_FRAMES})...
-            </div>
-          </div>
-        )}
+        <div className="absolute inset-0 flex items-center justify-center z-40 pointer-events-none px-4">
+          <AnimatePresence>
+            {!isReady && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.94 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.94 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                className="bg-black/90 backdrop-blur-md border border-white/10 px-6 py-4 rounded-xl flex items-center gap-3 shadow-2xl"
+              >
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 0.9, repeat: Infinity, ease: 'linear' }}
+                  className="w-5 h-5 border-2 border-[#3a86ff] border-t-transparent rounded-full shrink-0"
+                />
+                <div className="font-mono text-xs text-slate-300">
+                  SYNCHRONIZING SPECIFICATION FRAMES ({loadedCount}/{TOTAL_FRAMES})...
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
 
         {/* ========================================================
             3. HERO INTRO HEADER (Station 0: Upper Center)
@@ -565,7 +580,13 @@ export default function InteractiveSpecsSection() {
           </h2>
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-950/80 border border-[#001d3d]/25 backdrop-blur-md text-[11px] sm:text-xs font-mono text-slate-300 shadow-xl">
             <span>SCROLL DOWN TO EXPLORE ARCHITECTURE</span>
-            <ChevronDown className="w-3.5 h-3.5 text-[#3a86ff] animate-bounce" />
+            <motion.span
+              animate={{ y: [0, 4, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+              className="inline-flex"
+            >
+              <ChevronDown className="w-3.5 h-3.5 text-[#3a86ff]" />
+            </motion.span>
           </div>
         </div>
 

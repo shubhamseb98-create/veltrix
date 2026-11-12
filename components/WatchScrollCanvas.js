@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 
 const TOTAL_FRAMES = 239;
 const FRAME_EXT = '.webp?v=f1_v1';
@@ -210,17 +211,24 @@ export default function WatchScrollCanvas() {
       <div className="sticky top-0 left-0 w-full h-screen bg-black overflow-hidden flex items-center justify-center">
 
         {/* Luxury Glass Preloader Pill - Deep Royal Navy #001d3d */}
-        <div
-          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 transition-all duration-500 pointer-events-none ${
-            isReady ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
-          }`}
-        >
-          <div className="bg-neutral-950/85 backdrop-blur-xl border border-[#001d3d]/50 px-5 py-3 rounded-full flex items-center gap-3 shadow-[0_0_30px_rgba(0,29,61,0.35)]">
-            <div className="w-4 h-4 border-2 border-[#3a86ff]/20 border-t-[#3a86ff] rounded-full animate-spin flex-shrink-0" />
-            <div className="font-mono text-[11px] text-slate-300 tracking-wider">
-              INITIALIZING 3D ENGINE <span className="text-[#3a86ff] font-bold">— {progressPct}%</span>
-            </div>
-          </div>
+        <div className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none px-4">
+          <AnimatePresence>
+            {!isReady && (
+              <motion.div
+                key="canvas-preloader-pill"
+                initial={{ opacity: 0, scale: 0.94 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.92 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                className="bg-neutral-950/85 backdrop-blur-xl border border-[#001d3d]/50 px-5 py-3 rounded-full flex items-center gap-3 shadow-[0_0_30px_rgba(0,29,61,0.35)]"
+              >
+                <div className="w-4 h-4 border-2 border-[#3a86ff]/20 border-t-[#3a86ff] rounded-full animate-spin flex-shrink-0" />
+                <div className="font-mono text-[11px] text-slate-300 tracking-wider">
+                  INITIALIZING 3D ENGINE <span className="text-[#3a86ff] font-bold">— {progressPct}%</span>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         {/* Full Viewport Canvas (100vw x 100vh full-bleed, original video background intact) */}
@@ -230,15 +238,22 @@ export default function WatchScrollCanvas() {
         />
 
         {/* Top Floating Stage HUD - Minimal & Sleek in Royal Blue #001d3d */}
-        <div className="absolute top-[60px] left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 bg-neutral-950/85 border border-[#001d3d]/40 rounded-full backdrop-blur-xl shadow-lg pointer-events-none max-w-[90vw]">
-          <span className="w-2 h-2 rounded-full bg-[#3a86ff] animate-pulse flex-shrink-0" />
-          <span className="font-mono text-[10px] sm:text-[11px] text-[#3a86ff] font-semibold tracking-widest uppercase truncate">
-            VELTRIX — 3D APEX HOROLOGY
-          </span>
-          <span className="text-white/20 font-mono text-xs">|</span>
-          <span className="font-mono text-[10px] sm:text-[11px] text-slate-300 tracking-wider truncate">
-            SCROLL TO INSPECT
-          </span>
+        <div className="absolute top-[60px] left-1/2 -translate-x-1/2 z-20 pointer-events-none max-w-[90vw]">
+          <motion.div
+            initial={{ opacity: 0, y: -14, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.7, delay: 1.25, ease: [0.22, 1, 0.36, 1] }}
+            className="flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 bg-neutral-950/85 border border-[#001d3d]/40 rounded-full backdrop-blur-xl shadow-lg"
+          >
+            <span className="w-2 h-2 rounded-full bg-[#3a86ff] animate-pulse flex-shrink-0" />
+            <span className="font-mono text-[10px] sm:text-[11px] text-[#3a86ff] font-semibold tracking-widest uppercase truncate">
+              VELTRIX — 3D APEX HOROLOGY
+            </span>
+            <span className="text-white/20 font-mono text-xs">|</span>
+            <span className="font-mono text-[10px] sm:text-[11px] text-slate-300 tracking-wider truncate">
+              SCROLL TO INSPECT
+            </span>
+          </motion.div>
         </div>
 
       </div>
