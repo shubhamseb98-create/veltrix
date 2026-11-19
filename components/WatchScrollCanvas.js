@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
-const TOTAL_FRAMES = 239;
-const FRAME_EXT = '.webp?v=f1_v1';
+const TOTAL_FRAMES = 240;
+const FRAME_EXT = '.webp?v=bluebg_v1';
 
 function getFramePath(index) {
   const pad = String(index).padStart(4, '0');
@@ -164,8 +164,8 @@ export default function WatchScrollCanvas() {
     function onScroll() {
       if (!container) return;
       const rect = container.getBoundingClientRect();
-      const scrollDist = window.innerHeight * 3.5;
-      const progress = Math.min(Math.max(-rect.top / scrollDist, 0), 1);
+      const maxScroll = container.offsetHeight - window.innerHeight;
+      const progress = maxScroll > 0 ? Math.min(Math.max(-rect.top / maxScroll, 0), 1) : 0;
 
       targetFrame = Math.max(1, Math.min(TOTAL_FRAMES, Math.round(progress * (TOTAL_FRAMES - 1)) + 1));
     }
@@ -173,7 +173,7 @@ export default function WatchScrollCanvas() {
     function renderLoop() {
       const diff = targetFrame - currentFrame;
       if (Math.abs(diff) > 0.05) {
-        currentFrame += diff * 0.28;
+        currentFrame += diff * 0.10;
       } else {
         currentFrame = targetFrame;
       }
@@ -206,7 +206,7 @@ export default function WatchScrollCanvas() {
     <section
       ref={containerRef}
       id="scrolly-section"
-      className="relative w-full h-[450vh] bg-black select-none"
+      className="relative w-full h-[300vh] bg-black select-none"
     >
       <div className="sticky top-0 left-0 w-full h-screen bg-black overflow-hidden flex items-center justify-center">
 
@@ -236,25 +236,6 @@ export default function WatchScrollCanvas() {
           ref={canvasRef}
           className="absolute inset-0 w-full h-full block z-10 pointer-events-none"
         />
-
-        {/* Top Floating Stage HUD - Minimal & Sleek in Royal Blue #001d3d */}
-        <div className="absolute top-[60px] left-1/2 -translate-x-1/2 z-20 pointer-events-none max-w-[90vw]">
-          <motion.div
-            initial={{ opacity: 0, y: -14, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.7, delay: 1.25, ease: [0.22, 1, 0.36, 1] }}
-            className="flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 bg-neutral-950/85 border border-[#001d3d]/40 rounded-full backdrop-blur-xl shadow-lg"
-          >
-            <span className="w-2 h-2 rounded-full bg-[#3a86ff] animate-pulse flex-shrink-0" />
-            <span className="font-mono text-[10px] sm:text-[11px] text-[#3a86ff] font-semibold tracking-widest uppercase truncate">
-              VELTRIX — 3D APEX HOROLOGY
-            </span>
-            <span className="text-white/20 font-mono text-xs">|</span>
-            <span className="font-mono text-[10px] sm:text-[11px] text-slate-300 tracking-wider truncate">
-              SCROLL TO INSPECT
-            </span>
-          </motion.div>
-        </div>
 
       </div>
     </section>

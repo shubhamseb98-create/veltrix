@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.png?v=3" type="image/png" />
         <link rel="alternate icon" href="/favicon.ico?v=3" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3" />
-        <link rel="preload" href="/frames/frame_0001.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/frames/frame_0001.webp?v=bluebg_v1" as="image" type="image/webp" />
       </head>
       <body className="bg-black text-slate-100 antialiased selection:bg-[#001d3d] selection:text-white">
         {children}

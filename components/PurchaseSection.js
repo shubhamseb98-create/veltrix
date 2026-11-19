@@ -33,7 +33,7 @@ export default function PurchaseSection() {
   const [selectedFinish, setSelectedFinish] = useState(FINISHES[0]);
   const [orderComplete, setOrderComplete] = useState(false);
 
-  const previewPath = `/frames/frame_${String(selectedFrame).padStart(4, '0')}.webp`;
+  const previewPath = `/frames/frame_${String(selectedFrame).padStart(4, '0')}.webp?v=bluebg_v1`;
   const currentThumbnail = THUMBNAILS.find((t) => t.frame === selectedFrame) || THUMBNAILS[0];
 
   function handleOrder(e) {
